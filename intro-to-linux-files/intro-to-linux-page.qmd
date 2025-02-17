@@ -12,10 +12,51 @@ author:
 This is a modified version of the course presentation for [HPC0: Introduction to Linux for HPC](https://arc.leeds.ac.uk/courses/hpc0-introduction-to-linux-for-hpc/),
 if you're very unfamiliar with the material shown here, there's some [additional homework](../week-1-homework.qmd) for you between courses.
 
-You can follow alon with the presentation notes here:
+You can follow along with the presentation notes here:
 
 [<a href="linux101.qmd" target="_blank">Launch fullscreen presentation ⤢ </a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}
 
 Launch your virtual machine to test out these notes here:
 
-[<a href="linux101.qmd" target="_blank">Launch fullscreen presentation ⤢ </a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}
+[<a href="https://github.com/murphyqm/learning-linux" target="_blank">Launch codespaces virtual machine ⇗</a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch GitHub codespaces in a new tab"}
+
+
+## Frequently used commands: cheat sheet
+
+| Command | Description |
+| :--- | :--- |
+| `cd` | Change directory to home |
+| `cd dir-name` | Change directory to `dir-name` |
+| `pwd` | Print the current working directory - where am I? |
+| `name --help` | Load the manual for `name` - on Codespaces |
+| `man name` | Load the manual for `name` - on Aire/ARC |
+| `ls` | List the contents of a directory |
+| `cat file-name` | Print out the contents of a file called `file-name` |
+| `mkdir dir-name` | Make a new directory called `dir-name` |
+| `touch file-name` | Make a new file/update the last-edited date of a file called `file-name` |
+
+Some more `cd` commands:
+
+| Command | Description |
+| :--- | :--- |
+| `cd ..` | Go up a level to the parent directory |
+| `cd -` | Go back to the previous directory |
+| `cd ~/dir-name` | Go to `dir-name`, a directory in the home directory |
+
+Some more `ls` commands:
+
+| Command | Description |
+| :--- | :--- |
+| `ls -F` | List the contents of a dir, with symbols for content type |
+| `ls -a` | List *all* contents, including hidden files and directories |
+| `ls -l` | List contents, including permissions, the owner and their "group", and when the content was edited |
+
+
+Commands for working with files and directories:
+
+| Command | Description |
+| :--- | :--- |
+| `cp` |  |
+| `mv` |  |
+| `rm` |  |
+| `mkdir -p dir-name` | Make a new directory call `dir-name` if it doesn't already exist |

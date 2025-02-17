@@ -86,92 +86,7 @@ you'll be better able to search for and then understand the answer.
 
 :::
 
-## PRIMM method {.smaller}
 
-It's helpful for you as a learner to understand the PRIMM structure so you can apply it while working through this course. Not every step
-will be relevant or used at every stage of the course!
-
-::: {.panel-tabset}
-
-### What's PRIMM?
-
-PRIMM is a pedagogical method specifically aimed at teaching text-based programming. While research into adult programming
-learners is very limited (especially in terms of demographics; many key studies that are cited have overwhelmingly homogenous test groups),
-the PRIMM method has a few key benefits:
-
-- It supports learners with different ability levels and who learn at different speeds;
-- It can be applied by learners even if the course materials are not specifically built with it in mind;
-- It can be applied to asynchronous learning materials (for example, if you are using these notes online on your own).
-
-### P
-
-The **P** in PRIMM stands for **predict**:
-
-When you first see a command, script, or piece of code, before running it, predict what you think it will
-do. It's ok to get this wrong: the important thing is to get into the habit of predicting! This
-helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.
-
-- What do you think the code is going to do generally?
-- What do you think the output in your terminal is going to look like?
-
-### R 
-
-The **R** in PRIMM stands for **run**:
-
-- Run the code or program;
-- How does the output/effect compare to your prediction?
-  - What did you get right?
-  - What did you misinterpret?
-- Do you understand what happened?
-
-### I 
-
-The **I** in PRIMM stands for **investigate**:
-
-Let's dig a little deeper into the *structure* of code you've used.
-
-- What options or arguments did you use, and what effect did they have?
-- Can you find some documentation on the command you used?
-  - Does the description match how you would describe the code?
-    - If no, why does your understanding of it diverge?
-  - What other options or features are available?
-
-
-
-### M 
-
-The first **M** in PRIMM stands for **modify**:
-
-- Try running the code with different options:
-  - Change only a small thing at a time;
-  - Always predict what you think the output will be!
-  - Compare the actual output with your prediction;
-  - Compare your understanding to the available documentation.
-
-This stage helps you to gradually increase the difficultly of the tasks you are doing!
-
-### M
-
-The second **M** in PRIMM stands for **make**:
-
-This stage is about making the code your own.
-
-- At this stage, you can try implementing snippets of code you've already learned, but to solve a new or different problem;
-- Again, use the previous stages when you are writing your code: *predict* what you think will happen, *run* the code and compare
-the output to your predictions, and *investigate* the structure of it, especially if it does not behave how you intended!
-
-### Key notes
-
-**Read before you write** - research has proven repeatedly the importance of reading and predicting the output of code as
-a method of learning, over just *getting straight into it* and writing code.
-
-- Novice programmers need to acquire accuracy in tracing code *before* they can program independently
-- Trying to write code first leads to frustration and confusion
-
-**Learn in a way that suits you** - if that is copying and pasting commands
-from the slides instead of trying to keep up with typing, *that's ok!*
-
-:::
 
 # Ways of interacting with a computer
 
@@ -236,18 +151,6 @@ As well as using a GUI, we can also interact with computers using a **Command Li
 - Essentially, there are many different ways to access a command line, and there are different types
 of command line interfaces!
 - We are teaching you one today that is easy to access, and is used on research HPC systems
-:::
-
-## Poll
-
-Throughout this presentation, we will be using quick polls to gauge your familiarity with concepts.
-
-Let's test it out:
-
-[Click here to go to Poll](https://universityofleeds.display.vevox.com#/present/696636/ULXGUZROA4XT20VKGCAZ){target="_blank"}
-
-::: {.notes}
-- Open up vevox session and activate relevant poll
 :::
 
 ## Bash {.smaller}
@@ -640,12 +543,6 @@ flowchart
 
 - To save us from typing out `/home/my-username` every time we refer to a directory or file, we can use the shortcut `~`, called a *tilde*
 - This turns `/home/my-username/all_my_files` to `~/all_my_files`
-
-## Poll
-
-Let's test your familiarity with Linux file paths!
-
-[Click here to go to Poll](https://universityofleeds.display.vevox.com#/present/696636/ULXGUZROA4XT20VKGCAZ){target="_blank"}
 
 ## Let's explore some files!
 
@@ -1051,13 +948,6 @@ What will the output be?
 - *Executables* get an asterisk (`*`);
 :::
 
-## Poll
-
-Let's test your familiarity with these commands!
-
-[Click here to go to Poll](https://universityofleeds.display.vevox.com#/present/696636/ULXGUZROA4XT20VKGCAZ){target="_blank"}
-
-
 ## Recap
 
 So far, we've used:
@@ -1427,10 +1317,6 @@ Hint: what can we see with `ls .. ` from the current directory?
 
 What if we are in `pink-subfolder` (if it's our *working directory*), and want the path to `pink-file.md`?
 
-
-[Click here to go to Poll](https://universityofleeds.display.vevox.com#/present/696636/ULXGUZROA4XT20VKGCAZ){target="_blank"}
-
-
 ## Relative paths
 
 `../pink-file.md`
@@ -1495,13 +1381,6 @@ which lists useful commands.
 4. When naming files, give them a sensible file ending: `.txt`, `.md`, `.py` etc.
 
 If you're working with old files/directories that have spaces in their names, you'll need to wrap the path in single quotation marks, `'like this.txt'`
-
-## Poll
-
-Choose some sensible Linux file and folder names!
-
-[Click here to go to Poll](https://universityofleeds.display.vevox.com#/present/696636/ULXGUZROA4XT20VKGCAZ){target="_blank"}
-
 
 ## Making files and directories {.smaller}
 
@@ -1680,13 +1559,6 @@ This means CTRL and x▮
 
 This will close the Nano text editor and return you to the command line.
 
-## Poll
-
-How comfortable are you using Nano?
-
-[Click here to go to Poll](https://universityofleeds.display.vevox.com#/present/696636/ULXGUZROA4XT20VKGCAZ){target="_blank"}
-
-
 
 ## Using arrow keys ↑ ↓
 
@@ -1839,12 +1711,6 @@ The `cp` or copy command allows us to copy files or directories to specified loc
 :::
 
 :::::
-
-## Poll
-
-How comfortable are you with exploring and handling directories using the commands we have covered?
-
-[Click here to go to Poll](https://universityofleeds.display.vevox.com#/present/696636/ULXGUZROA4XT20VKGCAZ){target="_blank"}
 
 
 ## Deleting with `rm`

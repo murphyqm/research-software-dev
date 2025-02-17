@@ -11,15 +11,24 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: intro-to-linux-files/intro-to-linux-page.qmd
-        text: Intro to Linux
   sidebar:
     border: false
     style: "docked"
     search: false
     contents:
-      - text: "Introduction"
-        href: index.qmd
+      - section: "Introduction"
+        contents:
+        - text: "Course page"
+          href: index.qmd
+        - text: "Introduction Slides"
+          href: intro-presentation/intro.qmd
+      - section: "Basic Linux"
+        contents:
+        - href: intro-to-linux-files/intro-to-linux-page.qmd
+          text: Intro to Linux
+        - href: intro-to-linux-files/linux101.qmd
+          text: Linux 101 slides
+      - section: "Managing dependencies"
 
 format:
   html:

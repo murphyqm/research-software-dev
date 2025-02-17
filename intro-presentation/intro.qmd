@@ -1,0 +1,115 @@
+---
+title: "Research Software Engineering"
+author: "Dr Maeve Murphy Quinlan"
+format:
+  revealjs: 
+    self-contained: true
+    navigation-mode: linear
+    controls-layout: bottom-right
+    controls: true
+    theme: ../pres-theme.scss
+    footer: "Maeve Murphy Quinlan | Intro to RSE | murphyqm.github.io"
+---
+
+## Who am I?
+
+::: {.incremental}
+
+- I'm a Research Software Engineer in Research Computing, IT Services
+- I completed my PhD in 2024 in the Institute of Geophysics and Tectonics, School of Earth and Environment, University of Leeds
+- I have made almost every mistake imaginable when it comes to writing code, managing dependencies, tracking changes, submitting HPC jobs...
+
+:::
+
+## A "good enough" approach
+
+- Documentation, guidance, and courses often fall down by aiming for perfection
+- This can lead to people panicking, and not implementing *any* of the suggestions or tools
+- Everything in this course is incremental:
+    - You will be able to implement some little bits without too much work
+    - You can improve and add to this over time
+
+## PRIMM method {.smaller}
+
+PRIMM is a pedagogical method specifically aimed at teaching text-based programming. While research into adult programming
+learners is very limited (especially in terms of demographics; many key studies that are cited have overwhelmingly homogenous test groups),
+the PRIMM method has a few key benefits:
+
+- It supports learners with different ability levels and who learn at different speeds;
+- It can be applied by learners even if the course materials are not specifically built with it in mind;
+- It can be applied to asynchronous learning materials (for example, if you are using these notes online on your own).
+
+
+
+## PRIMM method {.smaller}
+
+::: {.panel-tabset}
+
+### P
+
+The **P** in PRIMM stands for **predict**:
+
+When you first see a command, script, or piece of code, before running it, predict what you think it will
+do. It's ok to get this wrong: the important thing is to get into the habit of predicting! This
+helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.
+
+- What do you think the code is going to do generally?
+- What do you think the output in your terminal is going to look like?
+
+### R 
+
+The **R** in PRIMM stands for **run**:
+
+- Run the code or program;
+- How does the output/effect compare to your prediction?
+  - What did you get right?
+  - What did you misinterpret?
+- Do you understand what happened?
+
+### I 
+
+The **I** in PRIMM stands for **investigate**:
+
+Let's dig a little deeper into the *structure* of code you've used.
+
+- What options or arguments did you use, and what effect did they have?
+- Can you find some documentation on the command you used?
+  - Does the description match how you would describe the code?
+    - If no, why does your understanding of it diverge?
+  - What other options or features are available?
+
+### M 
+
+The first **M** in PRIMM stands for **modify**:
+
+- Try running the code with different options:
+  - Change only a small thing at a time;
+  - Always predict what you think the output will be!
+  - Compare the actual output with your prediction;
+  - Compare your understanding to the available documentation.
+
+This stage helps you to gradually increase the difficultly of the tasks you are doing!
+
+### M
+
+The second **M** in PRIMM stands for **make**:
+
+This stage is about making the code your own.
+
+- At this stage, you can try implementing snippets of code you've already learned, but to solve a new or different problem;
+- Again, use the previous stages when you are writing your code: *predict* what you think will happen, *run* the code and compare
+the output to your predictions, and *investigate* the structure of it, especially if it does not behave how you intended!
+
+:::
+
+
+## Learning computational skills {.smaller}
+
+**Read before you write** - research has proven repeatedly the importance of reading and predicting the output of code as
+a method of learning, over just *getting straight into it* and writing code.
+
+- Novice programmers need to acquire accuracy in tracing code *before* they can program independently
+- Trying to write code first leads to frustration and confusion
+
+**Learn in a way that suits you** - if that is copying and pasting commands
+from the slides instead of trying to keep up with typing, *that's ok!*

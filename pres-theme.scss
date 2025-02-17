@@ -135,3 +135,12 @@ padding-left: 10px;
 border-radius: 2px;
 border: 1.5px solid $dark-grey;
 }
+
+.panel-tabset [role=tablist] {
+    border-bottom: 2px solid #470044;
+}
+
+.panel-tabset [role=tab][aria-selected=true] {
+    border: 2px solid #470044;
+    border-bottom-color: #f7d8fc;
+}

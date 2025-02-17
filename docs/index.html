@@ -50,6 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./intro-presentation/intro.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -111,10 +112,6 @@ div.csl-indent {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./intro-to-linux-files/intro-to-linux-page.html"> 
-<span class="menu-text">Intro to Linux</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -126,7 +123,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li><li class="breadcrumb-item"><a href="./index.html">Course page</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -138,12 +135,56 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Course page</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro-presentation/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction Slides</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Basic Linux</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro-to-linux-files/intro-to-linux-page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to Linux</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro-to-linux-files/linux101.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linux 101 slides</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Managing dependencies</span></span>
+  </li>
     </ul>
     </div>
 </nav>
@@ -156,14 +197,19 @@ div.csl-indent {
   <ul>
   <li><a href="#why-do-software-engineering-skills-matter-to-researchers" id="toc-why-do-software-engineering-skills-matter-to-researchers" class="nav-link active" data-scroll-target="#why-do-software-engineering-skills-matter-to-researchers">Why do software engineering skills matter to researchers?</a></li>
   <li><a href="#current-course" id="toc-current-course" class="nav-link" data-scroll-target="#current-course">Current course</a></li>
-  <li><a href="#how-to-use-this-resource" id="toc-how-to-use-this-resource" class="nav-link" data-scroll-target="#how-to-use-this-resource">How to use this resource</a></li>
+  <li><a href="#how-to-use-this-resource" id="toc-how-to-use-this-resource" class="nav-link" data-scroll-target="#how-to-use-this-resource">How to use this resource</a>
+  <ul class="collapse">
+  <li><a href="#use-the-primm-method-where-possible" id="toc-use-the-primm-method-where-possible" class="nav-link" data-scroll-target="#use-the-primm-method-where-possible">1. Use the PRIMM method where possible</a></li>
+  <li><a href="#kick-back-relax-and-do-something-else-when-you-know-something" id="toc-kick-back-relax-and-do-something-else-when-you-know-something" class="nav-link" data-scroll-target="#kick-back-relax-and-do-something-else-when-you-know-something">2. Kick back, relax, and do something else when you know something</a></li>
+  <li><a href="#learn-in-a-way-that-suits-you" id="toc-learn-in-a-way-that-suits-you" class="nav-link" data-scroll-target="#learn-in-a-way-that-suits-you">3. Learn in a way that suits <em>you</em></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li><li class="breadcrumb-item"><a href="./index.html">Course page</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">RSE: How to</h1>
 </div>
@@ -198,13 +244,106 @@ div.csl-indent {
 </section>
 <section id="how-to-use-this-resource" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-use-this-resource">How to use this resource</h2>
-<ol type="1">
-<li>Use the PRIMM method where possible</li>
-</ol>
-<p>The PRIMM method is a method to specifically learn a programming language <span class="citation" data-cites="Sentance2019-on">(<a href="#ref-Sentance2019-on" role="doc-biblioref">Sentance, Waite, and Kallia 2019</a>)</span>, but is generally useful for learning computational commands etc.</p>
+<p>There’s a lot of materal here to absorb, so here are some guidelines to help you make the most of it. This material is also covered in the presentation linked below.</p>
+<p><span class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="Launch presentation in a new tab"><a href="./intro-presentation/intro.html" target="_blank">Launch fullscreen presentation ⤢ </a></span></p>
+<section id="use-the-primm-method-where-possible" class="level3">
+<h3 class="anchored" data-anchor-id="use-the-primm-method-where-possible">1. Use the PRIMM method where possible</h3>
+<p>The PRIMM method is a method to specifically learn a programming language <span class="citation" data-cites="Sentance2019-on">(<a href="#ref-Sentance2019-on" role="doc-biblioref">Sentance, Waite, and Kallia 2019</a>)</span>, but is generally useful for learning computational commands etc. It’s helpful for you as a learner to understand the PRIMM structure so you can apply it while working through this course. Not every step will be relevant or used at every stage of the course!</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">What’s PRIMM?</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">P</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">I</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">M</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false">M</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>PRIMM is a pedagogical method specifically aimed at teaching text-based programming. While research into adult programming learners is very limited (especially in terms of demographics; many key studies that are cited have overwhelmingly homogenous test groups), the PRIMM method has a few key benefits:</p>
+<ul>
+<li>It supports learners with different ability levels and who learn at different speeds;</li>
+<li>It can be applied by learners even if the course materials are not specifically built with it in mind;</li>
+<li>It can be applied to asynchronous learning materials (for example, if you are using these notes online on your own).</li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>The <strong>P</strong> in PRIMM stands for <strong>predict</strong>:</p>
+<p>When you first see a command, script, or piece of code, before running it, predict what you think it will do. It’s ok to get this wrong: the important thing is to get into the habit of predicting! This helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.</p>
+<ul>
+<li>What do you think the code is going to do generally?</li>
+<li>What do you think the output in your terminal is going to look like?</li>
+</ul>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>The <strong>R</strong> in PRIMM stands for <strong>run</strong>:</p>
+<ul>
+<li>Run the code or program;</li>
+<li>How does the output/effect compare to your prediction?
+<ul>
+<li>What did you get right?</li>
+<li>What did you misinterpret?</li>
+</ul></li>
+<li>Do you understand what happened?</li>
+</ul>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p>The <strong>I</strong> in PRIMM stands for <strong>investigate</strong>:</p>
+<p>Let’s dig a little deeper into the <em>structure</em> of code you’ve used.</p>
+<ul>
+<li>What options or arguments did you use, and what effect did they have?</li>
+<li>Can you find some documentation on the command you used?
+<ul>
+<li>Does the description match how you would describe the code?
+<ul>
+<li>If no, why does your understanding of it diverge?</li>
+</ul></li>
+<li>What other options or features are available?</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<p>The first <strong>M</strong> in PRIMM stands for <strong>modify</strong>:</p>
+<ul>
+<li>Try running the code with different options:
+<ul>
+<li>Change only a small thing at a time;</li>
+<li>Always predict what you think the output will be!</li>
+<li>Compare the actual output with your prediction;</li>
+<li>Compare your understanding to the available documentation.</li>
+</ul></li>
+</ul>
+<p>This stage helps you to gradually increase the difficultly of the tasks you are doing!</p>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<p>The second <strong>M</strong> in PRIMM stands for <strong>make</strong>:</p>
+<p>This stage is about making the code your own.</p>
+<ul>
+<li>At this stage, you can try implementing snippets of code you’ve already learned, but to solve a new or different problem;</li>
+<li>Again, use the previous stages when you are writing your code: <em>predict</em> what you think will happen, <em>run</em> the code and compare the output to your predictions, and <em>investigate</em> the structure of it, especially if it does not behave how you intended!</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="kick-back-relax-and-do-something-else-when-you-know-something" class="level3">
+<h3 class="anchored" data-anchor-id="kick-back-relax-and-do-something-else-when-you-know-something">2. Kick back, relax, and do something else when you know something</h3>
+<p>Too frequently, I have attended broad-level, <em>apparently</em> introductory courses that have catered to the fastest in the class.</p>
+<p>The aim of this course is to demystify aspects of research software engineering, like dependency management, version control, and project directory structure. These topics are basic skills needed for pursuing research in the computational field. Certain <a href="https://murphyqm.github.io/talks/code-for-whom/">demographics are less likely to learn these skills in an informal setting</a>, meaning that classes like this are their main access to these topics.</p>
+<p>I am interested in helping the students who do not already know everything about these topics, and will not be pacing the course for the fastest in the group who have pre-existing knowledge. With that said, I know there is nothing more boring than sitting through a class where you already know all the material - <span class="extra">please feel free to use this time to do extra reading, work on projects, do various administrative work</span>; stick on headphones if you like, and join back in when something relevant comes up.</p>
+</section>
+<section id="learn-in-a-way-that-suits-you" class="level3">
+<h3 class="anchored" data-anchor-id="learn-in-a-way-that-suits-you">3. Learn in a way that suits <em>you</em></h3>
+<p><strong>Read before you write</strong> - research has proven repeatedly the importance of reading and predicting the output of code as a method of learning, over just <em>getting straight into it</em> and writing code.</p>
+<ul>
+<li>Novice programmers need to acquire accuracy in tracing code <em>before</em> they can program independently</li>
+<li>Trying to write code first leads to frustration and confusion</li>
+</ul>
+<p>However, with that said <strong>learn in a way that suits you</strong> - if that is copying and pasting commands from the slides instead of trying to keep up with typing, <em>that’s ok!</em> Also, if that means taking handwritten notes and not typing, that’s also fine!</p>
+<p>Please feel free to:</p>
+<ul>
+<li>Get up and stretch when you need, leave for breaks, and stretch your eyes by looking away from the screen;</li>
+<li>Wear headphones for background music if it helps you focus;</li>
+<li>Kick off your shoes and sit comfortably;</li>
+<li>Do whatever else helps you learn!</li>
+</ul>
 
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -637,6 +776,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://utteranc.es/client.js" repo="murphyqm/research-software-dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./intro-presentation/intro.html" class="pagination-link" aria-label="Introduction Slides">
+        <span class="nav-page-text">Introduction Slides</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
