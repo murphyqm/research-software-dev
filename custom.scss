@@ -1,0 +1,53 @@
+/*-- scss:defaults --*/
+
+// Colors
+$white: #ffffff;
+$purple1:#e79aff;
+$yellow: #fffc58;
+$pale-yellow: #fffec0;
+$pale-pink: #f7d8fc;
+$orange: #ffa135;
+$purple2: #9158A2;
+$light-blue: #9fe1ff;
+$pale-blue: #d2f1ff;
+$dark-grey: #1f292e;
+$navy: #2d3369;
+$dark-purple: #470044;
+$red: #ff3535;
+$red-orange: #ff6e35;
+
+h1, h2 {
+    color: $dark-purple;
+    font-weight: 800; // Google fonts tells you which weights your chosen font family allows for!
+    border-bottom: none;
+  }
+
+.title {
+    letter-spacing: 2px;
+    font: 700 60px Space Grotesk;
+    -webkit-text-fill-color: $light-blue;
+    -webkit-text-stroke: 1.5px;
+}
+
+.extra{
+    background-color: $yellow;
+    font-weight: 700;
+}
+
+.box-lp {
+    color: $dark-grey;
+    background-color: $purple1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 2px;
+    border: 1.5px solid $dark-grey;
+}
+
+.navbar-brand {
+    letter-spacing: 2px;
+    font: 700 2em Space Grotesk;
+    -webkit-text-fill-color: $orange;
+    -webkit-text-stroke: 1px;
+}

@@ -1,0 +1,44 @@
+color:
+  palette:
+    # navy: "#002642"
+    # cream: "#fffbf2"
+    # dark-orange: "#a23e02"
+    # dark-grey: "#222222"
+    # blue: "#ddeaf1"
+    white: "#ffffff"
+    purple1: "#e79aff"
+    yellow: "#fffc58"
+    pale-yellow: "#fffec0"
+    pale-pink: "#f7d8fc"
+    orange: "#ffa135"
+    purple2: "#9158A2"
+    light-blue: "#9fe1ff"
+    pale-blue: "#d2f1ff"
+    dark-grey: "#1f292e"
+    navy: "#2d3369"
+    dark-purple: "#470044"
+    red: "#ff3535"
+    red-orange: "#ff6e35"
+  background: white
+  foreground: dark-grey
+  primary: purple1
+  secondary: navy
+
+typography:
+  fonts:
+    - family: Karla
+      source: google
+    - family: Space Grotesk
+      source: google
+    - family: Space Mono
+      source: google
+  base: Space Grotesk
+  headings: Space Grotesk
+  link:
+    decoration: underline
+  monospace: Space Mono
+  monospace-inline:
+    color: navy
+    background-color: pale-blue
+  monospace-block: 
+    background-color: pale-blue
