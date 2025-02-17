@@ -1,0 +1,137 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+// Colors
+$white: #ffffff;
+$purple1:#e79aff;
+$yellow: #fffc58;
+$pale-yellow: #fffec0;
+$pale-pink: #f7d8fc;
+$orange: #ffa135;
+$purple2: #9158A2;
+$light-blue: #9fe1ff;
+$pale-blue: #d2f1ff;
+$dark-grey: #1f292e;
+$navy: #2d3369;
+$dark-purple: #470044;
+$red: #ff3535;
+$red-orange: #ff6e35;
+
+
+// Base document colors
+// $navbar-bg: $purple1; // navbar
+// $navbar-fg: $navy; // navbar foreground elements
+// $navbar-hl: $dark-purple; // highlight color when hovering over navbar links
+// $body-bg: $white; // page background 
+// $body-color: $dark-grey; // page text 
+// $footer-bg: $purple1; // footer 
+// $link-color: $navy; // hyperlinks 
+// $sidebar-bg: $yellow; // left sidebar background
+
+
+// Callouts
+$callout-color-note: $purple2;
+$callout-color-tip: $yellow;
+$callout-color-caution: $orange;
+$callout-color-warning: $red;
+$callout-color-important: $red-orange;
+
+
+// Inline code
+$code-bg: $pale-blue; // inline code background color
+$code-color: $navy; // inline code text color
+
+// Code blocks
+$code-block-bg: $pale-blue; // code block background color
+// $code-block-border-left: $navy;
+
+// fonts
+
+$font-family-sans-serif: "Space Grotesk";
+$presentation-heading-color: $dark-purple;
+$body-bg: $pale-pink;
+$code-block-bg: $pale-blue;
+$code-color: $dark-purple;
+$code-bg: $pale-blue;
+
+$mermaid-label-fg-color: $dark-purple;
+
+/*-- scss:rules --*/
+
+.title {
+    letter-spacing: 2px;
+    font: 700 60px Space Grotesk;
+    -webkit-text-fill-color: $light-blue;
+    -webkit-text-stroke: 1.5px;
+}
+
+.outline-b {
+    -webkit-text-fill-color: $light-blue;
+    -webkit-text-stroke: 1.5px;
+}
+
+.outline-o {
+    -webkit-text-fill-color: $orange;
+    -webkit-text-stroke: 1.5px;
+}
+
+.section {
+    -webkit-text-fill-color: $light-blue;
+    -webkit-text-stroke: 1.5px;
+    text-align: center;
+}
+
+.small {
+    font-size: 0.6em;
+}
+
+.extra{
+    background-color: $yellow;
+    font-weight: 700;
+}
+
+
+#mermaid-1 .nodeLabel {
+    color: $dark-purple !important;
+}
+
+.reveal a {
+    color: $navy !important;
+    text-decoration: underline;
+    transition: color .15s ease;
+}
+
+.box-lb {
+color: $dark-grey;
+background-color: $light-blue;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+border-radius: 2px;
+border: 1.5px solid $dark-grey;
+}
+
+
+.box-lp {
+color: $dark-grey;
+background-color: $purple1;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+border-radius: 2px;
+border: 1.5px solid $dark-grey;
+}
+
+.box-dp {
+background-color: $purple2;
+color: $white;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+border-radius: 2px;
+border: 1.5px solid $dark-grey;
+}

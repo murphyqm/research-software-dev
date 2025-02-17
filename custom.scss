@@ -1,4 +1,6 @@
 /*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
 
 // Colors
 $white: #ffffff;
@@ -16,6 +18,47 @@ $dark-purple: #470044;
 $red: #ff3535;
 $red-orange: #ff6e35;
 
+
+// Base document colors
+$navbar-bg: $purple1; // navbar
+$navbar-fg: $navy; // navbar foreground elements
+$navbar-hl: $dark-purple; // highlight color when hovering over navbar links
+$body-bg: $white; // page background 
+$body-color: $dark-grey; // page text 
+$footer-bg: $purple1; // footer 
+$link-color: $navy; // hyperlinks 
+$sidebar-bg: $yellow; // left sidebar background
+
+
+// Callouts
+$callout-color-note: $purple2;
+$callout-color-tip: $yellow;
+$callout-color-caution: $orange;
+$callout-color-warning: $red;
+$callout-color-important: $red-orange;
+
+
+// Inline code
+$code-bg: $pale-blue; // inline code background color
+$code-color: $navy; // inline code text color
+
+// Code blocks
+$code-block-bg: $pale-blue; // code block background color
+// $code-block-border-left: $navy;
+
+/*-- scss:rules --*/
+
+// h1, h2 {
+//     letter-spacing: 5px;
+//     font-weight: 800; // Google fonts tells you which weights your chosen font family allows for!
+//   }
+
+// h1 {
+//     font: 800 40px Arial;
+//     -webkit-text-fill-color: transparent;
+//     -webkit-text-stroke: 1px;
+//   }
+
 h1, h2 {
     color: $dark-purple;
     font-weight: 800; // Google fonts tells you which weights your chosen font family allows for!
@@ -29,20 +72,49 @@ h1, h2 {
     -webkit-text-stroke: 1.5px;
 }
 
+body {
+    line-height: 1.5; // min 1.5 suggested for assistive tech
+    font-size: 18px;
+    font-weight: 375;//350;
+  }
+
 .extra{
     background-color: $yellow;
     font-weight: 700;
 }
 
+.box-lb {
+color: $dark-grey;
+background-color: $light-blue;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+border-radius: 2px;
+border: 1.5px solid $dark-grey;
+}
+
+
 .box-lp {
-    color: $dark-grey;
-    background-color: $purple1;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    border-radius: 2px;
-    border: 1.5px solid $dark-grey;
+color: $dark-grey;
+background-color: $purple1;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+border-radius: 2px;
+border: 1.5px solid $dark-grey;
+}
+
+.box-dp {
+background-color: $purple2;
+color: $white;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+border-radius: 2px;
+border: 1.5px solid $dark-grey;
 }
 
 .navbar-brand {
@@ -50,4 +122,134 @@ h1, h2 {
     font: 700 2em Space Grotesk;
     -webkit-text-fill-color: $orange;
     -webkit-text-stroke: 1px;
+}
+
+// .navbar-brand {
+//     letter-spacing: 2px;
+//     font: 700 40px Space Grotesk;
+//     -webkit-text-fill-color: $orange;
+//     -webkit-text-stroke: 1px;
+// }
+
+// .sidebar {
+//     border: 1.5px solid $dark-grey;
+//     background-color: $purple2;
+// }
+
+.navbar {
+    border: 2px solid $dark-grey;
+}
+
+.sidebar-item-text {
+    letter-spacing: 1px;
+    font: 500 16px Space Grotesk;
+}
+
+.menu-text {
+    letter-spacing: 1.5px;
+    font: 400 18px Space Grotesk;
+}
+
+// div.sidebar.sidebar-navigation.rollup.quarto-sidebar-toggle-contents, nav.sidebar.sidebar-navigation:not(.rollup) {
+//     background-color: #fffc58;
+//     border: 1.0px solid $dark-grey;
+// }
+
+.quarto-back-to-top {
+background-color: $purple2;
+color: $white;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+border-radius: 2px;
+border: 1.5px solid $dark-grey;
+}
+
+#quarto-back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    background-color: $purple2;
+    color: $white;
+    border-radius: 2px;
+    border: 1.5px solid $dark-grey;
+    box-shadow: 0 0rem 0rem #6c757d, 0 0 .05rem #6c757d;
+    text-decoration: none;
+    font-size: .9em;
+    text-align: center;
+    left: 50%;
+    padding: .4rem .8rem;
+    transform: translate(-50%, 0);
+}
+
+.aa-DetachedFormContainer {
+    background-color: $pale-pink;
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: .5em;
+}
+
+.quarto-sidebar-toggle-title {
+    cursor: pointer;
+    padding-bottom: 2px;
+    margin-left: .25em;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1em;
+    background-color: $yellow;
+    color: $white;
+    border-radius: 2px;
+    border: 1.5px solid $dark-grey;
+}
+
+#quarto-appendix.default .quarto-appendix-bibtex {
+    font-size: .9em;
+    padding: 1em;
+    border: solid 1px $dark-purple;
+    margin-bottom: 1em;
+    color: $dark-grey;
+    background-color: $purple1;
+}
+
+#quarto-appendix.default .quarto-appendix-citeas {
+    font-size: .9em;
+    padding: 1em;
+    border: solid 1px $dark-purple;
+    margin-bottom: 1em;
+    color: $dark-grey;
+    background-color: $purple1;
+}
+
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: var(--bs-nav-tabs-link-active-color);
+    background-color: $pale-yellow;
+    border-color: $dark-purple;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: calc(-1*var(--bs-nav-tabs-border-width));
+    border: 1.5px solid $dark-purple;
+    margin-left: 0.5em;
+    border-bottom: 0px;
+    border-top-left-radius: var(--bs-nav-tabs-border-radius);
+    border-top-right-radius: var(--bs-nav-tabs-border-radius);
+}
+
+
+.tab-content {
+    margin-top: 0px;
+    border: 2px solid $dark-purple;
+    margin-left: 0;
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: $pale-yellow;
+}
+
+div.sourceCode {
+    border: 2px solid $dark-purple;
 }

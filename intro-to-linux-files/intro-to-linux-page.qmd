@@ -1,0 +1,21 @@
+---
+title: "Linux 101"
+description: "Very basic introduction to the Linux command line"
+citation: true
+date: 17/02/2025
+author:
+  - name: Maeve Murphy Quinlan
+    url: https://murphyqm.github.io/
+    orcid: 0000-0003-2958-1008
+---
+
+This is a modified version of the course presentation for [HPC0: Introduction to Linux for HPC](https://arc.leeds.ac.uk/courses/hpc0-introduction-to-linux-for-hpc/),
+if you're very unfamiliar with the material shown here, there's some [additional homework](../week-1-homework.qmd) for you between courses.
+
+You can follow alon with the presentation notes here:
+
+[<a href="linux101.qmd" target="_blank">Launch fullscreen presentation ⤢ </a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}
+
+Launch your virtual machine to test out these notes here:
+
+[<a href="linux101.qmd" target="_blank">Launch fullscreen presentation ⤢ </a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}

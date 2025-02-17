@@ -4,19 +4,34 @@ project:
 
 website:
   title: "RSE: How to"
+  back-to-top-navigation: true
+  page-navigation: true
+  site-url: https://murphyqm.github.io/research-software-dev/
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: intro-to-linux-files/intro-to-linux-page.qmd
+        text: Intro to Linux
+  sidebar:
+    border: false
+    style: "docked"
+    search: false
+    contents:
+      - text: "Introduction"
+        href: index.qmd
 
 format:
   html:
+    page-layout: full
+    mainfont: Space Grotesk
     theme:
-      - cosmo
-      - brand
       - custom.scss
     toc: true
+    footnotes-hover: true
 
+comments:
+  utterances:
+    repo: murphyqm/research-software-dev
 
-
+bibliography: refs.bib

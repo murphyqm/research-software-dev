@@ -2,6 +2,36 @@
 title: "RSE: How to"
 ---
 
-This is a Quarto website.
+These module notes aim to provide you with a friendly introduction to *Research Software Engineering* (RSE) or *Research Software Development*. This is an evolution of the course notes [Sustainable Software Development](https://software-dev.streamlit.app/) [@Murphy-Quinlan2024-ba], intended to be more flexible and not reliant on a server.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+::: {.box-lb}
+
+## Why do software engineering skills matter to researchers?
+
+Research computing competency and specifically programming skills are becoming ever more important in our data-driven world: @Jacobs2016-ex argues that "we are rapidly approaching a point where innovations [in research] will primarily come from those who are able to translate an idea into an algorithm, and then into computer code."
+
+Research software engineering skills are the lab tools and competencies of the computational research world; much like practical lab safety training, researchers often pick up bad habits (ask me about my fear of [HF acid](https://en.wikipedia.org/wiki/Hydrofluoric_acid)). Also similarly to lab processes, procedures, and best practises, software engineering is awash with bizarre jargon and is very difficult to navigate without the support of a jaded old PhD student who has made every mistake imaginable (hello, it's me, I escaped my PhD over a year ago now).
+
+This course does not provide **the holy grail**, the singular **correct way** of doing things; instead, it should hopefully make the process of writing good, robust, reproducible code a little bit more straighforward.
+
+:::
+
+
+This course consists of a series of different topics and notes, usually including a brief presentation and some exercises for you to follow along with. Where relevant, I've cited various articles, and have usually linked to a variety of different resources.
+
+::: {.box-lp}
+## Current course
+
+The most recent/current iteration of this course is:
+
+[Research Software Engineering: SOEE5261M]{.extra}
+
+Note that the order of delivery/course contents may vary depending on pre-course surveys etc.
+:::
+
+## How to use this resource
+
+1. Use the PRIMM method where possible
+
+The PRIMM method is a method to specifically learn a programming language [@Sentance2019-on], but is generally useful for learning computational commands etc.
+
