@@ -8,3 +8,17 @@ author:
     url: https://murphyqm.github.io/
     orcid: 0000-0003-2958-1008
 ---
+
+Conda is a widely used package management system which allows you to isolate different Python “environments” from each other, allowing you to use different versions of libraries or modules for different projects. However, mismanagement of packages can lead to dependency hell with tangled environments and incompatible versions of different modules.
+
+This presentation aims to provide you with a workflow for using conda that ensures:
+
+- You can rebuild your environment on a different computer/platform without problem
+- That you can record exact dependencies for the sake of reproducibility
+- That you can update your environment without it breaking (even if you have `pip` dependencies too!)
+- You don't get tangled up in licensing issues.
+
+To read the contents of this presentation in article format, please see my [blog post on using conda](https://murphyqm.github.io/posts/2024-11-27-conda-envs/); 
+
+
+[Launch fullscreen presentation ⤢](conda-pres.qmd){target="_blank" .btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}

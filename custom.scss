@@ -253,3 +253,7 @@ border: 1.5px solid $dark-grey;
 div.sourceCode {
     border: 2px solid $dark-purple;
 }
+
+.btn-outline-primary {
+    --bs-btn-color: $dark-purple;
+}
