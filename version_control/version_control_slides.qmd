@@ -1,0 +1,41 @@
+---
+title: "Version control"
+author: "Dr Maeve Murphy Quinlan"
+format:
+  revealjs: 
+    self-contained: true
+    navigation-mode: linear
+    controls-layout: bottom-right
+    controls: true
+    theme: ../pres-theme.scss
+    footer: "Maeve Murphy Quinlan | Version control | murphyqm.github.io"
+---
+
+## What is version control? 
+
+::: {.incremental}
+- Often described as "track changes", although that's not *quite* right
+- A super-powerful "undo" button
+- A way of working collaboratively without over-writing each other's work
+- A way of [recording exactly what you did and when]{.extra}
+:::
+
+## What is version control? {background-color="white"}
+
+![One way of doing version control...](https://phdcomics.com/comics/archive/phd101212s.gif)
+
+## What is version control?
+
+- We're going to use `git`, which is a strangely named version control software
+- We'll use this to explain how version control works, and why it matters
+- There are lots of other ways to do version control, but `git` is very widely used
+    - If *version control* was *word processing*, `git` would be *Microsoft Word*
+
+## What does `git` do?
+
+- `git` allows you to bundle up changes to various files, and give the group of changes a unique [commit hash]{.extra} and an explanatory message.
+- `git` works on a project level, so you can make a bunch of changes to different files in a folder, and then [commit]{.extra} all those changes with a descriptive message
+- It's recorded that *you* made those changes, and there's a unique [commit hash]{.extra} that you can quote to point at the exact state of your folder when you added those changes.
+
+## What does `git` do?
+

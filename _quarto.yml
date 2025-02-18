@@ -38,7 +38,10 @@ website:
             text: Conda skills
           - href: managing-dependencies/dependencies-old-projects.qmd
             text: Figuring out dependencies for old code
-      - section: "Version control"
+      - section: "Version control with git"
+        contents:
+          - href: version_control/version_control_slides.qmd
+            text: Version control intro slides
 
 format:
   html:
