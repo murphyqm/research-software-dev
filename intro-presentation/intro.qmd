@@ -113,3 +113,63 @@ a method of learning, over just *getting straight into it* and writing code.
 
 **Learn in a way that suits you** - if that is copying and pasting commands
 from the slides instead of trying to keep up with typing, *that's ok!*
+
+## This is an introductory workshop
+
+- If you're already familiar with the concepts that we're sharing, it's likely the sessions discussing those topics will be too basic for you!
+- Please feel free to work on other stuff while you're here - put headphones on, and jump back in when we're discussing a topic that's relevant to you.
+
+## How this workshop is formatted
+
+- This workshop is broken up into a series of mini seminars about different topics
+- These seminars will introduce different topics and give you background information that's often hard to pick up if you've learned to use them on your own
+- Please interrupt, ask questions, and discuss!
+
+## How this workshop is formatted
+
+But the main aim is to show you how to use all these different tools *together*...
+
+- This is often somethings that's missing when we do an online tutorial on how to use [git]{.extra}, or read about [Python packaging]{.extra}
+- Many tutorials and workflows online are tailored towards non-research applications and are difficult to apply to our work
+
+## Day 1 {.smaller}
+
+- Day 1 is very focused on these short seminars, introducing different topics, that we will tailor to your group
+- In the morning, we'll discuss some topics from the following:
+  - Dependencies
+  - Repositories and version control
+  - Testing
+- After lunch, we'll discuss some more project-oriented topics like:
+  - Two-directory structure for computational projects
+  - Workflows for setting up new projects
+  - Ways to salvage legacy code/old messy projects
+
+## Homework {.smaller}
+
+Between the two sessions, you'll have a few tasks:
+
+- Depending on your experience, you can brush up on some of the topics we covered
+  - If you're experienced, there are some extra exploratory things to try
+- Setting up a local dev environment:
+  - You can install and get the tools we used up and running on your local machine
+- Setting up your mini-project for our second session
+
+## Day 2 {.smaller}
+
+Day 2 is very hands-on and practical. Over the course of the past week, you'll have come up with a very simple and small project idea
+
+- In small groups, we will work to:
+  - Write the foundational code
+    - Create documentation
+    - Create tests
+    - Package it
+  - Create a "project" directory and apply our Package
+  - Look at how we can automate running our code with bash scripts
+
+## These notes
+
+- During the course, of course you can just ask me anything you want!
+
+- During the week and a half between sessions, you can also use the comments section on these notes to look for help.
+
+- Questions for clarification will also help your fellow cohort!
