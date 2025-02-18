@@ -2,7 +2,7 @@
 title: "Linux 101"
 description: "Very basic introduction to the Linux command line"
 citation: true
-date: 17/02/2025
+date: 02/17/2025
 author:
   - name: Maeve Murphy Quinlan
     url: https://murphyqm.github.io/

@@ -1,5 +1,149 @@
 [
   {
+    "objectID": "managing-dependencies/dependencies-old-projects.html",
+    "href": "managing-dependencies/dependencies-old-projects.html",
+    "title": "Salvaging old code: managing dependencies",
+    "section": "",
+    "text": "Ok, so we’ve looked at the basic behind-the-scenes of what dependency management is, and some of the different options available. But how do you retroactively apply dependency management to an existing messy code project?. While we can’t record things that we’ve done in the past, we can start from now.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Figuring out dependencies for old code"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dependencies-old-projects.html#step-0-pick-your-package-manager",
+    "href": "managing-dependencies/dependencies-old-projects.html#step-0-pick-your-package-manager",
+    "title": "Salvaging old code: managing dependencies",
+    "section": "Step 0: Pick your package manager",
+    "text": "Step 0: Pick your package manager\nWhile I’ve mentioned a whole host of options for Python package managers above, I’m going to work through some basic instructions for just two options: conda (installed via miniforge) and pixi.\n\ncondapixi\n\n\nIf you have never before used a package management system, or work in science, conda might be the best choice for you. See this conda blogpost (Murphy Quinlan 2024) for useful links to installation guides, and an in-depth use guide.\nConda is very widely used and recognised, especially amongst researchers in science and medical fields.\n\nMiniforge repository\nMiniforge License\nStep-by-step Miniforge tutorial\n\n\n\nPixi is great if you are using a lot of conda and PyPI packages together (which can get messy); it also can work with a pyproject.toml file if you plan on packaging your code at some point. It is very fast.\nHave a read through this blog post on testing pixi (Ma 2024).\n\nPixi repository\nPixi License\nPixi Python tutorial",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Figuring out dependencies for old code"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dependencies-old-projects.html#step-1-manually-record-what-libraries-you-use",
+    "href": "managing-dependencies/dependencies-old-projects.html#step-1-manually-record-what-libraries-you-use",
+    "title": "Salvaging old code: managing dependencies",
+    "section": "Step 1: Manually record what libraries you use",
+    "text": "Step 1: Manually record what libraries you use\nScroll through all the scripts you use in your project, and record all the packages that you call as imports across these different Python files and Jupyter notebooks (*.py and *.ipynb files).\nFor example, I have a series of Python files in my project folder with the following first few lines:\n# file1.ipynb\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n# file2.py\nimport numpy as np\nimport pandas as pd\nMy list of jotted down dependencies are then:\n\nnumpy\nmatplotlib 1\nseaborn\npandas\njupyter 2\n\n\nPlain system PythonAn old environment\n\n\nIf until now you’ve been running your Python programs directly using your system’s Python (so you have never set up an environment), let’s just see what versions of packages your system is using.\nFirst, check the version of Python by running the following from the command line:\npython --version\nFrom the command line, run the following (replacing numpy with your dependencies in turn):\npython -c \"import numpy; print(numpy.__version__)\"\nThis gives you an idea of what version of each of these dependencies your system has been using. Copy these down.\n\n\nIf you have been using an environment but it’s become messy or broken and you want to start over, there are a few different options for you.\nDepending on the package management software you used to build the environment, the method to export the environment will be different. Search your package manager software name and “export dependencies” to see how to do this automatically.\nAlternatively, if you’ve already manually collected the libraries used, and you know there’s a lot of bloat in your existing environment (lot’s of unused packages), you can instead activate the environment and then from the command line run the following (replacing numpy with your dependencies in turn):\npython -c \"import numpy; print(numpy.__version__)\"\nAlso check the version of Python by running the following from the command line (again, with the environment active):\npython --version\nThis gives you an idea of what version of each of these dependencies your system has been using. Copy these down.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Figuring out dependencies for old code"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dependencies-old-projects.html#step-2-create-a-new-environment",
+    "href": "managing-dependencies/dependencies-old-projects.html#step-2-create-a-new-environment",
+    "title": "Salvaging old code: managing dependencies",
+    "section": "Step 2: Create a new environment",
+    "text": "Step 2: Create a new environment\nNow that you know what packages you want to include in your environment, you can create a new environment. In the last step, we recorded the versions of different libraries we were using: right now, we’re not going to worry about pinning our versions to match our previous set-up unless something goes wrong. We’ll keep our manually recorded version numbers to hand just-in-case.\n\ncondapixi\n\n\nTo create a new conda environment, you need to create an environment.yml file. This will contain a list of your dependencies, like this:\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - numpy\n  - matplotlib\n  - pandas\n  - seaborn\n  - jupyter\nPut this in your project folder. I’ve just pinned the Python version as an example of how to pin a specific version. Then, from the command line (within this folder), run:\nconda env create -f environment.yml\nIf you need to add pip dependencies, then your environment.yml will look like this:\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - numpy\n  - matplotlib\n  - pandas\n  - seaborn\n  - jupyter\n  - pip\n  - pip:\n    - black\nNote: mixing conda and pip will cause issues; please read this post on mixing conda and pip (Murphy Quinlan 2024).\n\n\nTo create a new pixi environment for your pre-existing project, from inside the project directory run:\npixi init\nThis will create a file called pixi.toml that will look something like this:\n[project]\nauthors = [\"\"]\nchannels = [\"conda-forge\"]\ndescription = \"Add a short description here\"\nname = \"folder-name\"\nplatforms = [\"linux-64\"]\nversion = \"0.1.0\"\n\n[tasks]\n\n[dependencies]\n\nQuick addManual addPyPI dependencies\n\n\nWe can add pinned and unpinned dependencies from the command line:\npixi add python=3.12 numpy matplotlib pandas seaborn jupyter\nThis will fill in the dependencies section of our pixi.toml file with some automatically assigned version restrictions (given our pinned Python version):\n[dependencies]\npython = \"3.12.*\"\nnumpy = \"&gt;=2.2.1,&lt;3\"\nmatplotlib = \"&gt;=3.10.0,&lt;4\"\npandas = \"&gt;=2.2.3,&lt;3\"\nseaborn = \"&gt;=0.13.2,&lt;0.14\"\njupyter = \"&gt;=1.1.1,&lt;2\"\n\n\nWe can also fill in our dependencies (with as-of-yet no pinned versions except for Python as an example):\n[dependencies]\npython = \"3.12.*\"\nnumpy = \"*\"\nmatplotlib = \"*\"\npandas = \"*\"\nseaborn = \"*\"\njupyter = \"*\"\n\n\nIf you need any pip/PyPI dependencies, then simply add this section to the file:\n[pypi-dependencies]\nblack = \"*\"\nAlternatively, run this from the command line:\npixi add --pypi black\nwhich will add the following to your pixi.toml:\n[pypi-dependencies]\nblack = \"&gt;=24.10.0, &lt;25\"\n\n\n\nSave any changes to your pixi.toml file, then back in the command line in the folder containing your pixi.toml, run the following:\npixi install\nThis will install the listed packages and create a pixi.lock file.\nRead the Pixi docs on lockfiles.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Figuring out dependencies for old code"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dependencies-old-projects.html#step-3-activate-the-environment",
+    "href": "managing-dependencies/dependencies-old-projects.html#step-3-activate-the-environment",
+    "title": "Salvaging old code: managing dependencies",
+    "section": "Step 3: Activate the environment",
+    "text": "Step 3: Activate the environment\n\ncondapixi\n\n\nTo activate your conda environment, from the command line run:\nconda activate my-env-name\nand then either launch your Jupyter notebook or run your Python script.\n\n\nFrom the project folder, run:\npixi shell\nand then either launch your Jupyter notebook or run your Python script.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Figuring out dependencies for old code"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dependencies-old-projects.html#step-4-export-your-environment",
+    "href": "managing-dependencies/dependencies-old-projects.html#step-4-export-your-environment",
+    "title": "Salvaging old code: managing dependencies",
+    "section": "Step 4: Export your environment",
+    "text": "Step 4: Export your environment\nExporting and recording your environment is an important step in ensuring reproducibility and reusability of your code.\n\ncondapixi\n\n\nThere are a few different options when it comes to exporting your conda environment. Read more information here on the different ways to export.\nTo export a detailed record of your environment for reproducibility, use the following command:\nconda env export &gt; env-record.yml\nNote: this might not be installable on a different machine due to build dependencies - see this post for more details on exporting.\n\n\nFrom the project folder, run:\npixi shell\nand then either launch your Jupyter notebook or run your Python script.\n\n\n\nNow you should have a nice, reusable environment that ensures you code can run on other people’s machines!",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Figuring out dependencies for old code"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dependencies-old-projects.html#footnotes",
+    "href": "managing-dependencies/dependencies-old-projects.html#footnotes",
+    "title": "Salvaging old code: managing dependencies",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWe don’t specify the module (the pyplot part of matplotlib.pyplot) in our requirements.↩︎\nWhile jupyter isn’t imported in our files, we are using a Jupyter Notebook (file1.ipynb required Jupyter) so this must be included in our dependencies.↩︎",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Figuring out dependencies for old code"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dep-pres.html#what-are-dependencies",
+    "href": "managing-dependencies/dep-pres.html#what-are-dependencies",
+    "title": "Managing Dependencies",
+    "section": "What are dependencies?",
+    "text": "What are dependencies?\nDependencies are the versions of various different modules, packages, or software that your research code depends on: all of your imports.\n\n\n\n\nDon’t be like Ruby and Avi! Record your dependencies.\n\nImage CC BY Candace Savonen, retrieved from Reproducibility in Cancer Informatics.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "* Dependency slides"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dep-pres.html#general-rules-for-dependencies",
+    "href": "managing-dependencies/dep-pres.html#general-rules-for-dependencies",
+    "title": "Managing Dependencies",
+    "section": "General Rules for Dependencies",
+    "text": "General Rules for Dependencies\nManaging dependencies is something many, many people find complicated and difficult. Let’s start with some key ideas to simplify things.\nNYU Libraries provide some straightforward guidance that is language agnostic:\n\nUse dependencies wisely and sparingly: don’t import dependencies you don’t actually use, and try to stick to libraries that have robust and stable releases.\nUse a package manager of some form: package management software, virtual environments and containers help to avoid conflicts and incompatibility errors between packages.\nRecord your dependencies in a metadata file: package managers will often do this automatically for you; this file should be both human and machine readable.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "* Dependency slides"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dep-pres.html#package-management-software",
+    "href": "managing-dependencies/dep-pres.html#package-management-software",
+    "title": "Managing Dependencies",
+    "section": "Package management software",
+    "text": "Package management software\nPackage management software usually:\n\n\nProvides a way for you to create an environment:\n\nA code project environment will contain a selection of relevant libraries, with specific versions.\nThis is kept separate from other project environments.\nThis allows you to use different versions of libraries for different projects.\n\nProvides a way for you to export your environment:\n\nThis allows you to specify the exact libraries and library versions that were used to generate a set of results.\nThis makes it easier for others to use your work and built on it, and reproduce your code environment.\nThis saves you having to manually record library versions that you are using.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "* Dependency slides"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dep-pres.html#how-do-you-pick",
+    "href": "managing-dependencies/dep-pres.html#how-do-you-pick",
+    "title": "Managing Dependencies",
+    "section": "How do you pick?",
+    "text": "How do you pick?\n1. License\n\nDoes the package manager have an open-source license?\n\n2. Community\n\nWhat solution does your research group use? Does your supervisor have suggestions?\nWhat option can you find support for?\nWhat do researchers in your field use?",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "* Dependency slides"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dep-pres.html#where-to-next",
+    "href": "managing-dependencies/dep-pres.html#where-to-next",
+    "title": "Managing Dependencies",
+    "section": "Where to next?",
+    "text": "Where to next?\nIf you want some more background information and theory:\n\nReturn to the dependencies section of the course notes and keep reading.\n\nIf you want to learn by doing, get straight into it by following the instructions here:\n\nJump right in an start using conda by following this conda use blog post.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "* Dependency slides"
+    ]
+  },
+  {
     "objectID": "week-1-homework.html",
     "href": "week-1-homework.html",
     "title": "Homework",
@@ -15,7 +159,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -27,7 +171,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -39,7 +183,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -51,7 +195,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -63,7 +207,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -75,7 +219,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -87,7 +231,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -99,7 +243,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -111,7 +255,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -123,7 +267,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -135,7 +279,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -147,7 +291,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -159,7 +303,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -171,7 +315,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -183,7 +327,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -195,7 +339,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -207,7 +351,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -219,7 +363,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -231,7 +375,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -243,7 +387,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -255,7 +399,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -267,7 +411,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -279,7 +423,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -291,7 +435,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -303,7 +447,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -315,7 +459,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -327,7 +471,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -339,7 +483,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -351,7 +495,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -363,7 +507,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -375,7 +519,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -387,7 +531,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -399,7 +543,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -411,7 +555,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -423,7 +567,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -435,7 +579,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -447,7 +591,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -459,7 +603,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -471,7 +615,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -483,7 +627,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -495,7 +639,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -507,7 +651,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -519,7 +663,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -531,7 +675,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -543,7 +687,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -555,7 +699,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -567,7 +711,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -579,7 +723,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -591,7 +735,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -603,7 +747,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -615,7 +759,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -627,7 +771,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -639,7 +783,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -651,7 +795,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -663,7 +807,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -675,7 +819,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -687,7 +831,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -699,7 +843,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -711,7 +855,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -723,7 +867,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -735,7 +879,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -747,7 +891,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -759,7 +903,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -771,7 +915,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -783,7 +927,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -795,7 +939,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -807,7 +951,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -819,7 +963,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -831,7 +975,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -843,7 +987,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -855,7 +999,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -867,7 +1011,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -879,7 +1023,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -891,7 +1035,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -903,7 +1047,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -915,7 +1059,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -927,7 +1071,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -939,7 +1083,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -951,7 +1095,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -963,7 +1107,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -975,7 +1119,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -987,7 +1131,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -999,7 +1143,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1011,7 +1155,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1023,7 +1167,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1035,7 +1179,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1047,7 +1191,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1059,7 +1203,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1071,7 +1215,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1083,7 +1227,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1095,7 +1239,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1107,7 +1251,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1119,7 +1263,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1131,7 +1275,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1143,7 +1287,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1155,7 +1299,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1167,7 +1311,7 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
     ]
   },
   {
@@ -1179,7 +1323,31 @@
     "crumbs": [
       "Home",
       "Basic Linux",
-      "Linux 101 slides"
+      "* Linux 101 slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#who-am-i",
+    "href": "intro-presentation/intro.html#who-am-i",
+    "title": "Research Software Engineering",
+    "section": "Who am I?",
+    "text": "Who am I?\n\n\nI’m a Research Software Engineer in Research Computing, IT Services\nI completed my PhD in 2024 in the Institute of Geophysics and Tectonics, School of Earth and Environment, University of Leeds\nI have made almost every mistake imaginable when it comes to writing code, managing dependencies, tracking changes, submitting HPC jobs…",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#a-good-enough-approach",
+    "href": "intro-presentation/intro.html#a-good-enough-approach",
+    "title": "Research Software Engineering",
+    "section": "A “good enough” approach",
+    "text": "A “good enough” approach\n\nDocumentation, guidance, and courses often fall down by aiming for perfection\nThis can lead to people panicking, and not implementing any of the suggestions or tools\nEverything in this course is incremental:\n\nYou will be able to implement some little bits without too much work\nYou can improve and add to this over time",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
     ]
   },
   {
@@ -1191,7 +1359,115 @@
     "crumbs": [
       "Home",
       "Introduction",
-      "Introduction Slides"
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#primm-method-1",
+    "href": "intro-presentation/intro.html#primm-method-1",
+    "title": "Research Software Engineering",
+    "section": "PRIMM method",
+    "text": "PRIMM method\n\nPRIMM\n\n\nThe P in PRIMM stands for predict:\nWhen you first see a command, script, or piece of code, before running it, predict what you think it will do. It’s ok to get this wrong: the important thing is to get into the habit of predicting! This helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.\n\nWhat do you think the code is going to do generally?\nWhat do you think the output in your terminal is going to look like?\n\n\n\nThe R in PRIMM stands for run:\n\nRun the code or program;\nHow does the output/effect compare to your prediction?\n\nWhat did you get right?\nWhat did you misinterpret?\n\nDo you understand what happened?\n\n\n\nThe I in PRIMM stands for investigate:\nLet’s dig a little deeper into the structure of code you’ve used.\n\nWhat options or arguments did you use, and what effect did they have?\nCan you find some documentation on the command you used?\n\nDoes the description match how you would describe the code?\n\nIf no, why does your understanding of it diverge?\n\nWhat other options or features are available?\n\n\n\n\nThe first M in PRIMM stands for modify:\n\nTry running the code with different options:\n\nChange only a small thing at a time;\nAlways predict what you think the output will be!\nCompare the actual output with your prediction;\nCompare your understanding to the available documentation.\n\n\nThis stage helps you to gradually increase the difficultly of the tasks you are doing!\n\n\nThe second M in PRIMM stands for make:\nThis stage is about making the code your own.\n\nAt this stage, you can try implementing snippets of code you’ve already learned, but to solve a new or different problem;\nAgain, use the previous stages when you are writing your code: predict what you think will happen, run the code and compare the output to your predictions, and investigate the structure of it, especially if it does not behave how you intended!",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#learning-computational-skills",
+    "href": "intro-presentation/intro.html#learning-computational-skills",
+    "title": "Research Software Engineering",
+    "section": "Learning computational skills",
+    "text": "Learning computational skills\nRead before you write - research has proven repeatedly the importance of reading and predicting the output of code as a method of learning, over just getting straight into it and writing code.\n\nNovice programmers need to acquire accuracy in tracing code before they can program independently\nTrying to write code first leads to frustration and confusion\n\nLearn in a way that suits you - if that is copying and pasting commands from the slides instead of trying to keep up with typing, that’s ok!",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#this-is-an-introductory-workshop",
+    "href": "intro-presentation/intro.html#this-is-an-introductory-workshop",
+    "title": "Research Software Engineering",
+    "section": "This is an introductory workshop",
+    "text": "This is an introductory workshop\n\nIf you’re already familiar with the concepts that we’re sharing, it’s likely the sessions discussing those topics will be too basic for you!\nPlease feel free to work on other stuff while you’re here - put headphones on, and jump back in when we’re discussing a topic that’s relevant to you.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#how-this-workshop-is-formatted",
+    "href": "intro-presentation/intro.html#how-this-workshop-is-formatted",
+    "title": "Research Software Engineering",
+    "section": "How this workshop is formatted",
+    "text": "How this workshop is formatted\n\nThis workshop is broken up into a series of mini seminars about different topics\nThese seminars will introduce different topics and give you background information that’s often hard to pick up if you’ve learned to use them on your own\nPlease interrupt, ask questions, and discuss!",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#how-this-workshop-is-formatted-1",
+    "href": "intro-presentation/intro.html#how-this-workshop-is-formatted-1",
+    "title": "Research Software Engineering",
+    "section": "How this workshop is formatted",
+    "text": "How this workshop is formatted\nBut the main aim is to show you how to use all these different tools together…\n\nThis is often somethings that’s missing when we do an online tutorial on how to use git, or read about Python packaging\nMany tutorials and workflows online are tailored towards non-research applications and are difficult to apply to our work",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#day-1",
+    "href": "intro-presentation/intro.html#day-1",
+    "title": "Research Software Engineering",
+    "section": "Day 1",
+    "text": "Day 1\n\nDay 1 is very focused on these short seminars, introducing different topics, that we will tailor to your group\nIn the morning, we’ll discuss some topics from the following:\n\nDependencies\nRepositories and version control\nTesting\n\nAfter lunch, we’ll discuss some more project-oriented topics like:\n\nTwo-directory structure for computational projects\nWorkflows for setting up new projects\nWays to salvage legacy code/old messy projects",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#homework",
+    "href": "intro-presentation/intro.html#homework",
+    "title": "Research Software Engineering",
+    "section": "Homework",
+    "text": "Homework\nBetween the two sessions, you’ll have a few tasks:\n\nDepending on your experience, you can brush up on some of the topics we covered\n\nIf you’re experienced, there are some extra exploratory things to try\n\nSetting up a local dev environment:\n\nYou can install and get the tools we used up and running on your local machine\n\nSetting up your mini-project for our second session",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#day-2",
+    "href": "intro-presentation/intro.html#day-2",
+    "title": "Research Software Engineering",
+    "section": "Day 2",
+    "text": "Day 2\nDay 2 is very hands-on and practical. Over the course of the past week, you’ll have come up with a very simple and small project idea\n\nIn small groups, we will work to:\n\nWrite the foundational code\n\nCreate documentation\nCreate tests\nPackage it\n\nCreate a “project” directory and apply our Package\nLook at how we can automate running our code with bash scripts",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#these-notes",
+    "href": "intro-presentation/intro.html#these-notes",
+    "title": "Research Software Engineering",
+    "section": "These notes",
+    "text": "These notes\n\nDuring the course, of course you can just ask me anything you want!\nDuring the week and a half between sessions, you can also use the comments section on these notes to look for help.\nQuestions for clarification will also help your fellow cohort!",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "* Introduction Slides"
     ]
   },
   {
@@ -1267,159 +1543,39 @@
     ]
   },
   {
-    "objectID": "intro-presentation/intro.html#primm-method-1",
-    "href": "intro-presentation/intro.html#primm-method-1",
-    "title": "Research Software Engineering",
-    "section": "PRIMM method",
-    "text": "PRIMM method\n\nPRIMM\n\n\nThe P in PRIMM stands for predict:\nWhen you first see a command, script, or piece of code, before running it, predict what you think it will do. It’s ok to get this wrong: the important thing is to get into the habit of predicting! This helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.\n\nWhat do you think the code is going to do generally?\nWhat do you think the output in your terminal is going to look like?\n\n\n\nThe R in PRIMM stands for run:\n\nRun the code or program;\nHow does the output/effect compare to your prediction?\n\nWhat did you get right?\nWhat did you misinterpret?\n\nDo you understand what happened?\n\n\n\nThe I in PRIMM stands for investigate:\nLet’s dig a little deeper into the structure of code you’ve used.\n\nWhat options or arguments did you use, and what effect did they have?\nCan you find some documentation on the command you used?\n\nDoes the description match how you would describe the code?\n\nIf no, why does your understanding of it diverge?\n\nWhat other options or features are available?\n\n\n\n\nThe first M in PRIMM stands for modify:\n\nTry running the code with different options:\n\nChange only a small thing at a time;\nAlways predict what you think the output will be!\nCompare the actual output with your prediction;\nCompare your understanding to the available documentation.\n\n\nThis stage helps you to gradually increase the difficultly of the tasks you are doing!\n\n\nThe second M in PRIMM stands for make:\nThis stage is about making the code your own.\n\nAt this stage, you can try implementing snippets of code you’ve already learned, but to solve a new or different problem;\nAgain, use the previous stages when you are writing your code: predict what you think will happen, run the code and compare the output to your predictions, and investigate the structure of it, especially if it does not behave how you intended!",
+    "objectID": "managing-dependencies/conda-skills.html",
+    "href": "managing-dependencies/conda-skills.html",
+    "title": "conda skills",
+    "section": "",
+    "text": "Back to topCitationBibTeX citation:@online{murphy_quinlan2025,\n  author = {Murphy Quinlan, Maeve},\n  title = {Conda Skills},\n  date = {2025-02-18},\n  url = {https://murphyqm.github.io/research-software-dev/managing-dependencies/conda-skills.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nMurphy Quinlan, Maeve. 2025. “Conda Skills.” February 18,\n2025. https://murphyqm.github.io/research-software-dev/managing-dependencies/conda-skills.html.",
     "crumbs": [
       "Home",
-      "Introduction",
-      "Introduction Slides"
+      "Managing dependencies",
+      "Conda skills"
     ]
   },
   {
-    "objectID": "intro-presentation/intro.html#learning-computaitonal-skills",
-    "href": "intro-presentation/intro.html#learning-computaitonal-skills",
-    "title": "Research Software Engineering",
-    "section": "Learning computaitonal skills",
-    "text": "Learning computaitonal skills\nRead before you write - research has proven repeatedly the importance of reading and predicting the output of code as a method of learning, over just getting straight into it and writing code.\n\nNovice programmers need to acquire accuracy in tracing code before they can program independently\nTrying to write code first leads to frustration and confusion\n\nLearn in a way that suits you - if that is copying and pasting commands from the slides instead of trying to keep up with typing, that’s ok!",
+    "objectID": "managing-dependencies/dependencies-intro.html",
+    "href": "managing-dependencies/dependencies-intro.html",
+    "title": "Dependencies 101",
+    "section": "",
+    "text": "Dependencies are the versions of different packages/modules that your code depends on, for example the version of Python you are using, and any libraries you have to import, like matplotlib, scipy, tensorflow etc.\nDependencies are an important thing to keep track of when building scientific code. How many different external libraries does your code depend on? What versions of these libraries does it need? How do you install and update these different libraries?\nLaunch fullscreen presentation ⤢",
     "crumbs": [
       "Home",
-      "Introduction",
-      "Introduction Slides"
+      "Managing dependencies",
+      "Basic dependencies in Python"
     ]
   },
   {
-    "objectID": "intro-presentation/intro.html#who-am-i",
-    "href": "intro-presentation/intro.html#who-am-i",
-    "title": "Research Software Engineering",
-    "section": "Who am I?",
-    "text": "Who am I?\n\n\nI’m a Research Software Engineer in Research Computing, IT Services\nI completed my PhD in 2024 in the Institute of Geophysics and Tectonics, School of Earth and Environment, University of Leeds\nI have made almost every mistake imaginable when it comes to writing code, managing dependencies, tracking changes, submitting HPC jobs…",
+    "objectID": "managing-dependencies/dependencies-intro.html#package-management-for-python",
+    "href": "managing-dependencies/dependencies-intro.html#package-management-for-python",
+    "title": "Dependencies 101",
+    "section": "Package management for Python",
+    "text": "Package management for Python\nIn Python, there are lots of different ways to install and manage packages and dependencies. These different tools generally involve using virtual environments in order to keep the dependencies for different projects separate and tidy. Some package installation and management tools include:\n\nConda/Mamba\n\nYou can install conda with Miniforge\n\npip and Pipenv\npixi\nPoetry\nuv\n\nYou can read more about Python package management tool recommendations here. The package management tool you use will vary depending on whether you want to build your code into a package itself, or are relying primarily on external libraries. Some of these package managers include entire workflows for building and publishing Python packages, while others focus on organising pre-existing packages.\n\nPackage management for other coding languages\nNote that I do not have as extensive experience managing projects, dependencies and packages in the following languages so please proceed with caution.\nPackage management in R\nconda for R: you can install conda via Miniforge as linked above, and then install R packages through this following these instructions for R with conda.\nrenv: the reproducible environment package for R has some very nice introductory documentation.\nPackage management in Julia\nPkg: Pkg is Julia’s built-in package manager.\n\nIn research, a lot of people rely on conda: you can read more about perfecting your conda environment in this blog post.",
     "crumbs": [
       "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#a-good-enough-approach",
-    "href": "intro-presentation/intro.html#a-good-enough-approach",
-    "title": "Research Software Engineering",
-    "section": "A “good enough” approach",
-    "text": "A “good enough” approach\n\nDocumentation, guidance, and courses often fall down by aiming for perfection\nThis can lead to people panicking, and not implementing any of the suggestions or tools\nEverything in this course is incremental:\n\nYou will be able to implement some little bits without too much work\nYou can improve and add to this over time",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#learning-computational-skills",
-    "href": "intro-presentation/intro.html#learning-computational-skills",
-    "title": "Research Software Engineering",
-    "section": "Learning computational skills",
-    "text": "Learning computational skills\nRead before you write - research has proven repeatedly the importance of reading and predicting the output of code as a method of learning, over just getting straight into it and writing code.\n\nNovice programmers need to acquire accuracy in tracing code before they can program independently\nTrying to write code first leads to frustration and confusion\n\nLearn in a way that suits you - if that is copying and pasting commands from the slides instead of trying to keep up with typing, that’s ok!",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#this-is-an-introductory-bootcamp-session",
-    "href": "intro-presentation/intro.html#this-is-an-introductory-bootcamp-session",
-    "title": "Research Software Engineering",
-    "section": "This is an introductory bootcamp session",
-    "text": "This is an introductory bootcamp session",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#this-is-an-introductory-workshop",
-    "href": "intro-presentation/intro.html#this-is-an-introductory-workshop",
-    "title": "Research Software Engineering",
-    "section": "This is an introductory workshop",
-    "text": "This is an introductory workshop\n\nIf you’re already familiar with the concepts that we’re sharing, it’s likely the sessions discussing those topics will be too basic for you!\nPlease feel free to work on other stuff while you’re here - put headphones on, and jump back in when we’re discussing a topic that’s relevant to you.",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#how-this-workshop-is-formatted",
-    "href": "intro-presentation/intro.html#how-this-workshop-is-formatted",
-    "title": "Research Software Engineering",
-    "section": "How this workshop is formatted",
-    "text": "How this workshop is formatted\n\nThis workshop is broken up into a series of mini seminars about different topics\nThese seminars will introduce different topics and give you background information that’s often hard to pick up if you’ve learned to use them on your own\nPlease interrupt, ask questions, and discuss!",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#how-this-workshop-is-formatted-1",
-    "href": "intro-presentation/intro.html#how-this-workshop-is-formatted-1",
-    "title": "Research Software Engineering",
-    "section": "How this workshop is formatted",
-    "text": "How this workshop is formatted\nBut the main aim is to show you how to use all these different tools together…\n\nThis is often somethings that’s missing when we do an online tutorial on how to use git, or read about Python packaging\nMany tutorials and workflows online are tailored towards non-research applications and are difficult to apply to our work",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#day-1",
-    "href": "intro-presentation/intro.html#day-1",
-    "title": "Research Software Engineering",
-    "section": "Day 1",
-    "text": "Day 1\n\nDay 1 is very focused on these short seminars, introducing different topics, that we will tailor to your group\nIn the morning, we’ll discuss some topics from the following:\n\nDependencies\nRepositories and version control\nTesting\n\nAfter lunch, we’ll discuss some more project-oriented topics like:\n\nTwo-directory structure for computational projects\nWorkflows for setting up new projects\nWays to salvage legacy code/old messy projects",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#homework",
-    "href": "intro-presentation/intro.html#homework",
-    "title": "Research Software Engineering",
-    "section": "Homework",
-    "text": "Homework\nBetween the two sessions, you’ll have a few tasks:\n\nDepending on your experience, you can brush up on some of the topics we covered\n\nIf you’re experienced, there are some extra exploratory things to try\n\nSetting up a local dev environment:\n\nYou can install and get the tools we used up and running on your local machine\n\nSetting up your mini-project for our second session",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#day-2",
-    "href": "intro-presentation/intro.html#day-2",
-    "title": "Research Software Engineering",
-    "section": "Day 2",
-    "text": "Day 2\nDay 2 is very hands-on and practical. Over the course of the past week, you’ll have come up with a very simple and small project idea\n\nIn small groups, we will work to:\n\nWrite the foundational code\n\nCreate documentation\nCreate tests\nPackage it\n\nCreate a “project” directory and apply our Package\nLook at how we can automate running our code with bash scripts",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
-  },
-  {
-    "objectID": "intro-presentation/intro.html#these-notes",
-    "href": "intro-presentation/intro.html#these-notes",
-    "title": "Research Software Engineering",
-    "section": "These notes",
-    "text": "These notes\n\nDuring the course, of course you can just ask me anything you want!\nDuring the week and a half between sessions, you can also use the comments section on these notes to look for help.\nQuestions for clarification will also help your fellow cohort!",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
+      "Managing dependencies",
+      "Basic dependencies in Python"
     ]
   }
 ]

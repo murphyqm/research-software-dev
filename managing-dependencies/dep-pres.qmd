@@ -1,0 +1,137 @@
+---
+title: "Managing Dependencies"
+author: "Dr Maeve Murphy Quinlan"
+format:
+  revealjs: 
+    self-contained: true
+    navigation-mode: linear
+    controls-layout: bottom-right
+    controls: true
+    theme: ../pres-theme.scss
+    footer: "Maeve Murphy Quinlan | Intro to RSE | murphyqm.github.io"
+---
+
+## [What are dependencies?]{.outline-o}
+
+[Dependencies]{.extra} are the versions of various different modules, packages, or software that your research code depends on: all of your imports.
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+![](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/resources/images/06-package-management_files/figure-html/1LMurysUhCjZb7DVF6KS9QmJ5NBjwWVjRn40MS9f2noE_gf62875ddf7_0_404.png){fig-alt="Ruby has a particular computing environment she has developed her code from. This computing environment is represented as a bubble above her computer with various hexagons with version numbers as well as Rstudio and R installed on her computer. Her code ran just fine on her particular computing environment. Avi attempted to run Ruby’s code on his very different local computing environment and got an error. His computer runs the same code but came up with a different result!"}
+
+
+
+:::
+
+::: {.column width="30%"}
+
+
+Don't be like Ruby and Avi! Record your dependencies.
+
+::::{.small}
+Image CC BY Candace Savonen, retrieved from [Reproducibility in Cancer Informatics](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/managing-package-versions.html).
+::::
+
+
+:::
+
+::::
+
+
+
+
+## General Rules for Dependencies {.smaller}
+
+Managing dependencies is something many, many people find complicated and difficult. Let's start with some key ideas to simplify things.
+
+[NYU Libraries](https://guides.nyu.edu/software-reproducibility/dependencies) provide some straightforward guidance that is language agnostic:
+
+1. [Use dependencies wisely and sparingly:]{.extra} don't import dependencies you don't actually use, and try to stick to libraries that have robust and stable releases.
+2. [Use a package manager of some form:]{.extra} package management software, virtual environments and containers help to avoid conflicts and incompatibility errors between packages.
+3. [Record your dependencies in a metadata file:]{.extra} package managers will often do this automatically for you; this file should be both human and machine readable.
+
+
+# Where to begin? {.section}
+
+
+## [Package management software]{.outline-o}
+
+Package management software usually:
+
+::: {.small}
+
+- Provides a way for you to create an [environment]{.extra}:
+    - A code project *environment* will contain a selection of relevant libraries, with specific versions.
+    - This is kept separate from other project *environments*.
+    - This allows you to use different versions of libraries for different projects.
+- Provides a way for you to [export your environment]{.extra}:
+    - This allows you to specify the exact libraries and library versions that were used to generate a set of results.
+    - This makes it easier for others to use your work and built on it, and *reproduce* your code environment.
+    - This saves you having to manually record library versions that you are using.
+
+:::
+
+---
+
+Package management software *might also*:
+
+::: {.small}
+
+- Help you to solve [dependency conflicts]{.extra}:
+    - Conflicts can arise when different packages depend on different versions of other packages in the background.
+    - This can be tricky to resolve.
+    - Remember the guideline ["use dependencies wisely and sparingly"]{.extra} to minimise this issue.
+- Provide a way for you to package your own code into a library:
+    - In addition to helping you juggle external dependencies, some package management solutions also provide a framework for turning your code into an installable package.
+
+:::
+
+---
+
+Depending on the language you are using, there may be many different options available. For example, for Python, you may have heard of:
+
+- [**pip**]{.outline-b}
+- [**conda**]{.outline-o}
+- [**pixi**]{.outline-b}
+- [**uv**]{.outline-o}
+- [**poetry**]{.outline-b}
+
+
+## [How do you pick?]{.outline-b}
+
+### [1. License]{.outline-o}
+
+- Does the package manager have an open-source license?
+
+### [2. Community]{.outline-o}
+
+- What solution does your research group use? Does your supervisor have suggestions?
+- What option can you find support for?
+- What do researchers in your field use?
+
+---
+
+### [3. Documentation]{.outline-o}
+
+- Does the package manager have easy-to-understand instructions and tutorials available?
+
+### [4. Use-case]{.outline-o}
+
+- Are you managing all external libraries, or are you building your own packages?
+- Are you going to be pinning dependencies (like for a web-app)?[^pinning]
+
+[^pinning]: More on pinning dependencies back in the general notes.
+
+# Next steps {.section}
+
+## [Where to next?]{.outline-b}
+
+If you want some more background information and theory:
+
+- Return to the dependencies section of the course notes and keep reading.
+
+If you want to learn by doing, get straight into it by following the instructions here:
+
+- Jump right in an start using `conda` by following this [conda use blog post](https://murphyqm.github.io/posts/2024-11-27-conda-envs/).

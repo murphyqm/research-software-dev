@@ -1,0 +1,315 @@
+---
+title: "Salvaging old code: managing dependencies"
+description: "A basic introduction to handling dependencies for old projects"
+citation: true
+date: 02/18/2025
+author:
+  - name: Maeve Murphy Quinlan
+    url: https://murphyqm.github.io/
+    orcid: 0000-0003-2958-1008
+---
+
+Ok, so we've looked at the basic behind-the-scenes of what dependency management is, and some of the different options available. But [how do you retroactively apply dependency management to an existing messy code project?]{.extra}. While we can't record things that we've done in the past, we can start from now.
+
+## Step 0: Pick your package manager
+
+While I've mentioned a whole host of options for Python package managers above, I'm going to work through some basic instructions for just two options: `conda` (installed via `miniforge`) and `pixi`.
+
+
+::: {.panel-tabset group="package"}
+## conda
+
+If you have never before used a package management system, or work in science, `conda` might be the best choice for you. See this [conda blogpost](https://murphyqm.github.io/posts/2024-11-27-conda-envs/) [@Murphy-Quinlan2024-gc] for useful links to installation guides, and an in-depth use guide.
+
+Conda is very widely used and recognised, especially amongst researchers in science and medical fields.
+
+- [Miniforge repository](https://github.com/conda-forge/miniforge)
+- [Miniforge License](https://github.com/conda-forge/miniforge/blob/main/LICENSE)
+- [Step-by-step Miniforge tutorial](https://kirenz.github.io/codelabs/codelabs/miniforge-setup/#0)
+
+## pixi
+
+Pixi is great if you are using a lot of conda and PyPI packages together (which can get messy); it also can work with a `pyproject.toml` file if you plan on packaging your code at some point. It is very fast.
+
+Have a read through [this blog post on testing pixi](https://ericmjl.github.io/blog/2024/8/16/its-time-to-try-out-pixi/) [@Ma2024-gi].
+
+- [Pixi repository](https://github.com/prefix-dev/pixi)
+- [Pixi License](https://github.com/prefix-dev/pixi/blob/main/LICENSE)
+- [Pixi Python tutorial](https://pixi.sh/dev/tutorials/python/)
+
+:::
+
+## Step 1: Manually record what libraries you use
+
+Scroll through all the scripts you use in your project, and record all the packages that you call as imports across these different Python files and Jupyter notebooks (`*.py` and `*.ipynb` files). 
+
+For example, I have a series of Python files in my project folder with the following first few lines:
+
+```python
+# file1.ipynb
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+```python
+# file2.py
+import numpy as np
+import pandas as pd
+```
+
+My list of jotted down dependencies are then:
+
+- `numpy`
+- `matplotlib` [^plt]
+- `seaborn`
+- `pandas`
+- `jupyter` [^jup]
+
+
+[^plt]: We don't specify the module (the `pyplot` part of `matplotlib.pyplot`) in our requirements.
+[^jup]: While `jupyter` isn't imported in our files, we are using a Jupyter Notebook (`file1.ipynb` required Jupyter) so this must be included in our dependencies.
+
+::: {.panel-tabset}
+
+## Plain system Python
+
+If until now you've been running your Python programs directly using your system's Python (so you have never set up an environment), let's just see what versions of packages your system is using.
+
+First, check the version of Python by running the following from the command line:
+
+```bash
+python --version
+```
+
+From the command line, run the following (replacing `numpy` with your dependencies in turn):
+
+```bash
+python -c "import numpy; print(numpy.__version__)"
+```
+
+This gives you an idea of what version of each of these dependencies your system has been using. Copy these down.
+
+## An old environment
+
+If you have been using an environment but it's become messy or broken and you want to start over, there are a few different options for you.
+
+Depending on the package management software you used to build the environment, the method to export the environment will be different. Search your package manager software name and "export dependencies" to see how to do this automatically.
+
+Alternatively, if you've already manually collected the libraries used, and you know there's a lot of **bloat** in your existing environment (lot's of unused packages), you can instead activate the environment and then from the command line run the following (replacing `numpy` with your dependencies in turn):
+
+```bash
+python -c "import numpy; print(numpy.__version__)"
+```
+
+Also check the version of Python by running the following from the command line (again, with the environment active):
+
+```bash
+python --version
+```
+
+This gives you an idea of what version of each of these dependencies your system has been using. Copy these down.
+
+:::
+
+## Step 2: Create a new environment
+
+Now that you know what packages you want to include in your environment, you can create a new environment. In the last step, we recorded the versions of different libraries we were using: right now, we're not going to worry about pinning our versions to match our previous set-up unless something goes wrong. We'll keep our manually recorded version numbers to hand just-in-case.
+
+::: {.panel-tabset group="package"}
+## conda
+
+To create a new conda environment, you need to create an `environment.yml` file. This will contain a list of your dependencies, like this:
+
+```yml
+name: my-env-name
+
+dependencies:
+  - python=3.12
+  - numpy
+  - matplotlib
+  - pandas
+  - seaborn
+  - jupyter
+```
+
+Put this in your project folder. I've just pinned the Python version as an example of how to pin a specific version.
+Then, from the command line (within this folder), run:
+
+```bash
+conda env create -f environment.yml
+```
+
+If you need to add pip dependencies, then your `environment.yml` will look like this:
+
+```yml
+name: my-env-name
+
+dependencies:
+  - python=3.12
+  - numpy
+  - matplotlib
+  - pandas
+  - seaborn
+  - jupyter
+  - pip
+  - pip:
+    - black
+```
+
+Note: mixing `conda` and `pip` will cause issues; please read this [post on mixing conda and pip](https://murphyqm.github.io/posts/2024-11-27-conda-envs/#mixing-in-pip) [@Murphy-Quinlan2024-gc].
+
+## pixi
+
+To create a new pixi environment for your pre-existing project, from inside the project directory run:
+
+```bash
+pixi init
+```
+
+This will create a file called `pixi.toml` that will look something like this:
+
+```toml
+[project]
+authors = [""]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "folder-name"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+```
+
+::: {.panel-tabset}
+
+## Quick add
+
+We can add pinned and unpinned dependencies from the command line:
+
+```bash
+pixi add python=3.12 numpy matplotlib pandas seaborn jupyter
+```
+
+This will fill in the dependencies section of our `pixi.toml` file with some automatically assigned version restrictions (given our pinned Python version):
+
+```toml
+[dependencies]
+python = "3.12.*"
+numpy = ">=2.2.1,<3"
+matplotlib = ">=3.10.0,<4"
+pandas = ">=2.2.3,<3"
+seaborn = ">=0.13.2,<0.14"
+jupyter = ">=1.1.1,<2"
+```
+
+## Manual add
+
+We can also fill in our dependencies (with as-of-yet no pinned versions except for Python as an example):
+
+```toml
+[dependencies]
+python = "3.12.*"
+numpy = "*"
+matplotlib = "*"
+pandas = "*"
+seaborn = "*"
+jupyter = "*"
+```
+
+## PyPI dependencies
+
+If you need any pip/PyPI dependencies, then simply add this section to the file:
+
+```toml
+[pypi-dependencies]
+black = "*"
+```
+
+Alternatively, run this from the command line:
+
+```bash
+pixi add --pypi black
+```
+
+which will add the following to your `pixi.toml`:
+
+```toml
+[pypi-dependencies]
+black = ">=24.10.0, <25"
+```
+
+:::
+
+Save any changes to your `pixi.toml` file, then back in the command line in the folder containing your `pixi.toml`, run the following:
+
+```bash
+pixi install
+```
+
+This will install the listed packages and create a `pixi.lock` file.
+
+Read the [Pixi docs on lockfiles](https://pixi.sh/v0.21.1/features/lockfile/#what-is-a-lock-file).
+
+
+:::
+
+
+
+## Step 3: Activate the environment
+
+::: {.panel-tabset group="package"}
+## conda
+
+To activate your conda environment, from the command line run:
+
+```bash
+conda activate my-env-name
+```
+
+and then either launch your Jupyter notebook or run your Python script.
+
+## pixi
+
+From the project folder, run:
+
+```bash
+pixi shell
+```
+
+and then either launch your Jupyter notebook or run your Python script.
+
+:::
+
+## Step 4: Export your environment
+
+Exporting and recording your environment is an important step in ensuring reproducibility and reusability of your code.
+
+::: {.panel-tabset group="package"}
+## conda
+
+There are a few different options when it comes to exporting your conda environment. Read more [information here on the different ways to export](https://murphyqm.github.io/posts/2024-11-27-conda-envs/#exporting-a-conda-env).
+
+To export a detailed record of your environment for reproducibility, use the following command:
+
+```bash
+conda env export > env-record.yml
+```
+
+Note: this might not be installable on a different machine due to build dependencies - see [this post for more details on exporting](https://murphyqm.github.io/posts/2024-11-27-conda-envs/#exporting-a-conda-env).
+
+## pixi
+
+From the project folder, run:
+
+```bash
+pixi shell
+```
+
+and then either launch your Jupyter notebook or run your Python script.
+
+:::
+
+Now you should have a nice, reusable environment that ensures you code can run on other people's machines!

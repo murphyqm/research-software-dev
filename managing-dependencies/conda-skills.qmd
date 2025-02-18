@@ -1,0 +1,10 @@
+---
+title: "conda skills"
+description: "Learn how to use conda in a way that supports your research!"
+citation: true
+date: 02/18/2025
+author:
+  - name: Maeve Murphy Quinlan
+    url: https://murphyqm.github.io/
+    orcid: 0000-0003-2958-1008
+---

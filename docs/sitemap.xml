@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://murphyqm.github.io/research-software-dev/managing-dependencies/dependencies-old-projects.html</loc>
+    <lastmod>2025-02-18T10:53:49.423Z</lastmod>
+  </url>
+  <url>
+    <loc>https://murphyqm.github.io/research-software-dev/managing-dependencies/dep-pres.html</loc>
+    <lastmod>2025-02-18T10:42:34.267Z</lastmod>
+  </url>
+  <url>
     <loc>https://murphyqm.github.io/research-software-dev/week-1-homework.html</loc>
     <lastmod>2025-02-17T16:29:46.843Z</lastmod>
   </url>
@@ -14,10 +22,18 @@
   </url>
   <url>
     <loc>https://murphyqm.github.io/research-software-dev/intro-to-linux-files/intro-to-linux-page.html</loc>
-    <lastmod>2025-02-17T16:53:35.733Z</lastmod>
+    <lastmod>2025-02-18T10:59:28.199Z</lastmod>
   </url>
   <url>
     <loc>https://murphyqm.github.io/research-software-dev/index.html</loc>
     <lastmod>2025-02-17T17:26:11.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://murphyqm.github.io/research-software-dev/managing-dependencies/conda-skills.html</loc>
+    <lastmod>2025-02-18T10:58:45.863Z</lastmod>
+  </url>
+  <url>
+    <loc>https://murphyqm.github.io/research-software-dev/managing-dependencies/dependencies-intro.html</loc>
+    <lastmod>2025-02-18T10:59:03.775Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,52 @@
+---
+title: "Dependencies 101"
+description: "Very basic introduction to managing Python dependencies"
+citation: true
+date: 02/18/2025
+author:
+  - name: Maeve Murphy Quinlan
+    url: https://murphyqm.github.io/
+    orcid: 0000-0003-2958-1008
+---
+
+Dependencies are the versions of different packages/modules that your code depends on, for example the version of Python you are using, and any libraries you have to import, like `matplotlib`, `scipy`, `tensorflow` etc.
+
+Dependencies are an important thing to keep track of when building scientific code. How many different external libraries does your code depend on? What versions of these libraries does it need? How do you install and update these different libraries?
+
+[<a href="dep-pres.qmd" target="_blank">Launch fullscreen presentation ⤢ </a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}
+
+
+## Package management for Python
+
+In Python, there are lots of different ways to install and manage packages and dependencies. These different tools generally involve using virtual environments
+in order to keep the dependencies for different projects separate and tidy.
+Some package installation and management tools include:
+
+- [Conda](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html)/[Mamba](https://mamba.readthedocs.io/en/latest/)
+    - You can install conda with [Miniforge](https://github.com/conda-forge/miniforge)
+- [pip](https://packaging.python.org/en/latest/key_projects/#pip) and [Pipenv](https://packaging.python.org/en/latest/key_projects/#pipenv)
+- [pixi](https://pixi.sh/v0.18.0/basic_usage/)
+- [Poetry](https://python-poetry.org/)
+- [uv](https://github.com/astral-sh/uv)
+
+You can read more about Python package management tool recommendations [here](https://packaging.python.org/en/latest/guides/tool-recommendations/). The package management tool you use will vary depending on whether you want to build your code into a package itself, or are relying primarily on external libraries. Some of these package managers include entire workflows for building and publishing Python packages, while others focus on organising pre-existing packages.
+
+::: {.box-lb}
+### Package management for other coding languages
+
+Note that I do not have as extensive experience managing projects, dependencies and packages in the following languages so please proceed with caution.
+
+[Package management in R]{.extra}
+
+[**conda for R**](https://docs.anaconda.com/working-with-conda/packages/using-r-language/): you can install conda via Miniforge as linked above, and then install R packages through this following these [instructions for R with conda](https://docs.anaconda.com/working-with-conda/packages/using-r-language/).
+
+[**renv**](https://rstudio.github.io/renv/index.html): the **r**eproducible **en**vironment package for R has some very nice introductory [documentation](https://rstudio.github.io/renv/articles/renv.html).
+
+
+[Package management in Julia]{.extra}
+
+[**Pkg**](https://docs.julialang.org/en/v1/stdlib/Pkg/): Pkg is Julia's built-in package manager.
+
+:::
+
+In research, a lot of people rely on `conda`: you can read more about [perfecting your conda environment in this blog post](https://murphyqm.github.io/posts/2024-11-27-conda-envs/).
