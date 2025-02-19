@@ -37,5 +37,119 @@ format:
 - `git` works on a project level, so you can make a bunch of changes to different files in a folder, and then [commit]{.extra} all those changes with a descriptive message
 - It's recorded that *you* made those changes, and there's a unique [commit hash]{.extra} that you can quote to point at the exact state of your folder when you added those changes.
 
-## What does `git` do?
 
+## What does git do? {.smaller}
+
+
+::::: {.columns}
+
+::::{.column}
+
+Old version of `python-file.py`
+
+::: {.box-pb style="font-family:monospace; font-size:0.9em"}
+
+1 &#35; This is a comment
+
+2 import matplotlib.pyplot as plt
+
+3 x = [1, 2, 3, 4, 5]
+
+4 y = [3, 4, 5, 6, 7]
+
+5 plt.scatter(x, y)
+
+:::
+
+::::
+
+::::{.column}
+
+New version of `python-file.py`
+
+::: {.box-pb style="font-family:monospace; font-size:0.9em"}
+
+1 &#35; This is a comment
+
+2 import matplotlib.pyplot as plt
+
+[3 import numpy as np]{style="color:green"}
+
+4 x = [1, 2, 3, 4, 5]
+
+5 y = [3, 4, 5, 6, 7]
+
+[6 plt.scatter(x, y)]{style="color:red; text-decoration: underline wavy"}
+
+[6 plt.plot(x, y)]{style="color:green"}
+
+:::
+
+[Line 3 added,]{style="color:green"} [line 6 removed,]{style="color:red; text-decoration: underline wavy"}
+[line 6 added.]{style="color:green"}
+
+
+::::
+
+
+:::::
+
+## What does git do? {.smaller}
+
+
+::::: {.columns}
+
+::::{.column}
+
+New version of `python-file.py`
+
+::: {.box-pb style="font-family:monospace; font-size:0.9em"}
+
+1 &#35; This is a comment
+
+2 import matplotlib.pyplot as plt
+
+[3 import numpy as np]{style="color:green"}
+
+4 x = [1, 2, 3, 4, 5]
+
+5 y = [3, 4, 5, 6, 7]
+
+[6 plt.scatter(x, y)]{style="color:red; text-decoration: underline wavy"}
+
+[6 plt.plot(x, y)]{style="color:green"}
+
+:::
+
+[Line 3 added,]{style="color:green"} [line 6 removed,]{style="color:red; text-decoration: underline wavy"}
+[line 6 added.]{style="color:green"}
+
+
+::::
+
+::::{.column}
+
+Associated git commit
+
+::: {.box-pb style="font-family:monospace; font-size:0.9em"}
+
+File: python-file.py
+
+Commit hash: u87wy9o2
+
+Commit message: change plotting method
+
+[+++ 3 import numpy as np]{style="color:green"}
+
+[-&nbsp;-- 6 plt.scatter(x, y)]{style="color:red; text-decoration: underline wavy"}
+
+[+++ 6 plt.plot(x, y)]{style="color:green"}
+
+:::
+
+
+
+::::
+
+
+:::::

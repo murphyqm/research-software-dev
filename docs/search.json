@@ -24,6 +24,42 @@
     ]
   },
   {
+    "objectID": "version_control/version_control_slides.html#what-is-version-control-2",
+    "href": "version_control/version_control_slides.html#what-is-version-control-2",
+    "title": "Version control",
+    "section": "What is version control?",
+    "text": "What is version control?\n\nWe’re going to use git, which is a strangely named version control software\nWe’ll use this to explain how version control works, and why it matters\nThere are lots of other ways to do version control, but git is very widely used\n\nIf version control was word processing, git would be Microsoft Word",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do",
+    "href": "version_control/version_control_slides.html#what-does-git-do",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\ngit allows you to bundle up changes to various files, and give the group of changes a unique commit hash and an explanatory message.\ngit works on a project level, so you can make a bunch of changes to different files in a folder, and then commit all those changes with a descriptive message\nIt’s recorded that you made those changes, and there’s a unique commit hash that you can quote to point at the exact state of your folder when you added those changes.",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-1",
+    "href": "version_control/version_control_slides.html#what-does-git-do-1",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\nOld version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 x = [1, 2, 3, 4, 5]\n4 y = [3, 4, 5, 6, 7]\n5 plt.scatter(x, y)\n\n\nNew version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 import numpy as np\n4 x = [1, 2, 3, 4, 5]\n5 y = [3, 4, 5, 6, 7]\n6 plt.scatter(x, y)\n6 plt.plot(x, y)\n\nLine 3 added, line 6 removed, line 6 added.",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
     "objectID": "managing-dependencies/conda-pres.html#what-is-conda",
     "href": "managing-dependencies/conda-pres.html#what-is-conda",
     "title": "The Art of conda",
@@ -1764,23 +1800,11 @@
     ]
   },
   {
-    "objectID": "version_control/version_control_slides.html#what-is-version-control-2",
-    "href": "version_control/version_control_slides.html#what-is-version-control-2",
-    "title": "Version control",
-    "section": "What is version control?",
-    "text": "What is version control?\n\nWe’re going to use git, which is a strangely named version control software\nWe’ll use this to explain how version control works, and why it matters\nThere are lots of other ways to do version control, but git is very widely used\n\nIf version control was word processing, git would be Microsoft Word",
-    "crumbs": [
-      "Home",
-      "Version control with git",
-      "Version control intro slides"
-    ]
-  },
-  {
-    "objectID": "version_control/version_control_slides.html#what-does-git-do",
-    "href": "version_control/version_control_slides.html#what-does-git-do",
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-2",
+    "href": "version_control/version_control_slides.html#what-does-git-do-2",
     "title": "Version control",
     "section": "What does git do?",
-    "text": "What does git do?\n\ngit allows you to bundle up changes to various files, and give the group of changes a unique commit hash and an explanatory message.\ngit works on a project level, so you can make a bunch of changes to different files in a folder, and then commit all those changes with a descriptive message\nIt’s recorded that you made those changes, and there’s a unique commit hash that you can quote to point at the exact state of your folder when you added those changes.",
+    "text": "What does git do?\n\n\nNew version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 import numpy as np\n4 x = [1, 2, 3, 4, 5]\n5 y = [3, 4, 5, 6, 7]\n6 plt.scatter(x, y)\n6 plt.plot(x, y)\n\nLine 3 added, line 6 removed, line 6 added.\n\nAssociated git commit\n\nFile: python-file.py\nCommit hash: u87wy9o2\nCommit message: change plotting method\n+++ 3 import numpy as np\n— 6 plt.scatter(x, y)\n+++ 6 plt.plot(x, y)",
     "crumbs": [
       "Home",
       "Version control with git",
