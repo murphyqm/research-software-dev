@@ -1,0 +1,110 @@
+---
+title: "Version control and Jupyter notebooks"
+description: "How to make these sworn enemies behave like friends"
+citation: true
+date: 02/20/2025
+author:
+  - name: Maeve Murphy Quinlan
+    url: https://murphyqm.github.io/
+    orcid: 0000-0003-2958-1008
+---
+
+Have you ever looked inside a Jupyter Notebook file, without it being rendered?
+
+[Here is an example](https://raw.githubusercontent.com/ARCTraining/swd1a-notebooks/refs/heads/main/02-numpy.ipynb) of what the `json` file looks like (and here it is [rendered nicely](https://github.com/ARCTraining/swd1a-notebooks/blob/main/02-numpy.ipynb)). This example is actually pretty tidy, all things considered, because I ensured I *cleared all output* before pushing any changes.
+
+However, because Python notebooks like this are rendering a full webpage for you, the file contains a lot more information than just the code you've written. Every time you run the notebook, the output and metadata can change: this can lead to big changes in your git repository that become very difficult to keep track of, and can obfuscate actual important changes you make to the code.
+
+:::{.box-lp}
+**Notebook cautionary tale**
+
+We will dig into this in a bit more depth later in our discussion session, but **notebooks are notorious for being non-reproducible**. [Recent research has highlighted some of the issues](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad113/7516267#:~:text=Jupyter%20notebooks%20can%2C%20in%20principle,the%20reproducibility%20of%20Jupyter%20notebooks.) with lots of work presented in notebooks not reproducing the expected output, because cells can be rerun in an arbitrary order.
+
+[How does a notebook differ from a spreadsheet? How might this cause issues? How do you think about *reactivity* in notebooks?]{.extra}
+
+Make sure you regularly restart the kernel, clear all output, and *run all* from the beginning to make sure your code is actually doing what you think it is.
+:::
+
+So how do we get around this? A few different ways!
+
+## 0. Ignore it
+
+You can decide it's not a big deal for your specific workflow, and that you can cope with big/unwieldy commits! Especially if you're not collaborating with multiple people, this might the most straightforward choice.
+
+:::{.box-lp}
+
+I still like to migrate out as much of my code as possible into Python modules in `.py` files. I use notebooks for initial prototyping, but once I have a working function, I put it in a Python file and delete it's definition from my notebook; from then on I import it and use it like a regular Python library.
+
+:::
+
+Remember to keep your notebooks tidy, and run them through from the start regularly.
+
+## 1. Change how we track Jupyter Notebooks with `git`
+
+One thing we *could* do, is add `.ipynb` files to our [`.gitignore` file](https://docs.github.com/en/get-started/git-basics/ignoring-files) and not track them, and move any content from a notebook out into a standalone Python script as soon as possible.
+
+However, this feels a bit incomplete and takes away from the point of version control: the whole point is we capture everything we are doing, like we would in a lab notebook.
+
+
+## 2. Use a tool to make Jupyter notebooks better suited to version control
+
+Another option is to use a third party tool to tackle the problem.
+
+### Jupytext
+
+One such option is [Jupytext](https://jupytext.readthedocs.io/en/latest/). You can easily install a conda environment with this package installed in your virtual machine: 
+
+```bash
+conda env create --file .devcontainer/env-files/jup-env.yml
+```
+
+:::{.box-lp}
+
+When using Jupyter notebooks in VS Code, pull up the command pallette with *ctrl shift p* and then select *"Python: Select interpreter"*, and pick the correct conda environment.
+
+When you launch a notebook, you'll then be asked to select a kernel, and your conda environment should be available.
+:::
+
+Once you've created a notebook, you can then create a paired plaintext `.py` file for the notebook:
+
+```bash
+jupytext --set-formats ipynb,py:percent notebook.ipynb
+```
+
+You then continue to work from `notebook.ipynb`, and sync the notebook and the `.py` file using the following command:
+
+```bash
+jupytext --sync notebook.ipynb
+```
+
+Now you can add `.ipynb` files to your `.gitignore` and only track the `.py` version.
+
+You can get `jupytext` to generate the notebook output:
+
+```
+jupytext --sync notebook.py
+```
+
+This works really well; [however, it requires you to remember to sync the notebook when you make changes, adding another thing to the list of steps to follow]{.extra}. What I like to do is create a little template notebook and convert it using `jupytext --set-formats ipynb,py:percent notebook.ipynb`, then I delete the `.ipynb` file and work from the newly created Python file. VSCode and Jupyter Lab both support this format. 
+
+:::{.box-lp}
+Try it out - the `jup-env` conda environment has Jupyter lab installed if you want to work through that environment, or you can run it in VSCode.
+:::
+
+## 3. Use something else instead of Jupyter notebooks
+
+There are also other ways of doing *literate programming* that embed images and text alongside your code, that make for great prototyping tools and eventually result-sharing platforms.
+
+### Quarto
+
+[Quarto](https://quarto.org/) is another option that I now use almost exclusively for notebook-style work (and everything else - this website is built using it). It can be installed as a conda package or installed independently.
+
+The files are saved in markdown format, with code blocks fenced in backticks, and rendered to html pages - you can add the output folder to your `.gitignore` to ensure a tidy repository.
+
+### Marimo
+
+This one takes a slightly different approach, building a reactive notebook (think of how a spreadsheet works - if you update a cell, then every cell that uses that value in a formula will also update). This sometimes takes a little getting used to, but can be a very powerful tool and fixes the issues of reproducibility due to notebooks allowing arbitrary order of execution of cells.
+
+# Main points
+
+Notebooks are a useful tool, but it's important to be aware of their limitations!

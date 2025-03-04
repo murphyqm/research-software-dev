@@ -11,6 +11,12 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: https://github.com/murphyqm/python-project-template
+        text: Virtual machine template
+        target: _blank
+      - href: https://software-dev.streamlit.app/
+        text: SSD notes
+        target: _blank
   sidebar:
     border: false
     style: "docked"
@@ -40,8 +46,12 @@ website:
             text: Figuring out dependencies for old code
       - section: "Version control with git"
         contents:
+          - href: version_control/version_control.qmd
+            text: Introduction to Version Control
           - href: version_control/version_control_slides.qmd
             text: Version control intro slides
+          - href: version_control/version_control_and_notebooks.qmd
+            text: Version control and Jupyter Notebooks
 
 format:
   html:

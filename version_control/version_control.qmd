@@ -1,0 +1,203 @@
+---
+title: "Using version control"
+description: "Very basic introduction to git as a version control method"
+citation: true
+date: 02/20/2025
+author:
+  - name: Maeve Murphy Quinlan
+    url: https://murphyqm.github.io/
+    orcid: 0000-0003-2958-1008
+---
+
+First off, read through the introductory presentation below.
+
+[<a href="version_control_slides.qmd" target="_blank">Launch fullscreen presentation ⤢ </a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}
+
+# What can we use git for?
+
+`git` works for any files that are in plaintext. This includes:
+
+- `.py`
+- `.txt`
+- `.ipynb`
+- `.csv`
+- `.json`
+- `.c`, `.cc`
+- `.tex`
+- `.bib`
+- `.md`
+
+and many, many more! Files that aren't plain text *might* work, but are likely to be a bit of a mess and not particularly easy to work with.
+
+# Our git workflow
+
+Remember our series of cycles:
+
+1. Our local git cycle:
+    - We create/modify/edit files
+    - We **add** our changes (once, twice, many times)
+    - We **commit** our bundle of changes
+    - We repeat this cycle!
+
+2. Our branch cycle
+    - We can create a new branch and swap to it 
+    - We can make commits on this branch (following the cycle above)
+    - When we are happy, we can **merge** this branch back to main
+
+3. Our remote repository cycle
+    - We can **clone** a remote repository locally, or upload a local repository to a **remote**
+    - We **push** bundles of **commits** (which themselves are bundles of *added** edits) to the remote
+
+
+## When do you do each step, and how often?
+
+- `git add`: I tend to do this regularly as I'm working on a file.
+- `git commit`: when I've reached a checkpoint in a file I want to record, or I've made changes across a few files (in related things), I **commit**. I do this about once an hour.
+- `git push`: I push my changes to my remote before I head out for lunch, and before the end of the day, but you can do this more often.
+
+## Exploring git
+
+You can launch a virtual machine on GitHub Codespaces to test out git.
+
+[<a href="https://github.com/murphyqm/python-project-template" target="_blank">Launch virtual machine ⤢ </a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}
+
+It's time to put all that theory into action and try out the following commands, broken up into sections.
+
+To practice using `git`, it's a good idea to just make and edit subfolders and files in your project directory.
+
+### 1. Our local git cycle
+
+- Create and edit files and folders
+- Run `git status` to check what changes you've made and to see the *state* of the files
+- Run `git add filename` to add the changes in a file
+    - You can add files in sub-folders too: `git add sub-folder/filename`
+    - You can also add multiple files: `git add filename1 filename2 filename3 subfolder/filename4`
+- Run `git status` to check the *state* of the files
+- Commit your bundle of files with a short message with `git commit -m "message goes here"
+    - You can also just run `git commit` and a text editor will open for you to write a commit message
+- Run `git status` to check the *state* of the files
+
+:::{.box-lb}
+**What makes a good commit message?**
+
+Usually, `git` messages sound like instructions for what you've done, like you would have in a to-do list. In fact, I often have a detailed to-do list for my coding work, and when I've done something from the list, in addition to checking it off I also copy and paste it as my commit message!
+
+- "Add basic unit tests to the project"
+- "Spellcheck project description file"
+- "Fix error in flag type"
+
+Commit messages should be brief and descriptive.
+:::
+
+[Challenge: what does the command `git diff filename` do?]{.extra}
+
+### 2. Our branch cycle
+
+We've worked through some of the commands available in our local commit cycle - what about when we want to start creating and working with new branches?
+
+- Run `git status` to check the *state* of the files
+- Run `git branch` to see what branches already exist, and which one you are on
+- Run `git branch NAME` to create a new branch called NAME (try `git branch` again)
+- Run `git checkout NAME` to swap over to the branch called NAME (try `git branch` again)
+
+
+:::{.box-lb}
+You can consolidate `git branch NAME` and `git checkout NAME` into a single command, `git checkout -b NAME`
+:::
+
+Once you've created some commits on the branch, you can either **abandon** it or **merge** it.
+
+- To abandon the branch:
+    - Simply check that you've no untracked changes (`git status`) - if you have untracked changes, try `git stash` and see what happens!
+    - Then **checkout** the branch you want to return to: `git checkout main` and keep working!
+- To keep the changes:
+    - Check that you've no untracked changes (`git status`), and `git add`, `git commit -m "message!"` any that are untracked;
+    - Checkout the branch you want to merge with: `git checkout main` (or another branch instead of main!)
+    - Merge your branch called NAME *onto* main: `git merge NAME`
+
+:::{.box-lb}
+Branches, abandoned commits, and merges can all get very messy.
+
+Thankfully there are tools and plugins to help you visualise these, which tend to make it a bit easier!
+
+For example, try using the **GitGraph** plugin in your virtual machine!
+:::
+
+### 3. Our remote repository cycle
+
+Let's look at pushing changes to a remote repository.
+
+Because we are using a virtual machine, we don't need to set anything up (we can chat about ssh keys and setting git up locally later on!), so we can just decide to **push** our bundle of commits and commit messages: `git push origin BRANCHNAME`
+
+- If you are on your main branch: `git push origin main`
+- If you are on a branch called `mmq-patch-01`: `git push origin mmq-patch-01`
+
+:::{.box-lb}
+In the snippet above, the term `origin` is because by convention this is the name we have given our remote repository (and this is how the virtual machine has been configured).
+:::
+
+- You can **pull** changes to the remote onto your local machine too using a similar command: `git pull origin BRANCHNAME`
+
+:::{.box-lp}
+In general, I prefer merging in GitHub's online platform as opposed to from the command line: I find it easier to work with.
+
+- When you want to merge in GitHub, you can open up a **pull request** which lets you check the changes to files etc. before merging
+:::
+
+### When something goes wrong
+
+There are lots (and lots, and lots) of ways to fix mistakes with `git`.
+
+If you've added something unintentional during the last commit cycle, there are a few ways to undo it:
+
+```bash
+# Added something unintentional?
+git reset --soft HEAD^ # undo a git commit
+git reset # undo git add
+git restore --staged FILE # undo git add to specific file
+git restore FILE # undo all changes to an unstaged file since last commit
+```
+
+If you want to revert back to a previous commit (and stick it on a new branch to continue working with it):
+
+```bash
+# go back to an old version and put it on a branch
+git checkout -b NEW-BRANCH-NAME-FOR-OLD-VERSION git-hash-here
+```
+
+Also, there's the tried and true method of abandoning a branch if you don't like what's on it!
+
+:::{.box-lp}
+**Merge conflicts**
+
+You will get errors when you try to commit a change to a branch/merge branches if there are *conflicts* (for example, if changes were made on the `main` branch since you created your branch, so now when you've gone to merge your version is missing those changes).
+
+You'll be presented with a version of the file with the conflicting bits highlighted - you just delete the lines you want removed, and keep the version of the lines you want to save. This is presented nicely on the GitHub interface.
+:::
+
+# Cheat sheet
+
+Here are some of the very common commands you will use:
+
+```bash
+git clone repo-url # copy a remote online repository to your local machine
+
+git status # check on status of current git repo
+git branch NAME # create a branch called NAME
+git checkout NAME # swap over to the branch called NAME
+git add FILE # stage FILE for commit
+git commit # commit the staged files (this will open your text editor to create a commit message)
+git push origin NAME # push local commits to the remote branch tracking the branch NAME
+
+# Added something unintentional?
+git reset --soft HEAD^ # undo a git commit
+git reset # undo git add
+git restore --staged FILE # undo git add to specific file
+git restore FILE # undo all changes to an unstaged file since last commit
+
+# after merging a pull request
+git fetch -p  # delete branches that no longer exist in the remote
+
+# go back to an old version and put it on a branch
+git checkout -b NEW-BRANCH-NAME-FOR-OLD-VERSION git-hash-here
+```

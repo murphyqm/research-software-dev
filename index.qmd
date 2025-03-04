@@ -2,7 +2,16 @@
 title: "RSE: How to"
 ---
 
-These module notes aim to provide you with a friendly introduction to *Research Software Engineering* (RSE) or *Research Software Development*. This is an evolution of the course notes [Sustainable Software Development](https://software-dev.streamlit.app/) [@Murphy-Quinlan2024-ba], intended to be more flexible and not reliant on a server.
+These module notes aim to provide you with a friendly introduction to *Research Software Engineering* (RSE) or *Research Software Development*. This is an evolution of the course notes [Sustainable Software Development](https://software-dev.streamlit.app/) [@Murphy-Quinlan2024-ba], [SWD3 - Software Development Practices in Python](https://arctraining.github.io/swd3-notes/) (Murphy Quinlan & Ternes, 2024), and [SWD3: Software development practices for Research](https://arctraining.github.io/swd3-dev/welcome.html) (Ternes, 2023) intended to be more flexible and modular for learners with different experience and knowledge. These notes and the course structure are [experimental]{.extra}, and will be incorporated into our general [Advanced Research Computing training materials]{.extra} following feedback from this course.
+
+::: {.box-lb}
+
+The first half of this course has been extensively updated with new material covering `git`, `bash`, and `conda` (these were previously pre-requisites of SWD3), while the remainder follows 
+[Sustainable Software Development](https://software-dev.streamlit.app/) [@Murphy-Quinlan2024-ba]; we will be using the notes linked above for this second part of the course.
+:::
+
+
+This course covers a lot of information in a short time: treat the synchronous portion of this course as a primer, and then explore the material in more depth after the course. Also, look through previous iterations of the course for some slightly different materials that goes more in-depth in some areas!
 
 ::: {.box-lb}
 
@@ -27,11 +36,15 @@ The most recent/current iteration of this course is:
 [Research Software Engineering: SOEE5261M]{.extra}
 
 Note that the order of delivery/course contents may vary depending on pre-course surveys etc.
+
+You will need a GitHub account for the interactive portions of this course.
+
+There is some homework and follow-on work for this course - this is not mandatory, but will help you to embed the tools and workflows you have learned in your research going forward!
 :::
 
 ## How to use this resource
 
-There's a lot of materal here to absorb, so here are some guidelines to help you make the most of it.
+There's a lot of material here to absorb, so here are some guidelines to help you make the most of it.
 This material is also covered in the presentation linked below.
 
 [<a href="intro-presentation/intro.qmd" target="_blank">Launch fullscreen presentation ⤢ </a>]{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Launch presentation in a new tab"}
