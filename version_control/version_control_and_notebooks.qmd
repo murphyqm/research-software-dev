@@ -1,0 +1,32 @@
+---
+title: "Version control and Jupyter notebooks"
+description: "How to make these sworn enemies behave like friends"
+citation: true
+date: 02/20/2025
+author:
+  - name: Maeve Murphy Quinlan
+    url: https://murphyqm.github.io/
+    orcid: 0000-0003-2958-1008
+---
+
+Have you ever looked inside a Jupyter Notebook file, without it being rendered?
+
+[Here is an example](https://raw.githubusercontent.com/ARCTraining/swd1a-notebooks/refs/heads/main/02-numpy.ipynb) of what the `json` file looks like (and here it is [rendered nicely](https://github.com/ARCTraining/swd1a-notebooks/blob/main/02-numpy.ipynb)). This example is actually pretty tidy, all things considered, because I ensured I *cleared all output* before pushing any changes.
+
+However, because Python notebooks like this are rendering a full webpage for you, the file contains a lot more information than just the code you've written. Every time you run the notebook, the output and metadata can change: this can lead to big changes in your git repository that become very difficult to keep track of, and can obfuscate actual important changes you make to the code.
+
+:::{.box-lp}
+**Notebook cautionary tale**
+
+We will dig into this in a bit more depth later in our discussion session, but **notebooks are notorious for being non-reproducible**. [Recent research has highlighted some of the issues](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad113/7516267#:~:text=Jupyter%20notebooks%20can%2C%20in%20principle,the%20reproducibility%20of%20Jupyter%20notebooks.) with lots of work presented in notebooks not reproducing the expected output, because cells can be rerun in an arbitrary order.
+
+[How does a notebook differ from a spreadsheet? How might this cause issues? How do you think about *reactivity* in notebooks?]{.extra}
+
+Make sure you regularly restart the kernel, clear all output, and *run all* from the beginning to make sure your code is actually doing what you think it is.
+:::
+
+So how do we get around this? A few different ways!
+
+## 1. Change how we track Jupyter Notebooks with `git`
+
+One thing we *could* do, is add `.ipynb` files to our `.gitignore` file
