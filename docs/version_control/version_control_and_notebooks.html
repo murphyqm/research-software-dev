@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Maeve Murphy Quinlan">
-<meta name="dcterms.date" content="2025-02-18">
-<meta name="description" content="Very basic introduction to managing Python dependencies">
+<meta name="dcterms.date" content="2025-02-20">
+<meta name="description" content="How to make these sworn enemies behave like friends">
 
-<title>Dependencies 101 – RSE: How to</title>
+<title>Version control and Jupyter notebooks – RSE: How to</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../managing-dependencies/dep-pres.html" rel="next">
-<link href="../intro-to-linux-files/linux101.html" rel="prev">
+<link href="../version_control/version_control_slides.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../managing-dependencies/dependencies-intro.html">Managing dependencies</a></li><li class="breadcrumb-item"><a href="../managing-dependencies/dependencies-intro.html">Basic dependencies in Python</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../version_control/version_control.html">Version control with git</a></li><li class="breadcrumb-item"><a href="../version_control/version_control_and_notebooks.html">Version control and Jupyter Notebooks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -184,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../managing-dependencies/dependencies-intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="../managing-dependencies/dependencies-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic dependencies in Python</span></a>
   </div>
 </li>
@@ -231,7 +264,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../version_control/version_control_and_notebooks.html" class="sidebar-item-text sidebar-link">
+  <a href="../version_control/version_control_and_notebooks.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Version control and Jupyter Notebooks</span></a>
   </div>
 </li>
@@ -247,24 +280,32 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#package-management-for-python" id="toc-package-management-for-python" class="nav-link active" data-scroll-target="#package-management-for-python">Package management for Python</a>
+  <li><a href="#ignore-it" id="toc-ignore-it" class="nav-link active" data-scroll-target="#ignore-it">0. Ignore it</a></li>
+  <li><a href="#change-how-we-track-jupyter-notebooks-with-git" id="toc-change-how-we-track-jupyter-notebooks-with-git" class="nav-link" data-scroll-target="#change-how-we-track-jupyter-notebooks-with-git">1. Change how we track Jupyter Notebooks with <code>git</code></a></li>
+  <li><a href="#use-a-tool-to-make-jupyter-notebooks-better-suited-to-version-control" id="toc-use-a-tool-to-make-jupyter-notebooks-better-suited-to-version-control" class="nav-link" data-scroll-target="#use-a-tool-to-make-jupyter-notebooks-better-suited-to-version-control">2. Use a tool to make Jupyter notebooks better suited to version control</a>
   <ul class="collapse">
-  <li><a href="#package-management-for-other-coding-languages" id="toc-package-management-for-other-coding-languages" class="nav-link" data-scroll-target="#package-management-for-other-coding-languages">Package management for other coding languages</a></li>
+  <li><a href="#jupytext" id="toc-jupytext" class="nav-link" data-scroll-target="#jupytext">Jupytext</a></li>
   </ul></li>
+  <li><a href="#use-something-else-instead-of-jupyter-notebooks" id="toc-use-something-else-instead-of-jupyter-notebooks" class="nav-link" data-scroll-target="#use-something-else-instead-of-jupyter-notebooks">3. Use something else instead of Jupyter notebooks</a>
+  <ul class="collapse">
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#marimo" id="toc-marimo" class="nav-link" data-scroll-target="#marimo">Marimo</a></li>
+  </ul></li>
+  <li><a href="#main-points" id="toc-main-points" class="nav-link" data-scroll-target="#main-points">Main points</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../managing-dependencies/dependencies-intro.html">Managing dependencies</a></li><li class="breadcrumb-item"><a href="../managing-dependencies/dependencies-intro.html">Basic dependencies in Python</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../version_control/version_control.html">Version control with git</a></li><li class="breadcrumb-item"><a href="../version_control/version_control_and_notebooks.html">Version control and Jupyter Notebooks</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Dependencies 101</h1>
+<h1 class="title">Version control and Jupyter notebooks</h1>
 </div>
 
 <div>
   <div class="description">
-    Very basic introduction to managing Python dependencies
+    How to make these sworn enemies behave like friends
   </div>
 </div>
 
@@ -281,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 18, 2025</p>
+      <p class="date">February 20, 2025</p>
     </div>
   </div>
   
@@ -293,47 +334,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Dependencies are the versions of different packages/modules that your code depends on, for example the version of Python you are using, and any libraries you have to import, like <code>matplotlib</code>, <code>scipy</code>, <code>tensorflow</code> etc.</p>
-<p>Dependencies are an important thing to keep track of when building scientific code. How many different external libraries does your code depend on? What versions of these libraries does it need? How do you install and update these different libraries?</p>
-<p><span class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="Launch presentation in a new tab"><a href="../managing-dependencies/dep-pres.html" target="_blank">Launch fullscreen presentation ⤢ </a></span></p>
-<section id="package-management-for-python" class="level2">
-<h2 class="anchored" data-anchor-id="package-management-for-python">Package management for Python</h2>
-<p>In Python, there are lots of different ways to install and manage packages and dependencies. These different tools generally involve using virtual environments in order to keep the dependencies for different projects separate and tidy. Some package installation and management tools include:</p>
-<ul>
-<li><a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">Conda</a>/<a href="https://mamba.readthedocs.io/en/latest/">Mamba</a>
-<ul>
-<li>You can install conda with <a href="https://github.com/conda-forge/miniforge">Miniforge</a></li>
-</ul></li>
-<li><a href="https://packaging.python.org/en/latest/key_projects/#pip">pip</a> and <a href="https://packaging.python.org/en/latest/key_projects/#pipenv">Pipenv</a></li>
-<li><a href="https://pixi.sh/v0.18.0/basic_usage/">pixi</a></li>
-<li><a href="https://python-poetry.org/">Poetry</a></li>
-<li><a href="https://github.com/astral-sh/uv">uv</a></li>
-</ul>
-<p>You can read more about Python package management tool recommendations <a href="https://packaging.python.org/en/latest/guides/tool-recommendations/">here</a>. The package management tool you use will vary depending on whether you want to build your code into a package itself, or are relying primarily on external libraries. Some of these package managers include entire workflows for building and publishing Python packages, while others focus on organising pre-existing packages.</p>
-<section id="package-management-for-other-coding-languages" class="level3 box-lb">
-<h3 class="anchored" data-anchor-id="package-management-for-other-coding-languages">Package management for other coding languages</h3>
-<p>Note that I do not have as extensive experience managing projects, dependencies and packages in the following languages so please proceed with caution.</p>
-<p><span class="extra">Package management in R</span></p>
-<p><a href="https://docs.anaconda.com/working-with-conda/packages/using-r-language/"><strong>conda for R</strong></a>: you can install conda via Miniforge as linked above, and then install R packages through this following these <a href="https://docs.anaconda.com/working-with-conda/packages/using-r-language/">instructions for R with conda</a>.</p>
-<p><a href="https://rstudio.github.io/renv/index.html"><strong>renv</strong></a>: the <strong>r</strong>eproducible <strong>en</strong>vironment package for R has some very nice introductory <a href="https://rstudio.github.io/renv/articles/renv.html">documentation</a>.</p>
-<p><span class="extra">Package management in Julia</span></p>
-<p><a href="https://docs.julialang.org/en/v1/stdlib/Pkg/"><strong>Pkg</strong></a>: Pkg is Julia’s built-in package manager.</p>
+<p>Have you ever looked inside a Jupyter Notebook file, without it being rendered?</p>
+<p><a href="https://raw.githubusercontent.com/ARCTraining/swd1a-notebooks/refs/heads/main/02-numpy.ipynb">Here is an example</a> of what the <code>json</code> file looks like (and here it is <a href="https://github.com/ARCTraining/swd1a-notebooks/blob/main/02-numpy.ipynb">rendered nicely</a>). This example is actually pretty tidy, all things considered, because I ensured I <em>cleared all output</em> before pushing any changes.</p>
+<p>However, because Python notebooks like this are rendering a full webpage for you, the file contains a lot more information than just the code you’ve written. Every time you run the notebook, the output and metadata can change: this can lead to big changes in your git repository that become very difficult to keep track of, and can obfuscate actual important changes you make to the code.</p>
+<div class="box-lp">
+<p><strong>Notebook cautionary tale</strong></p>
+<p>We will dig into this in a bit more depth later in our discussion session, but <strong>notebooks are notorious for being non-reproducible</strong>. <a href="https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad113/7516267#:~:text=Jupyter%20notebooks%20can%2C%20in%20principle,the%20reproducibility%20of%20Jupyter%20notebooks.">Recent research has highlighted some of the issues</a> with lots of work presented in notebooks not reproducing the expected output, because cells can be rerun in an arbitrary order.</p>
+<p><span class="extra">How does a notebook differ from a spreadsheet? How might this cause issues? How do you think about <em>reactivity</em> in notebooks?</span></p>
+<p>Make sure you regularly restart the kernel, clear all output, and <em>run all</em> from the beginning to make sure your code is actually doing what you think it is.</p>
+</div>
+<p>So how do we get around this? A few different ways!</p>
+<section id="ignore-it" class="level2">
+<h2 class="anchored" data-anchor-id="ignore-it">0. Ignore it</h2>
+<p>You can decide it’s not a big deal for your specific workflow, and that you can cope with big/unwieldy commits! Especially if you’re not collaborating with multiple people, this might the most straightforward choice.</p>
+<div class="box-lp">
+<p>I still like to migrate out as much of my code as possible into Python modules in <code>.py</code> files. I use notebooks for initial prototyping, but once I have a working function, I put it in a Python file and delete it’s definition from my notebook; from then on I import it and use it like a regular Python library.</p>
+</div>
+<p>Remember to keep your notebooks tidy, and run them through from the start regularly.</p>
 </section>
-<p>In research, a lot of people rely on <code>conda</code>: you can read more about <a href="https://murphyqm.github.io/posts/2024-11-27-conda-envs/">perfecting your conda environment in this blog post</a>.</p>
+<section id="change-how-we-track-jupyter-notebooks-with-git" class="level2">
+<h2 class="anchored" data-anchor-id="change-how-we-track-jupyter-notebooks-with-git">1. Change how we track Jupyter Notebooks with <code>git</code></h2>
+<p>One thing we <em>could</em> do, is add <code>.ipynb</code> files to our <a href="https://docs.github.com/en/get-started/git-basics/ignoring-files"><code>.gitignore</code> file</a> and not track them, and move any content from a notebook out into a standalone Python script as soon as possible.</p>
+<p>However, this feels a bit incomplete and takes away from the point of version control: the whole point is we capture everything we are doing, like we would in a lab notebook.</p>
+</section>
+<section id="use-a-tool-to-make-jupyter-notebooks-better-suited-to-version-control" class="level2">
+<h2 class="anchored" data-anchor-id="use-a-tool-to-make-jupyter-notebooks-better-suited-to-version-control">2. Use a tool to make Jupyter notebooks better suited to version control</h2>
+<p>Another option is to use a third party tool to tackle the problem.</p>
+<section id="jupytext" class="level3">
+<h3 class="anchored" data-anchor-id="jupytext">Jupytext</h3>
+<p>One such option is <a href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a>. You can easily install a conda environment with this package installed in your virtual machine:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">--file</span> .devcontainer/env-files/jup-env.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="box-lp">
+<p>When using Jupyter notebooks in VS Code, pull up the command pallette with <em>ctrl shift p</em> and then select <em>“Python: Select interpreter”</em>, and pick the correct conda environment.</p>
+<p>When you launch a notebook, you’ll then be asked to select a kernel, and your conda environment should be available.</p>
+</div>
+<p>Once you’ve created a notebook, you can then create a paired plaintext <code>.py</code> file for the notebook:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupytext</span> <span class="at">--set-formats</span> ipynb,py:percent notebook.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You then continue to work from <code>notebook.ipynb</code>, and sync the notebook and the <code>.py</code> file using the following command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupytext</span> <span class="at">--sync</span> notebook.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now you can add <code>.ipynb</code> files to your <code>.gitignore</code> and only track the <code>.py</code> version.</p>
+<p>You can get <code>jupytext</code> to generate the notebook output:</p>
+<pre><code>jupytext --sync notebook.py</code></pre>
+<p>This works really well; <span class="extra">however, it requires you to remember to sync the notebook when you make changes, adding another thing to the list of steps to follow</span>. What I like to do is create a little template notebook and convert it using <code>jupytext --set-formats ipynb,py:percent notebook.ipynb</code>, then I delete the <code>.ipynb</code> file and work from the newly created Python file. VSCode and Jupyter Lab both support this format.</p>
+<div class="box-lp">
+<p>Try it out - the <code>jup-env</code> conda environment has Jupyter lab installed if you want to work through that environment, or you can run it in VSCode.</p>
+</div>
+</section>
+</section>
+<section id="use-something-else-instead-of-jupyter-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="use-something-else-instead-of-jupyter-notebooks">3. Use something else instead of Jupyter notebooks</h2>
+<p>There are also other ways of doing <em>literate programming</em> that embed images and text alongside your code, that make for great prototyping tools and eventually result-sharing platforms.</p>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
+<p><a href="https://quarto.org/">Quarto</a> is another option that I now use almost exclusively for notebook-style work (and everything else - this website is built using it). It can be installed as a conda package or installed independently.</p>
+<p>The files are saved in markdown format, with code blocks fenced in backticks, and rendered to html pages - you can add the output folder to your <code>.gitignore</code> to ensure a tidy repository.</p>
+</section>
+<section id="marimo" class="level3">
+<h3 class="anchored" data-anchor-id="marimo">Marimo</h3>
+<p>This one takes a slightly different approach, building a reactive notebook (think of how a spreadsheet works - if you update a cell, then every cell that uses that value in a formula will also update). This sometimes takes a little getting used to, but can be a very powerful tool and fixes the issues of reproducibility due to notebooks allowing arbitrary order of execution of cells.</p>
+</section>
+</section>
+<section id="main-points" class="level1">
+<h1>Main points</h1>
+<p>Notebooks are a useful tool, but it’s important to be aware of their limitations!</p>
 
 
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{murphy_quinlan2025,
   author = {Murphy Quinlan, Maeve},
-  title = {Dependencies 101},
-  date = {2025-02-18},
-  url = {https://murphyqm.github.io/research-software-dev/managing-dependencies/dependencies-intro.html},
+  title = {Version Control and {Jupyter} Notebooks},
+  date = {2025-02-20},
+  url = {https://murphyqm.github.io/research-software-dev/version_control/version_control_and_notebooks.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-murphy_quinlan2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-Murphy Quinlan, Maeve. 2025. <span>“Dependencies 101.”</span> February
-18, 2025. <a href="https://murphyqm.github.io/research-software-dev/managing-dependencies/dependencies-intro.html">https://murphyqm.github.io/research-software-dev/managing-dependencies/dependencies-intro.html</a>.
+Murphy Quinlan, Maeve. 2025. <span>“Version Control and Jupyter
+Notebooks.”</span> February 20, 2025. <a href="https://murphyqm.github.io/research-software-dev/version_control/version_control_and_notebooks.html">https://murphyqm.github.io/research-software-dev/version_control/version_control_and_notebooks.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -756,14 +833,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../intro-to-linux-files/linux101.html" class="pagination-link" aria-label="Linux 101 slides">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linux 101 slides</span>
+      <a href="../version_control/version_control_slides.html" class="pagination-link" aria-label="Version control intro slides">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Version control intro slides</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../managing-dependencies/dep-pres.html" class="pagination-link" aria-label="Dependency slides">
-        <span class="nav-page-text">Dependency slides</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

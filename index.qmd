@@ -4,6 +4,13 @@ title: "RSE: How to"
 
 These module notes aim to provide you with a friendly introduction to *Research Software Engineering* (RSE) or *Research Software Development*. This is an evolution of the course notes [Sustainable Software Development](https://software-dev.streamlit.app/) [@Murphy-Quinlan2024-ba], [SWD3 - Software Development Practices in Python](https://arctraining.github.io/swd3-notes/) (Murphy Quinlan & Ternes, 2024), and [SWD3: Software development practices for Research](https://arctraining.github.io/swd3-dev/welcome.html) (Ternes, 2023) intended to be more flexible and modular for learners with different experience and knowledge. These notes and the course structure are [experimental]{.extra}, and will be incorporated into our general [Advanced Research Computing training materials]{.extra} following feedback from this course.
 
+::: {.box-lb}
+
+The first half of this course has been extensively updated with new material covering `git`, `bash`, and `conda` (these were previously pre-requisites of SWD3), while the remainder follows 
+[Sustainable Software Development](https://software-dev.streamlit.app/) [@Murphy-Quinlan2024-ba]; we will be using the notes linked above for this second part of the course.
+:::
+
+
 This course covers a lot of information in a short time: treat the synchronous portion of this course as a primer, and then explore the material in more depth after the course. Also, look through previous iterations of the course for some slightly different materials that goes more in-depth in some areas!
 
 ::: {.box-lb}

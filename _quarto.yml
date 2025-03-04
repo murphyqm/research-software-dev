@@ -12,7 +12,10 @@ website:
       - href: index.qmd
         text: Home
       - href: https://github.com/murphyqm/python-project-template
-        text: Launch virtual machine
+        text: Virtual machine template
+        target: _blank
+      - href: https://software-dev.streamlit.app/
+        text: SSD notes
         target: _blank
   sidebar:
     border: false
@@ -47,6 +50,8 @@ website:
             text: Introduction to Version Control
           - href: version_control/version_control_slides.qmd
             text: Version control intro slides
+          - href: version_control/version_control_and_notebooks.qmd
+            text: Version control and Jupyter Notebooks
 
 format:
   html:
