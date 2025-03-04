@@ -8,7 +8,7 @@ format:
     controls-layout: bottom-right
     controls: true
     theme: ../pres-theme.scss
-    footer: "Maeve Murphy Quinlan | Intro to RSE | murphyqm.github.io"
+    footer: "Maeve Murphy Quinlan | Intro to RSE | [Back to main site](https://murphyqm.github.io/research-software-dev/)"
 ---
 
 ## [What are dependencies?]{.outline-o}

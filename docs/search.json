@@ -1,291 +1,147 @@
 [
   {
-    "objectID": "version_control/version_control_slides.html#what-is-version-control",
-    "href": "version_control/version_control_slides.html#what-is-version-control",
-    "title": "Version control",
-    "section": "What is version control?",
-    "text": "What is version control?\n\n\nOften described as “track changes”, although that’s not quite right\nA super-powerful “undo” button\nA way of working collaboratively without over-writing each other’s work\nA way of recording exactly what you did and when",
+    "objectID": "intro-presentation/intro.html#who-am-i",
+    "href": "intro-presentation/intro.html#who-am-i",
+    "title": "Research Software Engineering",
+    "section": "Who am I?",
+    "text": "Who am I?\n\n\nI’m a Research Software Engineer in Research Computing, IT Services\nI completed my PhD in 2024 in the Institute of Geophysics and Tectonics, School of Earth and Environment, University of Leeds\nI have made almost every mistake imaginable when it comes to writing code, managing dependencies, tracking changes, submitting HPC jobs…",
     "crumbs": [
       "Home",
-      "Version control with git",
-      "Version control intro slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "version_control/version_control_slides.html#what-is-version-control-1",
-    "href": "version_control/version_control_slides.html#what-is-version-control-1",
-    "title": "Version control",
-    "section": "What is version control?",
-    "text": "What is version control?\n\nOne way of doing version control…",
+    "objectID": "intro-presentation/intro.html#a-good-enough-approach",
+    "href": "intro-presentation/intro.html#a-good-enough-approach",
+    "title": "Research Software Engineering",
+    "section": "A “good enough” approach",
+    "text": "A “good enough” approach\n\nDocumentation, guidance, and courses often fall down by aiming for perfection\nThis can lead to people panicking, and not implementing any of the suggestions or tools\nEverything in this course is incremental:\n\nYou will be able to implement some little bits without too much work\nYou can improve and add to this over time",
     "crumbs": [
       "Home",
-      "Version control with git",
-      "Version control intro slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "version_control/version_control_slides.html#what-is-version-control-2",
-    "href": "version_control/version_control_slides.html#what-is-version-control-2",
-    "title": "Version control",
-    "section": "What is version control?",
-    "text": "What is version control?\n\nWe’re going to use git, which is a strangely named version control software\nWe’ll use this to explain how version control works, and why it matters\nThere are lots of other ways to do version control, but git is very widely used\n\nIf version control was word processing, git would be Microsoft Word",
+    "objectID": "intro-presentation/intro.html#primm-method",
+    "href": "intro-presentation/intro.html#primm-method",
+    "title": "Research Software Engineering",
+    "section": "PRIMM method",
+    "text": "PRIMM method\nPRIMM is a pedagogical method specifically aimed at teaching text-based programming. While research into adult programming learners is very limited (especially in terms of demographics; many key studies that are cited have overwhelmingly homogenous test groups), the PRIMM method has a few key benefits:\n\nIt supports learners with different ability levels and who learn at different speeds;\nIt can be applied by learners even if the course materials are not specifically built with it in mind;\nIt can be applied to asynchronous learning materials (for example, if you are using these notes online on your own).",
     "crumbs": [
       "Home",
-      "Version control with git",
-      "Version control intro slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "version_control/version_control_slides.html#what-does-git-do",
-    "href": "version_control/version_control_slides.html#what-does-git-do",
-    "title": "Version control",
-    "section": "What does git do?",
-    "text": "What does git do?\n\ngit allows you to bundle up changes to various files, and give the group of changes a unique commit hash and an explanatory message.\ngit works on a project level, so you can make a bunch of changes to different files in a folder, and then commit all those changes with a descriptive message\nIt’s recorded that you made those changes, and there’s a unique commit hash that you can quote to point at the exact state of your folder when you added those changes.",
+    "objectID": "intro-presentation/intro.html#primm-method-1",
+    "href": "intro-presentation/intro.html#primm-method-1",
+    "title": "Research Software Engineering",
+    "section": "PRIMM method",
+    "text": "PRIMM method\n\nPRIMM\n\n\nThe P in PRIMM stands for predict:\nWhen you first see a command, script, or piece of code, before running it, predict what you think it will do. It’s ok to get this wrong: the important thing is to get into the habit of predicting! This helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.\n\nWhat do you think the code is going to do generally?\nWhat do you think the output in your terminal is going to look like?\n\n\n\nThe R in PRIMM stands for run:\n\nRun the code or program;\nHow does the output/effect compare to your prediction?\n\nWhat did you get right?\nWhat did you misinterpret?\n\nDo you understand what happened?\n\n\n\nThe I in PRIMM stands for investigate:\nLet’s dig a little deeper into the structure of code you’ve used.\n\nWhat options or arguments did you use, and what effect did they have?\nCan you find some documentation on the command you used?\n\nDoes the description match how you would describe the code?\n\nIf no, why does your understanding of it diverge?\n\nWhat other options or features are available?\n\n\n\n\nThe first M in PRIMM stands for modify:\n\nTry running the code with different options:\n\nChange only a small thing at a time;\nAlways predict what you think the output will be!\nCompare the actual output with your prediction;\nCompare your understanding to the available documentation.\n\n\nThis stage helps you to gradually increase the difficultly of the tasks you are doing!\n\n\nThe second M in PRIMM stands for make:\nThis stage is about making the code your own.\n\nAt this stage, you can try implementing snippets of code you’ve already learned, but to solve a new or different problem;\nAgain, use the previous stages when you are writing your code: predict what you think will happen, run the code and compare the output to your predictions, and investigate the structure of it, especially if it does not behave how you intended!",
     "crumbs": [
       "Home",
-      "Version control with git",
-      "Version control intro slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "version_control/version_control_slides.html#what-does-git-do-1",
-    "href": "version_control/version_control_slides.html#what-does-git-do-1",
-    "title": "Version control",
-    "section": "What does git do?",
-    "text": "What does git do?\n\n\nOld version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 x = [1, 2, 3, 4, 5]\n4 y = [3, 4, 5, 6, 7]\n5 plt.scatter(x, y)\n\n\nNew version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 import numpy as np\n4 x = [1, 2, 3, 4, 5]\n5 y = [3, 4, 5, 6, 7]\n6 plt.scatter(x, y)\n6 plt.plot(x, y)\n\nLine 3 added, line 6 removed, line 6 added.",
+    "objectID": "intro-presentation/intro.html#learning-computational-skills",
+    "href": "intro-presentation/intro.html#learning-computational-skills",
+    "title": "Research Software Engineering",
+    "section": "Learning computational skills",
+    "text": "Learning computational skills\nRead before you write - research has proven repeatedly the importance of reading and predicting the output of code as a method of learning, over just getting straight into it and writing code.\n\nNovice programmers need to acquire accuracy in tracing code before they can program independently\nTrying to write code first leads to frustration and confusion\n\nLearn in a way that suits you - if that is copying and pasting commands from the slides instead of trying to keep up with typing, that’s ok!",
     "crumbs": [
       "Home",
-      "Version control with git",
-      "Version control intro slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "managing-dependencies/conda-pres.html#what-is-conda",
-    "href": "managing-dependencies/conda-pres.html#what-is-conda",
-    "title": "The Art of conda",
-    "section": "What is conda?",
-    "text": "What is conda?\n\nConda is a widely used package management system\nThis allows you to isolate different Python “environments” from each other, allowing you to use different versions of libraries or modules for different projects.\nHowever, mismanagement of packages can lead to dependency hell with tangled environments and incompatible versions of different modules."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#dependency-hell",
-    "href": "managing-dependencies/conda-pres.html#dependency-hell",
-    "title": "The Art of conda",
-    "section": "Dependency hell",
-    "text": "Dependency hell\n\nPython dependencies can get very messy…"
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#installing-conda-fun-licensing-details",
-    "href": "managing-dependencies/conda-pres.html#installing-conda-fun-licensing-details",
-    "title": "The Art of conda",
-    "section": "Installing conda: fun licensing details",
-    "text": "Installing conda: fun licensing details\n\nIn order to use conda on your machine, I recommend you use the MiniForge installer, which by default loads packages from conda-forge.\n\nIf you are using Anaconda (provided by Anaconda.com), ensure you are not using the defaults channel to install packages as this falls under the recent Anaconda repository licensing changes.\n\nTl;dr: stick to open source to avoid licensing issues, by using a tool such as Miniforge which by default downloads packages from conda-forge and not proprietary channels."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#the-key-to-conda-the-.yml-file",
-    "href": "managing-dependencies/conda-pres.html#the-key-to-conda-the-.yml-file",
-    "title": "The Art of conda",
-    "section": "The key to conda: the .yml file",
-    "text": "The key to conda: the .yml file\nDespite the fact conda is very widely used, especially in research, science, and data science fields, people often neglect the real magic of the system: the environment.yml file. This file is the recipe or configuration for your environment.\n\nWho here regularly uses environment.yml files in their workflow?"
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#whats-yaml-or-yml",
-    "href": "managing-dependencies/conda-pres.html#whats-yaml-or-yml",
-    "title": "The Art of conda",
-    "section": "What’s Yaml or yml?",
-    "text": "What’s Yaml or yml?\nYAML is a human readable format for plain text files (usually with the file ending .yml), often used for configuration of other programs.\n\nYAML initially stood for “Yet Another Markup Language”, but now has the recursive acronym “YAML Ain’t Markup Language”, because reasons\n¯\\_(ツ)_/¯\n\nIt’s the format environment.yml files are written in."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#whats-in-a-yml-file",
-    "href": "managing-dependencies/conda-pres.html#whats-in-a-yml-file",
-    "title": "The Art of conda",
-    "section": "What’s in a yml file?",
-    "text": "What’s in a yml file?\nWhat does a .yml file look like?\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - pytest\n  - setuptools\n  - blackd\n  - isort\n  - numpy\n  - matplotlib\n  - pandas\nWe just need to create a plain text file called environment.yml or something else sensible, and list the packages we need!"
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#create-a-new-environment",
-    "href": "managing-dependencies/conda-pres.html#create-a-new-environment",
-    "title": "The Art of conda",
-    "section": "Create a new environment",
-    "text": "Create a new environment\nWe can then turn this into a conda environment:\n\nOpen up the terminal in the folder with our environment.yml file\nrun the following command:\n\nconda env create -f environment.yml\nYou’ll get a lot of output, as it finds the various packages online and goes about solving all your dependencies in the background."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#why-use-a-.yml-file",
-    "href": "managing-dependencies/conda-pres.html#why-use-a-.yml-file",
-    "title": "The Art of conda",
-    "section": "Why use a .yml file?",
-    "text": "Why use a .yml file?\nCan’t I just create a fresh environment from the command line like this?\nconda create -n ENV-NAME python=3.12 numpy\nAnd then activate it and add dependencies like this?\nconda install pytest\nYou absolutely can, but theres a few reasons why you shouldn’t."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#why-not",
-    "href": "managing-dependencies/conda-pres.html#why-not",
-    "title": "The Art of conda",
-    "section": "Why not?",
-    "text": "Why not?\n\nThings you install later (e.g. pytest on the last slide) will be pinned by the versions of libraries installed at an earlier stage (so the base python version and numpy), which can lead to dependency conflicts.\nYou can end up with a lot of crud and old unneeded libraries that you no longer used bloating your environment.\nYou don’t have a nice, tidy record of what you installed and when."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#so-how-do-we-add-things",
-    "href": "managing-dependencies/conda-pres.html#so-how-do-we-add-things",
-    "title": "The Art of conda",
-    "section": "So how do we add things?",
-    "text": "So how do we add things?\nIf you want to add a new package that you didn’t include in your original environment.yml file, or pin a package to a specific version, you can go and do so within the environment.yml.\n\nJust add any new packages to the list of dependencies, and pin libraries with the = notation as in the first example.\nOnce your environment.yml file is up to date, you can apply the changes to your conda environment:\n\n\nconda env update --file environment.yml --prune\n\n\n\nThe --prune argument here clears out old unused libraries and is key to keeping your .conda folder a reasonable size."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#why-does-this-work",
-    "href": "managing-dependencies/conda-pres.html#why-does-this-work",
-    "title": "The Art of conda",
-    "section": "Why does this work?",
-    "text": "Why does this work?\n\nRunning conda install package-name from within your environment can lead to dependency conflicts (say your env has an older version of numpy and you’ve tried to conda install another package that can’t support this)\nUpdating the environment from the .yml file allows the solver to work through the dependencies at the same time. There may still be conflicts, but many easily avoidable issues will disappear."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#myth-the-env.yml-is-too-prescriptive",
-    "href": "managing-dependencies/conda-pres.html#myth-the-env.yml-is-too-prescriptive",
-    "title": "The Art of conda",
-    "section": "Myth: the env.yml is too prescriptive",
-    "text": "Myth: the env.yml is too prescriptive\n\nYou may have struggled building a conda environment from a yml file before\nThis yml file may have had lots of pinned dependencies that don’t work on the system you are trying to install on\nThis leads people to think that environment files are too prescriptive/restrictive and not useful for sharing environments\nThis conda environment file may have been built with the conda env export command - let’s learn about it!"
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#exporting-a-conda-env",
-    "href": "managing-dependencies/conda-pres.html#exporting-a-conda-env",
-    "title": "The Art of conda",
-    "section": "Exporting a conda env",
-    "text": "Exporting a conda env\nSay you have a conda environment file similar to the one shown below, with very minimal pinned dependencies. For the sake of reproducibility, you want a better record of exactly what libraries you used, right?\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - pytest\n  - setuptools\n  - blackd\n  - isort\n  - numpy\n  - matplotlib\n  - pandas"
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#exporting-a-conda-env-1",
-    "href": "managing-dependencies/conda-pres.html#exporting-a-conda-env-1",
-    "title": "The Art of conda",
-    "section": "Exporting a conda env",
-    "text": "Exporting a conda env\nThis is where the export option comes in. From inside your active environment, simply run:\n\nconda env export &gt; env-record.yml\n\n\n\nThe command above will export an extremely detailed list of everything in your environment (including background dependencies and their exact version numbers) to the file env-record.yml.\nSometimes, you might find it appropriate to export this to a filename with the date, for example 2024-11-27-env-record.yml."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#env.yml-files-being-restrictive",
-    "href": "managing-dependencies/conda-pres.html#env.yml-files-being-restrictive",
-    "title": "The Art of conda",
-    "section": "env.yml files being restrictive",
-    "text": "env.yml files being restrictive\nThis is where the myth of the conda env.yml being prohibitively restrictive comes in:\n\npeople often try to use this exported file to build a replica of the same environment on a different machine\nhowever this exported file contains specific details of backends and builds that will likely not be transferrable across different computers.\n\nThis is why I prefer to export it into a file name like env-record instead of just environment: it makes it very obvious this is recording the state of the environment as opposed to building a recipe to rebuild it."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#exporting-conda-environments",
-    "href": "managing-dependencies/conda-pres.html#exporting-conda-environments",
-    "title": "The Art of conda",
-    "section": "Exporting conda environments",
-    "text": "Exporting conda environments\nThis exported environment file is mainly useful as a record for the sake of reproducibility, not for reusability.\nIf you produce results with your code that are being used in some form of research output (e.g. a paper), export your environment at the time when the results are being generated, so you have a record of the versions of different libraries you used.\n\nThis is why I said it is good to build and update your environment from your environment.yml file: that way you have a reusable recipe that you can share and use to rebuild your environment, but you can also use export to get a super detailed snapshot for any sets of results!"
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#more-exporting",
-    "href": "managing-dependencies/conda-pres.html#more-exporting",
-    "title": "The Art of conda",
-    "section": "More exporting",
-    "text": "More exporting\nIf you ignored all my advice about not building a haphazard environment incrementally with conda install, there is still hope: you can use the --from-history flag comes in to play:\n\nconda env export --from-history &gt; environment.yml # again, from inside the activated env\n\nThis will produce a clean conda environment file similar to the example we gave at the start of this post, listing only the packages directly explicitly installed (without background dependencies or build details).\nHowever, things will get messy if you start adding in pip dependencies…"
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#mixing-in-pip",
-    "href": "managing-dependencies/conda-pres.html#mixing-in-pip",
-    "title": "The Art of conda",
-    "section": "Mixing in pip",
-    "text": "Mixing in pip\nUsing a conda environment.yml makes working with pip and conda together less painful.\n\nYou will have heard (or experienced first hand) that once you install pip in a conda env, everything from that point on must be pip, or you will break the environment.\nThis is true, but you can get around this by adding your pip dependencies to your environment.yml file."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#mixing-in-pip-1",
-    "href": "managing-dependencies/conda-pres.html#mixing-in-pip-1",
-    "title": "The Art of conda",
-    "section": "Mixing in pip",
-    "text": "Mixing in pip\nJust add your pip dependencies to your environment file, then run conda env update --file environment.yml --prune as previously described:\nname: env-with-pip-dependencies\ndependencies:\n# Whatever packages you need for your project\n  - python=3.12\n  - numpy\n  - matplotlib\n  - pandas\n  - pip\n  - pip:\n    - black\n    - https://github.com/YOUR-USERNAME/YOUR-REPO-NAME/releases/download/YOUR-VERSION-NAME/PACKAGENAME-VERSION.tar.gz # you can even install your own packages that you host on GitHub\nYou can update this as described above."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#exporting-with-pip",
-    "href": "managing-dependencies/conda-pres.html#exporting-with-pip",
-    "title": "The Art of conda",
-    "section": "Exporting with pip",
-    "text": "Exporting with pip\nExporting the full record works the same if you have pip dependencies:\nconda env export &gt; env-record.yml\nHowever, --from-history will not include pip dependencies…"
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#exporting-with-pip---advanced",
-    "href": "managing-dependencies/conda-pres.html#exporting-with-pip---advanced",
-    "title": "The Art of conda",
-    "section": "Exporting with pip - advanced",
-    "text": "Exporting with pip - advanced\nHowever, --from-history will not include pip dependencies…\nIf you’ve followed our advice until now (and built your conda environment from a file), this won’t be an issue.\nBut if you ignored us or are trying to salvage old code, thankfully, there are a few different workarounds!\nThis is outside of the scope of the talk today, but the instructions for exporting are here:\nModified from this conversation on GitHub, this code snippet will export your conda and pip dependencies without version numbers (so that the environment.yml file can be used to build a new environment):\n# Extract installed pip packages\npip_packages=$(conda env export | grep -A9999 \".*- pip:\" | grep -v \"^prefix: \" | cut -f1 -d\"=\")\n\n# Export conda environment without builds, and append pip packages\nconda env export --from-history | grep -v \"^prefix: \" &gt; new-environment.yml\necho \"$pip_packages\" &gt;&gt; new-environment.yml\nBut remember: it is better to keep your environment.yml file current, and update your conda env from this file, as opposed to adding packages using conda install and then trying to export details to your environment file to track these changes."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#a-general-workflow",
-    "href": "managing-dependencies/conda-pres.html#a-general-workflow",
-    "title": "The Art of conda",
-    "section": "A general workflow",
-    "text": "A general workflow\n\nCreate your conda environment from an environment file, and update/add packages to your environment by using this file. You can keep this environment file version controlled with git alongside your code.\nExport your conda environment to a record file when you change it and produce results with it. You can keep this environment record file version controlled with git alongside your results."
-  },
-  {
-    "objectID": "managing-dependencies/conda-pres.html#reproducibility-vs-reusability",
-    "href": "managing-dependencies/conda-pres.html#reproducibility-vs-reusability",
-    "title": "The Art of conda",
-    "section": "Reproducibility vs reusability",
-    "text": "Reproducibility vs reusability\nRemember that for reusability, you want:\n\nAn easy-to install conda environment, that works across different computers.\nYou can share this with your code to make your work more open\n\nFor reproducibility, you need the code to be reusable, but also:\n\nYou want an exact record of the environment as it was when you produced your results.\n\nEnvironments should be treated as disposable and easily rebuildable, we can use version control and tests to make sure that’s true."
-  },
-  {
-    "objectID": "managing-dependencies/dep-pres.html#what-are-dependencies",
-    "href": "managing-dependencies/dep-pres.html#what-are-dependencies",
-    "title": "Managing Dependencies",
-    "section": "What are dependencies?",
-    "text": "What are dependencies?\nDependencies are the versions of various different modules, packages, or software that your research code depends on: all of your imports.\n\n\n\n\nDon’t be like Ruby and Avi! Record your dependencies.\n\nImage CC BY Candace Savonen, retrieved from Reproducibility in Cancer Informatics.",
+    "objectID": "intro-presentation/intro.html#this-is-an-introductory-workshop",
+    "href": "intro-presentation/intro.html#this-is-an-introductory-workshop",
+    "title": "Research Software Engineering",
+    "section": "This is an introductory workshop",
+    "text": "This is an introductory workshop\n\nIf you’re already familiar with the concepts that we’re sharing, it’s likely the sessions discussing those topics will be too basic for you!\nPlease feel free to work on other stuff while you’re here - put headphones on, and jump back in when we’re discussing a topic that’s relevant to you.",
     "crumbs": [
       "Home",
-      "Managing dependencies",
-      "Dependency slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "managing-dependencies/dep-pres.html#general-rules-for-dependencies",
-    "href": "managing-dependencies/dep-pres.html#general-rules-for-dependencies",
-    "title": "Managing Dependencies",
-    "section": "General Rules for Dependencies",
-    "text": "General Rules for Dependencies\nManaging dependencies is something many, many people find complicated and difficult. Let’s start with some key ideas to simplify things.\nNYU Libraries provide some straightforward guidance that is language agnostic:\n\nUse dependencies wisely and sparingly: don’t import dependencies you don’t actually use, and try to stick to libraries that have robust and stable releases.\nUse a package manager of some form: package management software, virtual environments and containers help to avoid conflicts and incompatibility errors between packages.\nRecord your dependencies in a metadata file: package managers will often do this automatically for you; this file should be both human and machine readable.",
+    "objectID": "intro-presentation/intro.html#how-this-workshop-is-formatted",
+    "href": "intro-presentation/intro.html#how-this-workshop-is-formatted",
+    "title": "Research Software Engineering",
+    "section": "How this workshop is formatted",
+    "text": "How this workshop is formatted\n\nThis workshop is broken up into a series of mini seminars about different topics\nThese seminars will introduce different topics and give you background information that’s often hard to pick up if you’ve learned to use them on your own\nPlease interrupt, ask questions, and discuss!",
     "crumbs": [
       "Home",
-      "Managing dependencies",
-      "Dependency slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "managing-dependencies/dep-pres.html#package-management-software",
-    "href": "managing-dependencies/dep-pres.html#package-management-software",
-    "title": "Managing Dependencies",
-    "section": "Package management software",
-    "text": "Package management software\nPackage management software usually:\n\n\nProvides a way for you to create an environment:\n\nA code project environment will contain a selection of relevant libraries, with specific versions.\nThis is kept separate from other project environments.\nThis allows you to use different versions of libraries for different projects.\n\nProvides a way for you to export your environment:\n\nThis allows you to specify the exact libraries and library versions that were used to generate a set of results.\nThis makes it easier for others to use your work and built on it, and reproduce your code environment.\nThis saves you having to manually record library versions that you are using.",
+    "objectID": "intro-presentation/intro.html#how-this-workshop-is-formatted-1",
+    "href": "intro-presentation/intro.html#how-this-workshop-is-formatted-1",
+    "title": "Research Software Engineering",
+    "section": "How this workshop is formatted",
+    "text": "How this workshop is formatted\nBut the main aim is to show you how to use all these different tools together…\n\nThis is often somethings that’s missing when we do an online tutorial on how to use git, or read about Python packaging\nMany tutorials and workflows online are tailored towards non-research applications and are difficult to apply to our work",
     "crumbs": [
       "Home",
-      "Managing dependencies",
-      "Dependency slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "managing-dependencies/dep-pres.html#how-do-you-pick",
-    "href": "managing-dependencies/dep-pres.html#how-do-you-pick",
-    "title": "Managing Dependencies",
-    "section": "How do you pick?",
-    "text": "How do you pick?\n1. License\n\nDoes the package manager have an open-source license?\n\n2. Community\n\nWhat solution does your research group use? Does your supervisor have suggestions?\nWhat option can you find support for?\nWhat do researchers in your field use?",
+    "objectID": "intro-presentation/intro.html#day-1",
+    "href": "intro-presentation/intro.html#day-1",
+    "title": "Research Software Engineering",
+    "section": "Day 1",
+    "text": "Day 1\n\nDay 1 is very focused on these short seminars, introducing different topics, that we will tailor to your group\nIn the morning, we’ll discuss some topics from the following:\n\nDependencies\nRepositories and version control\nTesting\n\nAfter lunch, we’ll discuss some more project-oriented topics like:\n\nTwo-directory structure for computational projects\nWorkflows for setting up new projects\nWays to salvage legacy code/old messy projects",
     "crumbs": [
       "Home",
-      "Managing dependencies",
-      "Dependency slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "managing-dependencies/dep-pres.html#where-to-next",
-    "href": "managing-dependencies/dep-pres.html#where-to-next",
-    "title": "Managing Dependencies",
-    "section": "Where to next?",
-    "text": "Where to next?\nIf you want some more background information and theory:\n\nReturn to the dependencies section of the course notes and keep reading.\n\nIf you want to learn by doing, get straight into it by following the instructions here:\n\nJump right in an start using conda by following this conda use blog post.",
+    "objectID": "intro-presentation/intro.html#homework",
+    "href": "intro-presentation/intro.html#homework",
+    "title": "Research Software Engineering",
+    "section": "Homework",
+    "text": "Homework\nBetween the two sessions, you’ll have a few tasks:\n\nDepending on your experience, you can brush up on some of the topics we covered\n\nIf you’re experienced, there are some extra exploratory things to try\n\nSetting up a local dev environment:\n\nYou can install and get the tools we used up and running on your local machine\n\nSetting up your mini-project for our second session",
     "crumbs": [
       "Home",
-      "Managing dependencies",
-      "Dependency slides"
+      "Introduction",
+      "Introduction Slides"
     ]
   },
   {
-    "objectID": "week-1-homework.html",
-    "href": "week-1-homework.html",
-    "title": "Homework",
-    "section": "",
-    "text": "Some content\n\n\n\n Back to top"
+    "objectID": "intro-presentation/intro.html#day-2",
+    "href": "intro-presentation/intro.html#day-2",
+    "title": "Research Software Engineering",
+    "section": "Day 2",
+    "text": "Day 2\nDay 2 is very hands-on and practical. Over the course of the past week, you’ll have come up with a very simple and small project idea\n\nIn small groups, we will work to:\n\nWrite the foundational code\n\nCreate documentation\nCreate tests\nPackage it\n\nCreate a “project” directory and apply our Package\nLook at how we can automate running our code with bash scripts",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "Introduction Slides"
+    ]
+  },
+  {
+    "objectID": "intro-presentation/intro.html#these-notes",
+    "href": "intro-presentation/intro.html#these-notes",
+    "title": "Research Software Engineering",
+    "section": "These notes",
+    "text": "These notes\n\nDuring the course, of course you can just ask me anything you want!\nDuring the week and a half between sessions, you can also use the comments section on these notes to look for help.\nQuestions for clarification will also help your fellow cohort!",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "Introduction Slides"
+    ]
   },
   {
     "objectID": "intro-to-linux-files/linux101.html#introduction-to-linux",
@@ -1464,255 +1320,224 @@
     ]
   },
   {
-    "objectID": "intro-presentation/intro.html#who-am-i",
-    "href": "intro-presentation/intro.html#who-am-i",
-    "title": "Research Software Engineering",
-    "section": "Who am I?",
-    "text": "Who am I?\n\n\nI’m a Research Software Engineer in Research Computing, IT Services\nI completed my PhD in 2024 in the Institute of Geophysics and Tectonics, School of Earth and Environment, University of Leeds\nI have made almost every mistake imaginable when it comes to writing code, managing dependencies, tracking changes, submitting HPC jobs…",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#what-is-conda",
+    "href": "managing-dependencies/conda-pres.html#what-is-conda",
+    "title": "The Art of conda",
+    "section": "What is conda?",
+    "text": "What is conda?\n\nConda is a widely used package management system\nThis allows you to isolate different Python “environments” from each other, allowing you to use different versions of libraries or modules for different projects.\nHowever, mismanagement of packages can lead to dependency hell with tangled environments and incompatible versions of different modules."
   },
   {
-    "objectID": "intro-presentation/intro.html#a-good-enough-approach",
-    "href": "intro-presentation/intro.html#a-good-enough-approach",
-    "title": "Research Software Engineering",
-    "section": "A “good enough” approach",
-    "text": "A “good enough” approach\n\nDocumentation, guidance, and courses often fall down by aiming for perfection\nThis can lead to people panicking, and not implementing any of the suggestions or tools\nEverything in this course is incremental:\n\nYou will be able to implement some little bits without too much work\nYou can improve and add to this over time",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#dependency-hell",
+    "href": "managing-dependencies/conda-pres.html#dependency-hell",
+    "title": "The Art of conda",
+    "section": "Dependency hell",
+    "text": "Dependency hell\n\nPython dependencies can get very messy…"
   },
   {
-    "objectID": "intro-presentation/intro.html#primm-method",
-    "href": "intro-presentation/intro.html#primm-method",
-    "title": "Research Software Engineering",
-    "section": "PRIMM method",
-    "text": "PRIMM method\nPRIMM is a pedagogical method specifically aimed at teaching text-based programming. While research into adult programming learners is very limited (especially in terms of demographics; many key studies that are cited have overwhelmingly homogenous test groups), the PRIMM method has a few key benefits:\n\nIt supports learners with different ability levels and who learn at different speeds;\nIt can be applied by learners even if the course materials are not specifically built with it in mind;\nIt can be applied to asynchronous learning materials (for example, if you are using these notes online on your own).",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#installing-conda-fun-licensing-details",
+    "href": "managing-dependencies/conda-pres.html#installing-conda-fun-licensing-details",
+    "title": "The Art of conda",
+    "section": "Installing conda: fun licensing details",
+    "text": "Installing conda: fun licensing details\n\nIn order to use conda on your machine, I recommend you use the MiniForge installer, which by default loads packages from conda-forge.\n\nIf you are using Anaconda (provided by Anaconda.com), ensure you are not using the defaults channel to install packages as this falls under the recent Anaconda repository licensing changes.\n\nTl;dr: stick to open source to avoid licensing issues, by using a tool such as Miniforge which by default downloads packages from conda-forge and not proprietary channels."
   },
   {
-    "objectID": "intro-presentation/intro.html#primm-method-1",
-    "href": "intro-presentation/intro.html#primm-method-1",
-    "title": "Research Software Engineering",
-    "section": "PRIMM method",
-    "text": "PRIMM method\n\nPRIMM\n\n\nThe P in PRIMM stands for predict:\nWhen you first see a command, script, or piece of code, before running it, predict what you think it will do. It’s ok to get this wrong: the important thing is to get into the habit of predicting! This helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.\n\nWhat do you think the code is going to do generally?\nWhat do you think the output in your terminal is going to look like?\n\n\n\nThe R in PRIMM stands for run:\n\nRun the code or program;\nHow does the output/effect compare to your prediction?\n\nWhat did you get right?\nWhat did you misinterpret?\n\nDo you understand what happened?\n\n\n\nThe I in PRIMM stands for investigate:\nLet’s dig a little deeper into the structure of code you’ve used.\n\nWhat options or arguments did you use, and what effect did they have?\nCan you find some documentation on the command you used?\n\nDoes the description match how you would describe the code?\n\nIf no, why does your understanding of it diverge?\n\nWhat other options or features are available?\n\n\n\n\nThe first M in PRIMM stands for modify:\n\nTry running the code with different options:\n\nChange only a small thing at a time;\nAlways predict what you think the output will be!\nCompare the actual output with your prediction;\nCompare your understanding to the available documentation.\n\n\nThis stage helps you to gradually increase the difficultly of the tasks you are doing!\n\n\nThe second M in PRIMM stands for make:\nThis stage is about making the code your own.\n\nAt this stage, you can try implementing snippets of code you’ve already learned, but to solve a new or different problem;\nAgain, use the previous stages when you are writing your code: predict what you think will happen, run the code and compare the output to your predictions, and investigate the structure of it, especially if it does not behave how you intended!",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#the-key-to-conda-the-.yml-file",
+    "href": "managing-dependencies/conda-pres.html#the-key-to-conda-the-.yml-file",
+    "title": "The Art of conda",
+    "section": "The key to conda: the .yml file",
+    "text": "The key to conda: the .yml file\nDespite the fact conda is very widely used, especially in research, science, and data science fields, people often neglect the real magic of the system: the environment.yml file. This file is the recipe or configuration for your environment.\n\nWho here regularly uses environment.yml files in their workflow?"
   },
   {
-    "objectID": "intro-presentation/intro.html#learning-computational-skills",
-    "href": "intro-presentation/intro.html#learning-computational-skills",
-    "title": "Research Software Engineering",
-    "section": "Learning computational skills",
-    "text": "Learning computational skills\nRead before you write - research has proven repeatedly the importance of reading and predicting the output of code as a method of learning, over just getting straight into it and writing code.\n\nNovice programmers need to acquire accuracy in tracing code before they can program independently\nTrying to write code first leads to frustration and confusion\n\nLearn in a way that suits you - if that is copying and pasting commands from the slides instead of trying to keep up with typing, that’s ok!",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#whats-yaml-or-yml",
+    "href": "managing-dependencies/conda-pres.html#whats-yaml-or-yml",
+    "title": "The Art of conda",
+    "section": "What’s Yaml or yml?",
+    "text": "What’s Yaml or yml?\nYAML is a human readable format for plain text files (usually with the file ending .yml), often used for configuration of other programs.\n\nYAML initially stood for “Yet Another Markup Language”, but now has the recursive acronym “YAML Ain’t Markup Language”, because reasons\n¯\\_(ツ)_/¯\n\nIt’s the format environment.yml files are written in."
   },
   {
-    "objectID": "intro-presentation/intro.html#this-is-an-introductory-workshop",
-    "href": "intro-presentation/intro.html#this-is-an-introductory-workshop",
-    "title": "Research Software Engineering",
-    "section": "This is an introductory workshop",
-    "text": "This is an introductory workshop\n\nIf you’re already familiar with the concepts that we’re sharing, it’s likely the sessions discussing those topics will be too basic for you!\nPlease feel free to work on other stuff while you’re here - put headphones on, and jump back in when we’re discussing a topic that’s relevant to you.",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#whats-in-a-yml-file",
+    "href": "managing-dependencies/conda-pres.html#whats-in-a-yml-file",
+    "title": "The Art of conda",
+    "section": "What’s in a yml file?",
+    "text": "What’s in a yml file?\nWhat does a .yml file look like?\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - pytest\n  - setuptools\n  - blackd\n  - isort\n  - numpy\n  - matplotlib\n  - pandas\nWe just need to create a plain text file called environment.yml or something else sensible, and list the packages we need!"
   },
   {
-    "objectID": "intro-presentation/intro.html#how-this-workshop-is-formatted",
-    "href": "intro-presentation/intro.html#how-this-workshop-is-formatted",
-    "title": "Research Software Engineering",
-    "section": "How this workshop is formatted",
-    "text": "How this workshop is formatted\n\nThis workshop is broken up into a series of mini seminars about different topics\nThese seminars will introduce different topics and give you background information that’s often hard to pick up if you’ve learned to use them on your own\nPlease interrupt, ask questions, and discuss!",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#create-a-new-environment",
+    "href": "managing-dependencies/conda-pres.html#create-a-new-environment",
+    "title": "The Art of conda",
+    "section": "Create a new environment",
+    "text": "Create a new environment\nWe can then turn this into a conda environment:\n\nOpen up the terminal in the folder with our environment.yml file\nrun the following command:\n\nconda env create -f environment.yml\nYou’ll get a lot of output, as it finds the various packages online and goes about solving all your dependencies in the background."
   },
   {
-    "objectID": "intro-presentation/intro.html#how-this-workshop-is-formatted-1",
-    "href": "intro-presentation/intro.html#how-this-workshop-is-formatted-1",
-    "title": "Research Software Engineering",
-    "section": "How this workshop is formatted",
-    "text": "How this workshop is formatted\nBut the main aim is to show you how to use all these different tools together…\n\nThis is often somethings that’s missing when we do an online tutorial on how to use git, or read about Python packaging\nMany tutorials and workflows online are tailored towards non-research applications and are difficult to apply to our work",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#why-use-a-.yml-file",
+    "href": "managing-dependencies/conda-pres.html#why-use-a-.yml-file",
+    "title": "The Art of conda",
+    "section": "Why use a .yml file?",
+    "text": "Why use a .yml file?\nCan’t I just create a fresh environment from the command line like this?\nconda create -n ENV-NAME python=3.12 numpy\nAnd then activate it and add dependencies like this?\nconda install pytest\nYou absolutely can, but theres a few reasons why you shouldn’t."
   },
   {
-    "objectID": "intro-presentation/intro.html#day-1",
-    "href": "intro-presentation/intro.html#day-1",
-    "title": "Research Software Engineering",
-    "section": "Day 1",
-    "text": "Day 1\n\nDay 1 is very focused on these short seminars, introducing different topics, that we will tailor to your group\nIn the morning, we’ll discuss some topics from the following:\n\nDependencies\nRepositories and version control\nTesting\n\nAfter lunch, we’ll discuss some more project-oriented topics like:\n\nTwo-directory structure for computational projects\nWorkflows for setting up new projects\nWays to salvage legacy code/old messy projects",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#why-not",
+    "href": "managing-dependencies/conda-pres.html#why-not",
+    "title": "The Art of conda",
+    "section": "Why not?",
+    "text": "Why not?\n\nThings you install later (e.g. pytest on the last slide) will be pinned by the versions of libraries installed at an earlier stage (so the base python version and numpy), which can lead to dependency conflicts.\nYou can end up with a lot of crud and old unneeded libraries that you no longer used bloating your environment.\nYou don’t have a nice, tidy record of what you installed and when."
   },
   {
-    "objectID": "intro-presentation/intro.html#homework",
-    "href": "intro-presentation/intro.html#homework",
-    "title": "Research Software Engineering",
-    "section": "Homework",
-    "text": "Homework\nBetween the two sessions, you’ll have a few tasks:\n\nDepending on your experience, you can brush up on some of the topics we covered\n\nIf you’re experienced, there are some extra exploratory things to try\n\nSetting up a local dev environment:\n\nYou can install and get the tools we used up and running on your local machine\n\nSetting up your mini-project for our second session",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#so-how-do-we-add-things",
+    "href": "managing-dependencies/conda-pres.html#so-how-do-we-add-things",
+    "title": "The Art of conda",
+    "section": "So how do we add things?",
+    "text": "So how do we add things?\nIf you want to add a new package that you didn’t include in your original environment.yml file, or pin a package to a specific version, you can go and do so within the environment.yml.\n\nJust add any new packages to the list of dependencies, and pin libraries with the = notation as in the first example.\nOnce your environment.yml file is up to date, you can apply the changes to your conda environment:\n\n\nconda env update --file environment.yml --prune\n\n\n\nThe --prune argument here clears out old unused libraries and is key to keeping your .conda folder a reasonable size."
   },
   {
-    "objectID": "intro-presentation/intro.html#day-2",
-    "href": "intro-presentation/intro.html#day-2",
-    "title": "Research Software Engineering",
-    "section": "Day 2",
-    "text": "Day 2\nDay 2 is very hands-on and practical. Over the course of the past week, you’ll have come up with a very simple and small project idea\n\nIn small groups, we will work to:\n\nWrite the foundational code\n\nCreate documentation\nCreate tests\nPackage it\n\nCreate a “project” directory and apply our Package\nLook at how we can automate running our code with bash scripts",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#why-does-this-work",
+    "href": "managing-dependencies/conda-pres.html#why-does-this-work",
+    "title": "The Art of conda",
+    "section": "Why does this work?",
+    "text": "Why does this work?\n\nRunning conda install package-name from within your environment can lead to dependency conflicts (say your env has an older version of numpy and you’ve tried to conda install another package that can’t support this)\nUpdating the environment from the .yml file allows the solver to work through the dependencies at the same time. There may still be conflicts, but many easily avoidable issues will disappear."
   },
   {
-    "objectID": "intro-presentation/intro.html#these-notes",
-    "href": "intro-presentation/intro.html#these-notes",
-    "title": "Research Software Engineering",
-    "section": "These notes",
-    "text": "These notes\n\nDuring the course, of course you can just ask me anything you want!\nDuring the week and a half between sessions, you can also use the comments section on these notes to look for help.\nQuestions for clarification will also help your fellow cohort!",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Introduction Slides"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#myth-the-env.yml-is-too-prescriptive",
+    "href": "managing-dependencies/conda-pres.html#myth-the-env.yml-is-too-prescriptive",
+    "title": "The Art of conda",
+    "section": "Myth: the env.yml is too prescriptive",
+    "text": "Myth: the env.yml is too prescriptive\n\nYou may have struggled building a conda environment from a yml file before\nThis yml file may have had lots of pinned dependencies that don’t work on the system you are trying to install on\nThis leads people to think that environment files are too prescriptive/restrictive and not useful for sharing environments\nThis conda environment file may have been built with the conda env export command - let’s learn about it!"
   },
   {
-    "objectID": "intro-to-linux-files/intro-to-linux-page.html",
-    "href": "intro-to-linux-files/intro-to-linux-page.html",
-    "title": "Linux 101",
-    "section": "",
-    "text": "This is a modified version of the course presentation for HPC0: Introduction to Linux for HPC, if you’re very unfamiliar with the material shown here, there’s some additional homework for you between courses.\nYou can follow along with the presentation notes here:\nLaunch fullscreen presentation ⤢\nLaunch your virtual machine to test out these notes here:\nLaunch codespaces virtual machine ⇗",
-    "crumbs": [
-      "Home",
-      "Basic Linux",
-      "Intro to Linux"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#exporting-a-conda-env",
+    "href": "managing-dependencies/conda-pres.html#exporting-a-conda-env",
+    "title": "The Art of conda",
+    "section": "Exporting a conda env",
+    "text": "Exporting a conda env\nSay you have a conda environment file similar to the one shown below, with very minimal pinned dependencies. For the sake of reproducibility, you want a better record of exactly what libraries you used, right?\nname: my-env-name\n\ndependencies:\n  - python=3.12\n  - pytest\n  - setuptools\n  - blackd\n  - isort\n  - numpy\n  - matplotlib\n  - pandas"
   },
   {
-    "objectID": "intro-to-linux-files/intro-to-linux-page.html#frequently-used-commands-cheat-sheet",
-    "href": "intro-to-linux-files/intro-to-linux-page.html#frequently-used-commands-cheat-sheet",
-    "title": "Linux 101",
-    "section": "Frequently used commands: cheat sheet",
-    "text": "Frequently used commands: cheat sheet\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\ncd\nChange directory to home\n\n\ncd dir-name\nChange directory to dir-name\n\n\npwd\nPrint the current working directory - where am I?\n\n\nname --help\nLoad the manual for name - on Codespaces\n\n\nman name\nLoad the manual for name - on Aire/ARC\n\n\nls\nList the contents of a directory\n\n\ncat file-name\nPrint out the contents of a file called file-name\n\n\nmkdir dir-name\nMake a new directory called dir-name\n\n\ntouch file-name\nMake a new file/update the last-edited date of a file called file-name\n\n\n\nSome more cd commands:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\ncd ..\nGo up a level to the parent directory\n\n\ncd -\nGo back to the previous directory\n\n\ncd ~/dir-name\nGo to dir-name, a directory in the home directory\n\n\n\nSome more ls commands:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nls -F\nList the contents of a dir, with symbols for content type\n\n\nls -a\nList all contents, including hidden files and directories\n\n\nls -l\nList contents, including permissions, the owner and their “group”, and when the content was edited\n\n\n\nCommands for working with files and directories:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\ncp\n\n\n\nmv\n\n\n\nrm\n\n\n\nmkdir -p dir-name\nMake a new directory call dir-name if it doesn’t already exist",
-    "crumbs": [
-      "Home",
-      "Basic Linux",
-      "Intro to Linux"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#exporting-a-conda-env-1",
+    "href": "managing-dependencies/conda-pres.html#exporting-a-conda-env-1",
+    "title": "The Art of conda",
+    "section": "Exporting a conda env",
+    "text": "Exporting a conda env\nThis is where the export option comes in. From inside your active environment, simply run:\n\nconda env export &gt; env-record.yml\n\n\n\nThe command above will export an extremely detailed list of everything in your environment (including background dependencies and their exact version numbers) to the file env-record.yml.\nSometimes, you might find it appropriate to export this to a filename with the date, for example 2024-11-27-env-record.yml."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "RSE: How to",
-    "section": "",
-    "text": "These module notes aim to provide you with a friendly introduction to Research Software Engineering (RSE) or Research Software Development. This is an evolution of the course notes Sustainable Software Development (Murphy Quinlan 2024), intended to be more flexible and not reliant on a server.\nThis course consists of a series of different topics and notes, usually including a brief presentation and some exercises for you to follow along with. Where relevant, I’ve cited various articles, and have usually linked to a variety of different resources.",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Course page"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#env.yml-files-being-restrictive",
+    "href": "managing-dependencies/conda-pres.html#env.yml-files-being-restrictive",
+    "title": "The Art of conda",
+    "section": "env.yml files being restrictive",
+    "text": "env.yml files being restrictive\nThis is where the myth of the conda env.yml being prohibitively restrictive comes in:\n\npeople often try to use this exported file to build a replica of the same environment on a different machine\nhowever this exported file contains specific details of backends and builds that will likely not be transferrable across different computers.\n\nThis is why I prefer to export it into a file name like env-record instead of just environment: it makes it very obvious this is recording the state of the environment as opposed to building a recipe to rebuild it."
   },
   {
-    "objectID": "index.html#why-do-software-engineering-skills-matter-to-researchers",
-    "href": "index.html#why-do-software-engineering-skills-matter-to-researchers",
-    "title": "RSE: How to",
-    "section": "Why do software engineering skills matter to researchers?",
-    "text": "Why do software engineering skills matter to researchers?\nResearch computing competency and specifically programming skills are becoming ever more important in our data-driven world: Jacobs et al. (2016) argues that “we are rapidly approaching a point where innovations [in research] will primarily come from those who are able to translate an idea into an algorithm, and then into computer code.”\nResearch software engineering skills are the lab tools and competencies of the computational research world; much like practical lab safety training, researchers often pick up bad habits (ask me about my fear of HF acid). Also similarly to lab processes, procedures, and best practises, software engineering is awash with bizarre jargon and is very difficult to navigate without the support of a jaded old PhD student who has made every mistake imaginable (hello, it’s me, I escaped my PhD over a year ago now).\nThis course does not provide the holy grail, the singular correct way of doing things; instead, it should hopefully make the process of writing good, robust, reproducible code a little bit more straighforward.",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Course page"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#exporting-conda-environments",
+    "href": "managing-dependencies/conda-pres.html#exporting-conda-environments",
+    "title": "The Art of conda",
+    "section": "Exporting conda environments",
+    "text": "Exporting conda environments\nThis exported environment file is mainly useful as a record for the sake of reproducibility, not for reusability.\nIf you produce results with your code that are being used in some form of research output (e.g. a paper), export your environment at the time when the results are being generated, so you have a record of the versions of different libraries you used.\n\nThis is why I said it is good to build and update your environment from your environment.yml file: that way you have a reusable recipe that you can share and use to rebuild your environment, but you can also use export to get a super detailed snapshot for any sets of results!"
   },
   {
-    "objectID": "index.html#current-course",
-    "href": "index.html#current-course",
-    "title": "RSE: How to",
-    "section": "Current course",
-    "text": "Current course\nThe most recent/current iteration of this course is:\nResearch Software Engineering: SOEE5261M\nNote that the order of delivery/course contents may vary depending on pre-course surveys etc.",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Course page"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#more-exporting",
+    "href": "managing-dependencies/conda-pres.html#more-exporting",
+    "title": "The Art of conda",
+    "section": "More exporting",
+    "text": "More exporting\nIf you ignored all my advice about not building a haphazard environment incrementally with conda install, there is still hope: you can use the --from-history flag comes in to play:\n\nconda env export --from-history &gt; environment.yml # again, from inside the activated env\n\nThis will produce a clean conda environment file similar to the example we gave at the start of this post, listing only the packages directly explicitly installed (without background dependencies or build details).\nHowever, things will get messy if you start adding in pip dependencies…"
   },
   {
-    "objectID": "index.html#how-to-use-this-resource",
-    "href": "index.html#how-to-use-this-resource",
-    "title": "RSE: How to",
-    "section": "How to use this resource",
-    "text": "How to use this resource\nThere’s a lot of materal here to absorb, so here are some guidelines to help you make the most of it. This material is also covered in the presentation linked below.\nLaunch fullscreen presentation ⤢ \n\n1. Use the PRIMM method where possible\nThe PRIMM method is a method to specifically learn a programming language (Sentance, Waite, and Kallia 2019), but is generally useful for learning computational commands etc. It’s helpful for you as a learner to understand the PRIMM structure so you can apply it while working through this course. Not every step will be relevant or used at every stage of the course!\n\nWhat’s PRIMM?PRIMM\n\n\nPRIMM is a pedagogical method specifically aimed at teaching text-based programming. While research into adult programming learners is very limited (especially in terms of demographics; many key studies that are cited have overwhelmingly homogenous test groups), the PRIMM method has a few key benefits:\n\nIt supports learners with different ability levels and who learn at different speeds;\nIt can be applied by learners even if the course materials are not specifically built with it in mind;\nIt can be applied to asynchronous learning materials (for example, if you are using these notes online on your own).\n\n\n\nThe P in PRIMM stands for predict:\nWhen you first see a command, script, or piece of code, before running it, predict what you think it will do. It’s ok to get this wrong: the important thing is to get into the habit of predicting! This helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.\n\nWhat do you think the code is going to do generally?\nWhat do you think the output in your terminal is going to look like?\n\n\n\nThe R in PRIMM stands for run:\n\nRun the code or program;\nHow does the output/effect compare to your prediction?\n\nWhat did you get right?\nWhat did you misinterpret?\n\nDo you understand what happened?\n\n\n\nThe I in PRIMM stands for investigate:\nLet’s dig a little deeper into the structure of code you’ve used.\n\nWhat options or arguments did you use, and what effect did they have?\nCan you find some documentation on the command you used?\n\nDoes the description match how you would describe the code?\n\nIf no, why does your understanding of it diverge?\n\nWhat other options or features are available?\n\n\n\n\nThe first M in PRIMM stands for modify:\n\nTry running the code with different options:\n\nChange only a small thing at a time;\nAlways predict what you think the output will be!\nCompare the actual output with your prediction;\nCompare your understanding to the available documentation.\n\n\nThis stage helps you to gradually increase the difficultly of the tasks you are doing!\n\n\nThe second M in PRIMM stands for make:\nThis stage is about making the code your own.\n\nAt this stage, you can try implementing snippets of code you’ve already learned, but to solve a new or different problem;\nAgain, use the previous stages when you are writing your code: predict what you think will happen, run the code and compare the output to your predictions, and investigate the structure of it, especially if it does not behave how you intended!\n\n\n\n\n\n\n2. Kick back, relax, and do something else when you know something\nToo frequently, I have attended broad-level, apparently introductory courses that have catered to the fastest in the class.\nThe aim of this course is to demystify aspects of research software engineering, like dependency management, version control, and project directory structure. These topics are basic skills needed for pursuing research in the computational field. Certain demographics are less likely to learn these skills in an informal setting, meaning that classes like this are their main access to these topics.\nI am interested in helping the students who do not already know everything about these topics, and will not be pacing the course for the fastest in the group who have pre-existing knowledge. With that said, I know there is nothing more boring than sitting through a class where you already know all the material - please feel free to use this time to do extra reading, work on projects, do various administrative work; stick on headphones if you like, and join back in when something relevant comes up.\n\n\n3. Learn in a way that suits you\nRead before you write - research has proven repeatedly the importance of reading and predicting the output of code as a method of learning, over just getting straight into it and writing code.\n\nNovice programmers need to acquire accuracy in tracing code before they can program independently\nTrying to write code first leads to frustration and confusion\n\nHowever, with that said learn in a way that suits you - if that is copying and pasting commands from the slides instead of trying to keep up with typing, that’s ok! Also, if that means taking handwritten notes and not typing, that’s also fine!\nPlease feel free to:\n\nGet up and stretch when you need, leave for breaks, and stretch your eyes by looking away from the screen;\nWear headphones for background music if it helps you focus;\nKick off your shoes and sit comfortably;\nDo whatever else helps you learn!",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "Course page"
-    ]
+    "objectID": "managing-dependencies/conda-pres.html#mixing-in-pip",
+    "href": "managing-dependencies/conda-pres.html#mixing-in-pip",
+    "title": "The Art of conda",
+    "section": "Mixing in pip",
+    "text": "Mixing in pip\nUsing a conda environment.yml makes working with pip and conda together less painful.\n\nYou will have heard (or experienced first hand) that once you install pip in a conda env, everything from that point on must be pip, or you will break the environment.\nThis is true, but you can get around this by adding your pip dependencies to your environment.yml file."
   },
   {
-    "objectID": "managing-dependencies/conda-skills.html",
-    "href": "managing-dependencies/conda-skills.html",
-    "title": "conda skills",
-    "section": "",
-    "text": "Conda is a widely used package management system which allows you to isolate different Python “environments” from each other, allowing you to use different versions of libraries or modules for different projects. However, mismanagement of packages can lead to dependency hell with tangled environments and incompatible versions of different modules.\nThis presentation aims to provide you with a workflow for using conda that ensures:\n\nYou can rebuild your environment on a different computer/platform without problem\nThat you can record exact dependencies for the sake of reproducibility\nThat you can update your environment without it breaking (even if you have pip dependencies too!)\nYou don’t get tangled up in licensing issues.\n\nTo read the contents of this presentation in article format, please see my blog post on using conda;\nLaunch fullscreen presentation ⤢\n\n\n\n Back to topCitationBibTeX citation:@online{murphy_quinlan2025,\n  author = {Murphy Quinlan, Maeve},\n  title = {Conda Skills},\n  date = {2025-02-18},\n  url = {https://murphyqm.github.io/research-software-dev/managing-dependencies/conda-skills.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nMurphy Quinlan, Maeve. 2025. “Conda Skills.” February 18,\n2025. https://murphyqm.github.io/research-software-dev/managing-dependencies/conda-skills.html.",
+    "objectID": "managing-dependencies/conda-pres.html#mixing-in-pip-1",
+    "href": "managing-dependencies/conda-pres.html#mixing-in-pip-1",
+    "title": "The Art of conda",
+    "section": "Mixing in pip",
+    "text": "Mixing in pip\nJust add your pip dependencies to your environment file, then run conda env update --file environment.yml --prune as previously described:\nname: env-with-pip-dependencies\ndependencies:\n# Whatever packages you need for your project\n  - python=3.12\n  - numpy\n  - matplotlib\n  - pandas\n  - pip\n  - pip:\n    - black\n    - https://github.com/YOUR-USERNAME/YOUR-REPO-NAME/releases/download/YOUR-VERSION-NAME/PACKAGENAME-VERSION.tar.gz # you can even install your own packages that you host on GitHub\nYou can update this as described above."
+  },
+  {
+    "objectID": "managing-dependencies/conda-pres.html#exporting-with-pip",
+    "href": "managing-dependencies/conda-pres.html#exporting-with-pip",
+    "title": "The Art of conda",
+    "section": "Exporting with pip",
+    "text": "Exporting with pip\nExporting the full record works the same if you have pip dependencies:\nconda env export &gt; env-record.yml\nHowever, --from-history will not include pip dependencies…"
+  },
+  {
+    "objectID": "managing-dependencies/conda-pres.html#exporting-with-pip---advanced",
+    "href": "managing-dependencies/conda-pres.html#exporting-with-pip---advanced",
+    "title": "The Art of conda",
+    "section": "Exporting with pip - advanced",
+    "text": "Exporting with pip - advanced\nHowever, --from-history will not include pip dependencies…\nIf you’ve followed our advice until now (and built your conda environment from a file), this won’t be an issue.\nBut if you ignored us or are trying to salvage old code, thankfully, there are a few different workarounds!\nThis is outside of the scope of the talk today, but the instructions for exporting are here:\nModified from this conversation on GitHub, this code snippet will export your conda and pip dependencies without version numbers (so that the environment.yml file can be used to build a new environment):\n# Extract installed pip packages\npip_packages=$(conda env export | grep -A9999 \".*- pip:\" | grep -v \"^prefix: \" | cut -f1 -d\"=\")\n\n# Export conda environment without builds, and append pip packages\nconda env export --from-history | grep -v \"^prefix: \" &gt; new-environment.yml\necho \"$pip_packages\" &gt;&gt; new-environment.yml\nBut remember: it is better to keep your environment.yml file current, and update your conda env from this file, as opposed to adding packages using conda install and then trying to export details to your environment file to track these changes."
+  },
+  {
+    "objectID": "managing-dependencies/conda-pres.html#a-general-workflow",
+    "href": "managing-dependencies/conda-pres.html#a-general-workflow",
+    "title": "The Art of conda",
+    "section": "A general workflow",
+    "text": "A general workflow\n\nCreate your conda environment from an environment file, and update/add packages to your environment by using this file. You can keep this environment file version controlled with git alongside your code.\nExport your conda environment to a record file when you change it and produce results with it. You can keep this environment record file version controlled with git alongside your results."
+  },
+  {
+    "objectID": "managing-dependencies/conda-pres.html#reproducibility-vs-reusability",
+    "href": "managing-dependencies/conda-pres.html#reproducibility-vs-reusability",
+    "title": "The Art of conda",
+    "section": "Reproducibility vs reusability",
+    "text": "Reproducibility vs reusability\nRemember that for reusability, you want:\n\nAn easy-to install conda environment, that works across different computers.\nYou can share this with your code to make your work more open\n\nFor reproducibility, you need the code to be reusable, but also:\n\nYou want an exact record of the environment as it was when you produced your results.\n\nEnvironments should be treated as disposable and easily rebuildable, we can use version control and tests to make sure that’s true."
+  },
+  {
+    "objectID": "managing-dependencies/dep-pres.html#what-are-dependencies",
+    "href": "managing-dependencies/dep-pres.html#what-are-dependencies",
+    "title": "Managing Dependencies",
+    "section": "What are dependencies?",
+    "text": "What are dependencies?\nDependencies are the versions of various different modules, packages, or software that your research code depends on: all of your imports.\n\n\n\n\nDon’t be like Ruby and Avi! Record your dependencies.\n\nImage CC BY Candace Savonen, retrieved from Reproducibility in Cancer Informatics.",
     "crumbs": [
       "Home",
       "Managing dependencies",
-      "Conda skills"
+      "Dependency slides"
     ]
   },
   {
-    "objectID": "managing-dependencies/dependencies-intro.html",
-    "href": "managing-dependencies/dependencies-intro.html",
-    "title": "Dependencies 101",
-    "section": "",
-    "text": "Dependencies are the versions of different packages/modules that your code depends on, for example the version of Python you are using, and any libraries you have to import, like matplotlib, scipy, tensorflow etc.\nDependencies are an important thing to keep track of when building scientific code. How many different external libraries does your code depend on? What versions of these libraries does it need? How do you install and update these different libraries?\nLaunch fullscreen presentation ⤢",
+    "objectID": "managing-dependencies/dep-pres.html#general-rules-for-dependencies",
+    "href": "managing-dependencies/dep-pres.html#general-rules-for-dependencies",
+    "title": "Managing Dependencies",
+    "section": "General Rules for Dependencies",
+    "text": "General Rules for Dependencies\nManaging dependencies is something many, many people find complicated and difficult. Let’s start with some key ideas to simplify things.\nNYU Libraries provide some straightforward guidance that is language agnostic:\n\nUse dependencies wisely and sparingly: don’t import dependencies you don’t actually use, and try to stick to libraries that have robust and stable releases.\nUse a package manager of some form: package management software, virtual environments and containers help to avoid conflicts and incompatibility errors between packages.\nRecord your dependencies in a metadata file: package managers will often do this automatically for you; this file should be both human and machine readable.",
     "crumbs": [
       "Home",
       "Managing dependencies",
-      "Basic dependencies in Python"
+      "Dependency slides"
     ]
   },
   {
-    "objectID": "managing-dependencies/dependencies-intro.html#package-management-for-python",
-    "href": "managing-dependencies/dependencies-intro.html#package-management-for-python",
-    "title": "Dependencies 101",
-    "section": "Package management for Python",
-    "text": "Package management for Python\nIn Python, there are lots of different ways to install and manage packages and dependencies. These different tools generally involve using virtual environments in order to keep the dependencies for different projects separate and tidy. Some package installation and management tools include:\n\nConda/Mamba\n\nYou can install conda with Miniforge\n\npip and Pipenv\npixi\nPoetry\nuv\n\nYou can read more about Python package management tool recommendations here. The package management tool you use will vary depending on whether you want to build your code into a package itself, or are relying primarily on external libraries. Some of these package managers include entire workflows for building and publishing Python packages, while others focus on organising pre-existing packages.\n\nPackage management for other coding languages\nNote that I do not have as extensive experience managing projects, dependencies and packages in the following languages so please proceed with caution.\nPackage management in R\nconda for R: you can install conda via Miniforge as linked above, and then install R packages through this following these instructions for R with conda.\nrenv: the reproducible environment package for R has some very nice introductory documentation.\nPackage management in Julia\nPkg: Pkg is Julia’s built-in package manager.\n\nIn research, a lot of people rely on conda: you can read more about perfecting your conda environment in this blog post.",
+    "objectID": "managing-dependencies/dep-pres.html#package-management-software",
+    "href": "managing-dependencies/dep-pres.html#package-management-software",
+    "title": "Managing Dependencies",
+    "section": "Package management software",
+    "text": "Package management software\nPackage management software usually:\n\n\nProvides a way for you to create an environment:\n\nA code project environment will contain a selection of relevant libraries, with specific versions.\nThis is kept separate from other project environments.\nThis allows you to use different versions of libraries for different projects.\n\nProvides a way for you to export your environment:\n\nThis allows you to specify the exact libraries and library versions that were used to generate a set of results.\nThis makes it easier for others to use your work and built on it, and reproduce your code environment.\nThis saves you having to manually record library versions that you are using.",
     "crumbs": [
       "Home",
       "Managing dependencies",
-      "Basic dependencies in Python"
+      "Dependency slides"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dep-pres.html#how-do-you-pick",
+    "href": "managing-dependencies/dep-pres.html#how-do-you-pick",
+    "title": "Managing Dependencies",
+    "section": "How do you pick?",
+    "text": "How do you pick?\n1. License\n\nDoes the package manager have an open-source license?\n\n2. Community\n\nWhat solution does your research group use? Does your supervisor have suggestions?\nWhat option can you find support for?\nWhat do researchers in your field use?",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Dependency slides"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dep-pres.html#where-to-next",
+    "href": "managing-dependencies/dep-pres.html#where-to-next",
+    "title": "Managing Dependencies",
+    "section": "Where to next?",
+    "text": "Where to next?\nIf you want some more background information and theory:\n\nReturn to the dependencies section of the course notes and keep reading.\n\nIf you want to learn by doing, get straight into it by following the instructions here:\n\nJump right in an start using conda by following this conda use blog post.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Dependency slides"
     ]
   },
   {
@@ -1800,11 +1625,390 @@
     ]
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "RSE: How to",
+    "section": "",
+    "text": "These module notes aim to provide you with a friendly introduction to Research Software Engineering (RSE) or Research Software Development. This is an evolution of the course notes Sustainable Software Development (Murphy Quinlan 2024), SWD3 - Software Development Practices in Python (Murphy Quinlan & Ternes, 2024), and SWD3: Software development practices for Research (Ternes, 2023) intended to be more flexible and modular for learners with different experience and knowledge. These notes and the course structure are experimental, and will be incorporated into our general Advanced Research Computing training materials following feedback from this course.\nThis course covers a lot of information in a short time: treat the synchronous portion of this course as a primer, and then explore the material in more depth after the course. Also, look through previous iterations of the course for some slightly different materials that goes more in-depth in some areas!\nThis course consists of a series of different topics and notes, usually including a brief presentation and some exercises for you to follow along with. Where relevant, I’ve cited various articles, and have usually linked to a variety of different resources.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "Course page"
+    ]
+  },
+  {
+    "objectID": "index.html#why-do-software-engineering-skills-matter-to-researchers",
+    "href": "index.html#why-do-software-engineering-skills-matter-to-researchers",
+    "title": "RSE: How to",
+    "section": "Why do software engineering skills matter to researchers?",
+    "text": "Why do software engineering skills matter to researchers?\nResearch computing competency and specifically programming skills are becoming ever more important in our data-driven world: Jacobs et al. (2016) argues that “we are rapidly approaching a point where innovations [in research] will primarily come from those who are able to translate an idea into an algorithm, and then into computer code.”\nResearch software engineering skills are the lab tools and competencies of the computational research world; much like practical lab safety training, researchers often pick up bad habits (ask me about my fear of HF acid). Also similarly to lab processes, procedures, and best practises, software engineering is awash with bizarre jargon and is very difficult to navigate without the support of a jaded old PhD student who has made every mistake imaginable (hello, it’s me, I escaped my PhD over a year ago now).\nThis course does not provide the holy grail, the singular correct way of doing things; instead, it should hopefully make the process of writing good, robust, reproducible code a little bit more straighforward.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "Course page"
+    ]
+  },
+  {
+    "objectID": "index.html#current-course",
+    "href": "index.html#current-course",
+    "title": "RSE: How to",
+    "section": "Current course",
+    "text": "Current course\nThe most recent/current iteration of this course is:\nResearch Software Engineering: SOEE5261M\nNote that the order of delivery/course contents may vary depending on pre-course surveys etc.\nYou will need a GitHub account for the interactive portions of this course.\nThere is some homework and follow-on work for this course - this is not mandatory, but will help you to embed the tools and workflows you have learned in your research going forward!",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "Course page"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-resource",
+    "href": "index.html#how-to-use-this-resource",
+    "title": "RSE: How to",
+    "section": "How to use this resource",
+    "text": "How to use this resource\nThere’s a lot of material here to absorb, so here are some guidelines to help you make the most of it. This material is also covered in the presentation linked below.\nLaunch fullscreen presentation ⤢ \n\n1. Use the PRIMM method where possible\nThe PRIMM method is a method to specifically learn a programming language (Sentance, Waite, and Kallia 2019), but is generally useful for learning computational commands etc. It’s helpful for you as a learner to understand the PRIMM structure so you can apply it while working through this course. Not every step will be relevant or used at every stage of the course!\n\nWhat’s PRIMM?PRIMM\n\n\nPRIMM is a pedagogical method specifically aimed at teaching text-based programming. While research into adult programming learners is very limited (especially in terms of demographics; many key studies that are cited have overwhelmingly homogenous test groups), the PRIMM method has a few key benefits:\n\nIt supports learners with different ability levels and who learn at different speeds;\nIt can be applied by learners even if the course materials are not specifically built with it in mind;\nIt can be applied to asynchronous learning materials (for example, if you are using these notes online on your own).\n\n\n\nThe P in PRIMM stands for predict:\nWhen you first see a command, script, or piece of code, before running it, predict what you think it will do. It’s ok to get this wrong: the important thing is to get into the habit of predicting! This helps to keep you actively engaged and focused, and begins to build an intuitive sense about the structure of commands.\n\nWhat do you think the code is going to do generally?\nWhat do you think the output in your terminal is going to look like?\n\n\n\nThe R in PRIMM stands for run:\n\nRun the code or program;\nHow does the output/effect compare to your prediction?\n\nWhat did you get right?\nWhat did you misinterpret?\n\nDo you understand what happened?\n\n\n\nThe I in PRIMM stands for investigate:\nLet’s dig a little deeper into the structure of code you’ve used.\n\nWhat options or arguments did you use, and what effect did they have?\nCan you find some documentation on the command you used?\n\nDoes the description match how you would describe the code?\n\nIf no, why does your understanding of it diverge?\n\nWhat other options or features are available?\n\n\n\n\nThe first M in PRIMM stands for modify:\n\nTry running the code with different options:\n\nChange only a small thing at a time;\nAlways predict what you think the output will be!\nCompare the actual output with your prediction;\nCompare your understanding to the available documentation.\n\n\nThis stage helps you to gradually increase the difficultly of the tasks you are doing!\n\n\nThe second M in PRIMM stands for make:\nThis stage is about making the code your own.\n\nAt this stage, you can try implementing snippets of code you’ve already learned, but to solve a new or different problem;\nAgain, use the previous stages when you are writing your code: predict what you think will happen, run the code and compare the output to your predictions, and investigate the structure of it, especially if it does not behave how you intended!\n\n\n\n\n\n\n2. Kick back, relax, and do something else when you know something\nToo frequently, I have attended broad-level, apparently introductory courses that have catered to the fastest in the class.\nThe aim of this course is to demystify aspects of research software engineering, like dependency management, version control, and project directory structure. These topics are basic skills needed for pursuing research in the computational field. Certain demographics are less likely to learn these skills in an informal setting, meaning that classes like this are their main access to these topics.\nI am interested in helping the students who do not already know everything about these topics, and will not be pacing the course for the fastest in the group who have pre-existing knowledge. With that said, I know there is nothing more boring than sitting through a class where you already know all the material - please feel free to use this time to do extra reading, work on projects, do various administrative work; stick on headphones if you like, and join back in when something relevant comes up.\n\n\n3. Learn in a way that suits you\nRead before you write - research has proven repeatedly the importance of reading and predicting the output of code as a method of learning, over just getting straight into it and writing code.\n\nNovice programmers need to acquire accuracy in tracing code before they can program independently\nTrying to write code first leads to frustration and confusion\n\nHowever, with that said learn in a way that suits you - if that is copying and pasting commands from the slides instead of trying to keep up with typing, that’s ok! Also, if that means taking handwritten notes and not typing, that’s also fine!\nPlease feel free to:\n\nGet up and stretch when you need, leave for breaks, and stretch your eyes by looking away from the screen;\nWear headphones for background music if it helps you focus;\nKick off your shoes and sit comfortably;\nDo whatever else helps you learn!",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "Course page"
+    ]
+  },
+  {
+    "objectID": "week-1-homework.html",
+    "href": "week-1-homework.html",
+    "title": "Homework",
+    "section": "",
+    "text": "Some content\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "managing-dependencies/dependencies-intro.html",
+    "href": "managing-dependencies/dependencies-intro.html",
+    "title": "Dependencies 101",
+    "section": "",
+    "text": "Dependencies are the versions of different packages/modules that your code depends on, for example the version of Python you are using, and any libraries you have to import, like matplotlib, scipy, tensorflow etc.\nDependencies are an important thing to keep track of when building scientific code. How many different external libraries does your code depend on? What versions of these libraries does it need? How do you install and update these different libraries?\nLaunch fullscreen presentation ⤢",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Basic dependencies in Python"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/dependencies-intro.html#package-management-for-python",
+    "href": "managing-dependencies/dependencies-intro.html#package-management-for-python",
+    "title": "Dependencies 101",
+    "section": "Package management for Python",
+    "text": "Package management for Python\nIn Python, there are lots of different ways to install and manage packages and dependencies. These different tools generally involve using virtual environments in order to keep the dependencies for different projects separate and tidy. Some package installation and management tools include:\n\nConda/Mamba\n\nYou can install conda with Miniforge\n\npip and Pipenv\npixi\nPoetry\nuv\n\nYou can read more about Python package management tool recommendations here. The package management tool you use will vary depending on whether you want to build your code into a package itself, or are relying primarily on external libraries. Some of these package managers include entire workflows for building and publishing Python packages, while others focus on organising pre-existing packages.\n\nPackage management for other coding languages\nNote that I do not have as extensive experience managing projects, dependencies and packages in the following languages so please proceed with caution.\nPackage management in R\nconda for R: you can install conda via Miniforge as linked above, and then install R packages through this following these instructions for R with conda.\nrenv: the reproducible environment package for R has some very nice introductory documentation.\nPackage management in Julia\nPkg: Pkg is Julia’s built-in package manager.\n\nIn research, a lot of people rely on conda: you can read more about perfecting your conda environment in this blog post.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Basic dependencies in Python"
+    ]
+  },
+  {
+    "objectID": "managing-dependencies/conda-skills.html",
+    "href": "managing-dependencies/conda-skills.html",
+    "title": "conda skills",
+    "section": "",
+    "text": "Conda is a widely used package management system which allows you to isolate different Python “environments” from each other, allowing you to use different versions of libraries or modules for different projects. However, mismanagement of packages can lead to dependency hell with tangled environments and incompatible versions of different modules.\nThis presentation aims to provide you with a workflow for using conda that ensures:\n\nYou can rebuild your environment on a different computer/platform without problem\nThat you can record exact dependencies for the sake of reproducibility\nThat you can update your environment without it breaking (even if you have pip dependencies too!)\nYou don’t get tangled up in licensing issues.\n\nTo read the contents of this presentation in article format, please see my blog post on using conda;\nLaunch fullscreen presentation ⤢\n\n\n\n Back to topCitationBibTeX citation:@online{murphy_quinlan2025,\n  author = {Murphy Quinlan, Maeve},\n  title = {Conda Skills},\n  date = {2025-02-18},\n  url = {https://murphyqm.github.io/research-software-dev/managing-dependencies/conda-skills.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nMurphy Quinlan, Maeve. 2025. “Conda Skills.” February 18,\n2025. https://murphyqm.github.io/research-software-dev/managing-dependencies/conda-skills.html.",
+    "crumbs": [
+      "Home",
+      "Managing dependencies",
+      "Conda skills"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-is-version-control",
+    "href": "version_control/version_control_slides.html#what-is-version-control",
+    "title": "Version control",
+    "section": "What is version control?",
+    "text": "What is version control?\n\n\nOften described as “track changes”, although that’s not quite right\nA super-powerful “undo” button\nA way of working collaboratively without over-writing each other’s work\nA way of recording exactly what you did and when",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-is-version-control-1",
+    "href": "version_control/version_control_slides.html#what-is-version-control-1",
+    "title": "Version control",
+    "section": "What is version control?",
+    "text": "What is version control?\n\nOne way of doing version control…",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-is-version-control-2",
+    "href": "version_control/version_control_slides.html#what-is-version-control-2",
+    "title": "Version control",
+    "section": "What is version control?",
+    "text": "What is version control?\n\nWe’re going to use git, which is a strangely named version control software\nWe’ll use this to explain how version control works, and why it matters\nThere are lots of other ways to do version control, but git is very widely used\n\nIf version control was word processing, git would be Microsoft Word",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do",
+    "href": "version_control/version_control_slides.html#what-does-git-do",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\ngit allows you to bundle up changes to various files, and give the group of changes a unique commit hash and an explanatory message.\ngit works on a project level, so you can make a bunch of changes to different files in a folder, and then commit all those changes with a descriptive message\nIt’s recorded that you made those changes, and there’s a unique commit hash that you can quote to point at the exact state of your folder when you added those changes.",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-1",
+    "href": "version_control/version_control_slides.html#what-does-git-do-1",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\ngit is a command line program\nThere are actually only a few commands you’ll really use regularly\nBut before we move on to learning what commands are needed, let’s try to build a mental model of git\nHopefully this will be useful to those of you who are already using git too!",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
     "objectID": "version_control/version_control_slides.html#what-does-git-do-2",
     "href": "version_control/version_control_slides.html#what-does-git-do-2",
     "title": "Version control",
     "section": "What does git do?",
-    "text": "What does git do?\n\n\nNew version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 import numpy as np\n4 x = [1, 2, 3, 4, 5]\n5 y = [3, 4, 5, 6, 7]\n6 plt.scatter(x, y)\n6 plt.plot(x, y)\n\nLine 3 added, line 6 removed, line 6 added.\n\nAssociated git commit\n\nFile: python-file.py\nCommit hash: u87wy9o2\nCommit message: change plotting method\n+++ 3 import numpy as np\n— 6 plt.scatter(x, y)\n+++ 6 plt.plot(x, y)",
+    "text": "What does git do?\n\n\nOld version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 x = [1, 2, 3, 4, 5]\n4 y = [3, 4, 5, 6, 7]\n5 plt.scatter(x, y)\n\n\nNew version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 import numpy as np\n4 x = [1, 2, 3, 4, 5]\n5 y = [3, 4, 5, 6, 7]\n6 plt.scatter(x, y)\n6 plt.plot(x, y)\n\nLine 3 added, line 6 removed, line 6 added.",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "intro-to-linux-files/intro-to-linux-page.html",
+    "href": "intro-to-linux-files/intro-to-linux-page.html",
+    "title": "Linux 101",
+    "section": "",
+    "text": "This is a modified version of the course presentation for HPC0: Introduction to Linux for HPC, if you’re very unfamiliar with the material shown here, there’s some additional homework for you between courses.\nYou can follow along with the presentation notes here:\nLaunch fullscreen presentation ⤢\nLaunch your virtual machine to test out these notes here:\nLaunch codespaces virtual machine ⇗",
+    "crumbs": [
+      "Home",
+      "Basic Linux",
+      "Intro to Linux"
+    ]
+  },
+  {
+    "objectID": "intro-to-linux-files/intro-to-linux-page.html#frequently-used-commands-cheat-sheet",
+    "href": "intro-to-linux-files/intro-to-linux-page.html#frequently-used-commands-cheat-sheet",
+    "title": "Linux 101",
+    "section": "Frequently used commands: cheat sheet",
+    "text": "Frequently used commands: cheat sheet\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\ncd\nChange directory to home\n\n\ncd dir-name\nChange directory to dir-name\n\n\npwd\nPrint the current working directory - where am I?\n\n\nname --help\nLoad the manual for name - on Codespaces\n\n\nman name\nLoad the manual for name - on Aire/ARC\n\n\nls\nList the contents of a directory\n\n\ncat file-name\nPrint out the contents of a file called file-name\n\n\nmkdir dir-name\nMake a new directory called dir-name\n\n\ntouch file-name\nMake a new file/update the last-edited date of a file called file-name\n\n\n\nSome more cd commands:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\ncd ..\nGo up a level to the parent directory\n\n\ncd -\nGo back to the previous directory\n\n\ncd ~/dir-name\nGo to dir-name, a directory in the home directory\n\n\n\nSome more ls commands:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nls -F\nList the contents of a dir, with symbols for content type\n\n\nls -a\nList all contents, including hidden files and directories\n\n\nls -l\nList contents, including permissions, the owner and their “group”, and when the content was edited\n\n\n\nCommands for working with files and directories:\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\ncp\n\n\n\nmv\n\n\n\nrm\n\n\n\nmkdir -p dir-name\nMake a new directory call dir-name if it doesn’t already exist",
+    "crumbs": [
+      "Home",
+      "Basic Linux",
+      "Intro to Linux"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-3",
+    "href": "version_control/version_control_slides.html#what-does-git-do-3",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\nNew version of python-file.py\n\n1 # This is a comment\n2 import matplotlib.pyplot as plt\n3 import numpy as np\n4 x = [1, 2, 3, 4, 5]\n5 y = [3, 4, 5, 6, 7]\n6 plt.scatter(x, y)\n6 plt.plot(x, y)\n\nLine 3 added, line 6 removed, line 6 added.\n\nAssociated git commit\n\nFile: python-file.py\nCommit hash: u87wy9o2\nCommit message: change plotting method\n+++ 3 import numpy as np\n- – 6 plt.scatter(x, y)\n+++ 6 plt.plot(x, y)",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-4",
+    "href": "version_control/version_control_slides.html#what-does-git-do-4",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\nWhen we work with git, we bundle up changes in our project folder (/directory) and commit our changes.\nEach commit (bundle of changes) gets a unique id - a hexadecimal hash that’s 40 digits long (we’re just going to abbreviate to the first 7)\nThe commits are made to a “branch” - pause any thinking for a moment\n\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-5",
+    "href": "version_control/version_control_slides.html#what-does-git-do-5",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\nWhen we work with git, we bundle up changes in our project folder (/directory) and commit our changes.\nEach commit (bundle of changes) gets a unique id - a hexadecimal hash that’s 40 digits long (we’re just going to abbreviate to the first 7)\nThe commits are made to a “branch” - pause any thinking for a moment\n\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-6",
+    "href": "version_control/version_control_slides.html#what-does-git-do-6",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n\n\n\n\n\n\n\n\nBecause each “bundle” of changes has been saved with a unique id, we can roll back our changes to a previous version if we want",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-7",
+    "href": "version_control/version_control_slides.html#what-does-git-do-7",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n\n\n\n\n\n\n\n\nBut let’s say we’re happy with how our code is working, but we want to try out a different way of doing something\nOr say we’ve written the conclusion section of our paper in a certain way, but our supervisor has some ideas for structuring it differently\n\nHow can we try this out without risking our current work that we’re happy with?",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-8",
+    "href": "version_control/version_control_slides.html#what-does-git-do-8",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n\n\n\n\n\n\n\nThe answer is branching\n\n\nWe mentioned earlier that your bundled changes (commits) were on the main branch\n\n\n\n\nWe can create other branches to try out experimental changes while keeping our main branch safe",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-9",
+    "href": "version_control/version_control_slides.html#what-does-git-do-9",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n\n\n\n\n\n\n\nThe answer is branching\n\nWhen we are happy with the changes we have made on the experimental branch, we can decide to mix them back in with our main branch\nWe can merge the changes with the main branch",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-10",
+    "href": "version_control/version_control_slides.html#what-does-git-do-10",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n   checkout main\n   merge experimental-1 id: \"df37ba1\"\n\n\n\n\n\n\n\nThe answer is branching\n\nWhen we are happy with the changes we have made on the experimental branch, we can decide to mix them back in with our main branch\nWe can merge the changes with the main branch\n\nThis merge get’s it’s own unique id\n\n\nRemember that you can always reverse to a previous commit, even across different branches!",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-11",
+    "href": "version_control/version_control_slides.html#what-does-git-do-11",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n   checkout main\n   merge experimental-1 id: \"df37ba1\"\n   commit id: \"34efc1a\"\n   commit id: \"32753bc\"\n   branch experimental-2\n   checkout experimental-2\n   commit id: \"cb45ad1\"\n\n\n\n\n\n\n\n\nWe can continue committing bundles of changes, and making new branches that support us taking risks with our work",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-12",
+    "href": "version_control/version_control_slides.html#what-does-git-do-12",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n   checkout main\n   merge experimental-1 id: \"df37ba1\"\n   commit id: \"34efc1a\"\n   commit id: \"32753bc\"\n   branch experimental-2\n   checkout experimental-2\n   commit id: \"cb45ad1\"\n   branch experimental-3\n   checkout experimental-3\n   commit id: \"456abc1\"\n\n\n\n\n\n\n\n\nWe can create branches from other branches, if we want to noodle around with changes",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-13",
+    "href": "version_control/version_control_slides.html#what-does-git-do-13",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n   checkout main\n   merge experimental-1 id: \"df37ba1\"\n   commit id: \"34efc1a\"\n   commit id: \"32753bc\"\n   branch experimental-2\n   checkout experimental-2\n   commit id: \"cb45ad1\"\n   branch experimental-3\n   checkout experimental-3\n   commit id: \"456abc1\"\n   checkout experimental-2\n   commit id: \"ad1cb45\"\n\n\n\n\n\n\n\n\nWe can create branches from other branches, if we want to noodle around with changes\n\nWe can then abandon those branches if we realise we made terrible choices, and keep working on the original branch like nothing happened…",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-14",
+    "href": "version_control/version_control_slides.html#what-does-git-do-14",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n   checkout main\n   merge experimental-1 id: \"df37ba1\"\n   commit id: \"34efc1a\"\n   commit id: \"32753bc\"\n   branch experimental-2\n   checkout experimental-2\n   commit id: \"cb45ad1\"\n   branch experimental-3\n   checkout experimental-3\n   commit id: \"456abc1\"\n   checkout experimental-2\n   commit id: \"ad1cb45\"\n   checkout main\n   merge experimental-2 id: \"be34af1\"\n   commit id: \"def134a\"\n   commit id: \"563bdef\"\n\n\n\n\n\n\n\n\nAnd we usually bring everything back to the main branch once we are happy with it",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-15",
+    "href": "version_control/version_control_slides.html#what-does-git-do-15",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n   checkout main\n   merge experimental-1 id: \"df37ba1\"\n   commit id: \"34efc1a\"\n   commit id: \"32753bc\" tag:\"v0.1.0 - preprint\" type: HIGHLIGHT\n   branch experimental-2\n   checkout experimental-2\n   commit id: \"cb45ad1\"\n   branch experimental-3\n   checkout experimental-3\n   commit id: \"456abc1\"\n   checkout experimental-2\n   commit id: \"ad1cb45\"\n   checkout main\n   merge experimental-2 id: \"be34af1\"\n   commit id: \"def134a\"\n   commit id: \"563bdef\" tag:\"v1.0.0 - published paper\" type: HIGHLIGHT\n\n\n\n\n\n\n\n\nWe can also tag specific commits if the code at that point in time is important!\n\nFor example, the version of the code you used to generate results for a preprint or the final paper!",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#what-does-git-do-16",
+    "href": "version_control/version_control_slides.html#what-does-git-do-16",
+    "title": "Version control",
+    "section": "What does git do?",
+    "text": "What does git do?\n\n\n\n\n\n\n%%{\n  init: {\n    'theme': 'base',\n    'themeVariables': {\n      'primaryColor': '#9fe1ff',\n      'primaryTextColor': '#470044',\n      'primaryBorderColor': '#000000',\n      'lineColor': '#9158A2',\n      'secondaryColor': '#e79aff',\n      'tertiaryColor': '#fffc58'\n    }\n  }\n}%%\n\ngitGraph\n   commit id: \"a1b2c3d\"\n   commit id: \"4e5f678\"\n   branch experimental-1\n   checkout experimental-1\n   commit id: \"90abcde\"\n   commit id: \"7835cd3\"\n   checkout main\n   merge experimental-1 id: \"df37ba1\"\n   commit id: \"34efc1a\"\n   commit id: \"32753bc\" tag:\"v0.1.0 - preprint\" type: HIGHLIGHT\n   branch experimental-2\n   checkout experimental-2\n   commit id: \"cb45ad1\"\n   branch experimental-3\n   checkout experimental-3\n   commit id: \"456abc1\"\n   checkout experimental-2\n   commit id: \"ad1cb45\"\n   checkout main\n   merge experimental-2 id: \"be34af1\"\n   commit id: \"def134a\"\n   commit id: \"563bdef\" tag:\"v1.0.0 - published paper\" type: HIGHLIGHT\n\n\n\n\n\n\n\n\nThese tags can also be called releases: (hopefully!) fairly complete, working, nice versions of your code\n\nCommits in between releases (merged to the main branch) are like patches to video games\nThe commit notes are like patch notes, telling you what’s changed",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#the-git-cycle",
+    "href": "version_control/version_control_slides.html#the-git-cycle",
+    "title": "Version control",
+    "section": "The git cycle",
+    "text": "The git cycle\nSo we’ve looked at the idea of bundling up changes as commits, but what does that actually involve?\nI think of it like packing a picnic basket:\n\n\n\nI make a sandwich and wrap it up\nI add it to the basket\nI chop up some fruit and put it in a lunchbox\nI add that to the basket\nI make a smoothie and bottle it\nI add that to the basket too\nFinally, I close over the top of the picnic basket and secure the latch",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#the-git-cycle-1",
+    "href": "version_control/version_control_slides.html#the-git-cycle-1",
+    "title": "Version control",
+    "section": "The git cycle",
+    "text": "The git cycle\nHow does this have anything to do with git?\n\n\nI make a sandwich and wrap it up\nI add it to the basket\nI chop up some fruit and put it in a lunchbox\nI add that to the basket\nI make a smoothie and bottle it\nI add that to the basket too\nFinally, I close over the top of the picnic basket and secure the latch",
+    "crumbs": [
+      "Home",
+      "Version control with git",
+      "Version control intro slides"
+    ]
+  },
+  {
+    "objectID": "version_control/version_control_slides.html#the-git-cycle-2",
+    "href": "version_control/version_control_slides.html#the-git-cycle-2",
+    "title": "Version control",
+    "section": "The git cycle",
+    "text": "The git cycle\nLet’s introduce the concept of add as well as commit.\n\n\nI make a sandwich and wrap it up -&gt; I make some edits to files/create new files in my project folder\nI add it to the basket -&gt; I add my changes\nI chop up some fruit and put it in a lunchbox -&gt; I make some more edits to files\nI add that to the basket -&gt; I add my changes\nI make a smoothie and bottle it -&gt; I make some more edits to files\nI add that to the basket too -&gt; I add my changes\nI close over the top of the picnic basket and secure the latch -&gt; I commit all these changes that I previously added",
     "crumbs": [
       "Home",
       "Version control with git",
